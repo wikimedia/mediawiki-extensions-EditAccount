@@ -1,0 +1,46 @@
+{
+	"name": "EditAccount",
+	"version": "1.3.1",
+	"author": [
+		"Łukasz Garczewski",
+		"Jack Phoenix"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:EditAccount",
+	"descriptionmsg": "editaccount-desc",
+	"type": "specialpage",
+	"GroupPermissions": {
+		"*": {
+			"editaccount": false
+		},
+		"staff": {
+			"editaccount": true
+		}
+	},
+	"AvailableRights": [
+		"editaccount"
+	],
+	"SpecialPages": {
+		"EditAccount": "EditAccount"
+	},
+	"LogTypes": [
+		"editaccnt"
+	],
+	"LogRestrictions": {
+		"editaccnt": "editaccount"
+	},
+	"LogActionsHandlers": {
+		"editaccnt/*": "LogFormatter"
+	},
+	"MessagesDirs": {
+		"EditAccount": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"EditAccountAliases": "EditAccount.alias.php"
+	},
+	"AutoloadClasses": {
+		"EditAccount": "SpecialEditAccount_body.php"
+	},
+	"manifest_version": 1
+}
