@@ -1,6 +1,6 @@
 {
 	"name": "EditAccount",
-	"version": "1.3.1",
+	"version": "1.3.2",
 	"author": [
 		"Łukasz Garczewski",
 		"Jack Phoenix"
@@ -20,6 +20,7 @@
 		"editaccount"
 	],
 	"SpecialPages": {
+		"CloseAccount": "CloseAccount",
 		"EditAccount": "EditAccount"
 	},
 	"LogTypes": [
@@ -40,6 +41,7 @@
 		"EditAccountAliases": "EditAccount.alias.php"
 	},
 	"AutoloadClasses": {
+		"CloseAccount": "SpecialCloseAccount.body.php",
 		"EditAccount": "SpecialEditAccount_body.php"
 	},
 	"manifest_version": 1

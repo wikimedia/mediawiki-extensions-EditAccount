@@ -9,9 +9,7 @@
  * Jack Phoenix's notes: the @date comment below also indicates from which
  * revision on Wikia SVN this extension was forked from.
  * For ShoutWiki, I changed the code so that users can access the special page
- * to *permanently shut down* their _own_ account.
- * Privileged users, i.e. those with the 'editaccount' permission (staff), can
- * use all the features provided by the special page.
+ * Special:CloseAccount to *permanently shut down* their _own_ account.
  *
  * Some i18n changes were also done and the logging system was converted to use
  * the 1.19-style logging system.
@@ -33,7 +31,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 $wgExtensionCredits['specialpage'][] = array(
 	'path' => __FILE__,
 	'name' => 'EditAccount',
-	'version' => '1.3.1',
+	'version' => '1.3.2',
 	'author' => array( 'Łukasz Garczewski', 'Jack Phoenix' ),
 	'descriptionmsg' => 'editaccount-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Extension:EditAccount'
@@ -49,8 +47,12 @@ $wgLogTypes[] = 'editaccnt';
 $wgLogActionsHandlers['editaccnt/*'] = 'LogFormatter';
 $wgLogRestrictions['editaccnt'] = 'editaccount';
 
-// Set up the new special page
+// Set up the new special pages
 $wgMessagesDirs['EditAccount'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['EditAccountAliases'] = __DIR__ . '/EditAccount.alias.php';
+
 $wgAutoloadClasses['EditAccount'] = __DIR__ . '/SpecialEditAccount_body.php';
 $wgSpecialPages['EditAccount'] = 'EditAccount';
+
+$wgAutoloadClasses['CloseAccount'] = __DIR__ . '/SpecialCloseAccount.body.php';
+$wgSpecialPages['CloseAccount'] = 'CloseAccount';

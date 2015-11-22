@@ -34,10 +34,10 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 		$isDisabled = $this->data['isDisabled'];
 ?>
 <!-- s:<?php echo __FILE__ ?> -->
-<small><a href="<?php echo $returnURL; ?>"><?php echo wfMsg( 'editaccount-return' ) ?></a><?php echo wfMessage( 'pipe-separator' )->plain() . $logLink ?></small>
+<small><a href="<?php echo $returnURL; ?>"><?php echo wfMessage( 'editaccount-return' )->plain() ?></a><?php echo wfMessage( 'pipe-separator' )->plain() . $logLink ?></small>
 <?php if ( !is_null( $status ) ) { ?>
 <fieldset>
-	<legend><?php echo wfMsg( 'editaccount-status' ) ?></legend>
+	<legend><?php echo wfMessage( 'editaccount-status' )->plain() ?></legend>
 	<?php
 		if ( $status ) {
 			echo Xml::element( 'span', array( 'style' => 'color: darkgreen; font-weight: bold;' ), $statusMsg );
@@ -45,19 +45,19 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 			echo Xml::element( 'span', array( 'style' => 'color: #fe0000; font-weight: bold;' ), $statusMsg );
 		}
 
-		if( !empty( $statusMsg2 ) ) {
+		if ( !empty( $statusMsg2 ) ) {
 			echo Xml::element( 'span', array( 'style' => 'color: #fe0000; font-weight: bold;' ), $statusMsg2 );
 		}
 	?>
 </fieldset>
 <?php } ?>
 <fieldset>
-	<legend><?php echo wfMsg( 'editaccount-frame-account', $user ) ?></legend>
+	<legend><?php echo wfMessage( 'editaccount-frame-account', $user )->escaped() ?></legend>
 	<?php echo $userEncoded ?><br />
-	<?php echo wfMsg( 'editaccount-user-id', $userId ); ?><br />
-	<?php echo wfMsg( 'editaccount-user-reg-date', $userReg ); ?><br />
-	<?php echo wfMsg( 'editaccount-label-account-status', $userStatus ); ?><br />
-	<?php echo wfMsg( 'editaccount-label-email-status', $emailStatus ); ?><br />
+	<?php echo wfMessage( 'editaccount-user-id', $userId )->escaped(); ?><br />
+	<?php echo wfMessage( 'editaccount-user-reg-date', $userReg )->escaped(); ?><br />
+	<?php echo wfMessage( 'editaccount-label-account-status', $userStatus )->escaped(); ?><br />
+	<?php echo wfMessage( 'editaccount-label-email-status', $emailStatus )->escaped(); ?><br />
 	<?php echo $changeEmailRequested; ?><br />
 	<form method="post" action="" id="EditAccountForm">
 		<div>
@@ -87,7 +87,7 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 		</div>
 		<?php } ?>
 
-		<?php if( $isUnsub ) { ?>
+		<?php if ( $isUnsub ) { ?>
 		<div>
 			<input type="radio" id="wpActionClearUnsub" name="wpAction" value="clearunsub" <?php echo $disabled; ?> />
 			<label for="wpActionClearUnsub"><?php echo wfMessage( 'editaccount-submit-clearunsub' )->escaped() ?></label>
@@ -107,17 +107,17 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 	</form>
 </fieldset>
 <fieldset>
-	<legend><?php echo wfMsg( 'editaccount-frame-close', $user ) ?></legend>
-	<p><?php echo wfMsg( 'editaccount-usage-close' ) ?></p>
+	<legend><?php echo wfMessage( 'editaccount-frame-close', $user )->escaped() ?></legend>
+	<p><?php echo wfMessage( 'editaccount-usage-close' )->plain() ?></p>
 	<form method="post" action="">
-		<input type="submit" value="<?php echo wfMsg( 'editaccount-submit-close' ) ?>" <?php echo $disabled; ?> />
+		<input type="submit" value="<?php echo wfMessage( 'editaccount-submit-close' )->plain() ?>" <?php echo $disabled; ?> />
 		<input type="hidden" name="wpAction" value="closeaccount" />
 		<input type="hidden" name="wpUserName" value="<?php echo $user_hsc ?>" />
 	</form>
-<?php if( $isDisabled ) {
-	echo wfMsg( 'edit-account-closed-flag' ); ?>
+<?php if ( $isDisabled ) {
+	echo wfMessage( 'edit-account-closed-flag' )->plain(); ?>
 	<form method="post" action="">
-		<input type="submit" value="<?php echo wfMsg( 'editaccount-submit-cleardisable' ) ?>" <?php echo $disabled; ?> />
+		<input type="submit" value="<?php echo wfMessage( 'editaccount-submit-cleardisable' )->plain() ?>" <?php echo $disabled; ?> />
 		<input type="hidden" name="wpAction" value="cleardisable" />
 		<input type="hidden" name="wpUserName" value="<?php echo $user_hsc ?>" />
 	</form>

@@ -24,7 +24,7 @@ class EditAccountCloseAccountTemplate extends QuickTemplate {
 // something *and* they are not the current user performing the action
 if ( !is_null( $status ) && $user !== $user_hsc ) { ?>
 <fieldset>
-	<legend><?php echo wfMsg( 'editaccount-status' ) ?></legend>
+	<legend><?php echo wfMessage( 'editaccount-status' )->plain() ?></legend>
 	<?php
 	if ( $status ) {
 		echo Xml::element( 'span', array( 'style' => 'color: darkgreen; font-weight: bold;' ), $statusMsg );
@@ -36,14 +36,14 @@ if ( !is_null( $status ) && $user !== $user_hsc ) { ?>
 <?php } ?>
 <form method="post" id="editaccountSelectForm" action="">
 	<fieldset>
-		<legend><?php echo wfMsg( 'editaccount-frame-close', $user ) ?></legend>
-		<p><?php echo wfMsg( 'editaccount-warning-close', $user ) ?></p>
+		<legend><?php echo wfMessage( 'editaccount-frame-close', $user )->escaped() ?></legend>
+		<p><?php echo wfMessage( 'editaccount-warning-close', $user )->parse() ?></p>
 		<div>
 			<label for="wpReason"><?php echo wfMessage( 'editaccount-label-reason' )->escaped() ?></label>
 			<input id="wpReason" name="wpReason" type="text" />
 		</div>
 		<div>
-			<input type="submit" value="<?php echo wfMsg( 'editaccount-submit-close' ) ?>" />
+			<input type="submit" value="<?php echo wfMessage( 'editaccount-submit-close' )->plain() ?>" />
 		</div>
 		<input type="hidden" name="wpUserName" value="<?php echo $user_hsc ?>" />
 		<input type="hidden" name="wpAction" value="closeaccountconfirm" />

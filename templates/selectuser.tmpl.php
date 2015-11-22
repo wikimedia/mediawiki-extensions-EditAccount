@@ -22,14 +22,14 @@ class EditAccountSelectUserTemplate extends QuickTemplate {
 <!-- s:<?php echo __FILE__ ?> -->
 <?php if ( !is_null( $status ) ) { ?>
 <fieldset>
-	<legend><?php echo wfMsg( 'editaccount-status' ); ?></legend>
+	<legend><?php echo wfMessage( 'editaccount-status' )->plain(); ?></legend>
 	<?php
 		if ( $status ) {
 			echo Xml::element( 'span', array( 'style' => 'color: darkgreen; font-weight: bold;' ), $statusMsg );
 		} else {
 			echo Xml::element( 'span', array( 'style' => 'color: #fe0000; font-weight: bold;' ), $statusMsg );
 		}
-		if( !empty( $statusMsg2 ) ) {
+		if ( !empty( $statusMsg2 ) ) {
 			echo Xml::element( 'span', array( 'style' => 'color: #fe0000; font-weight: bold;' ), $statusMsg2 );
 		}
 	?>
@@ -37,15 +37,15 @@ class EditAccountSelectUserTemplate extends QuickTemplate {
 <?php } ?>
 <form method="post" id="editaccountSelectForm" action="">
 	<fieldset>
-		<legend><?php echo wfMsg( 'editaccount-frame-manage' ) ?></legend>
-		<label for="wpUserName"><?php echo wfMsg( 'editaccount-label-select' ); ?></label>
+		<legend><?php echo wfMessage( 'editaccount-frame-manage' )->plain() ?></legend>
+		<label for="wpUserName"><?php echo wfMessage( 'editaccount-label-select' )->plain(); ?></label>
 		<input type="text" name="wpUserName" value="<?php echo $user_hsc; ?>" />
-		<input type="submit" value="<?php echo wfMsg( 'editaccount-submit-account' ); ?>" />
+		<input type="submit" value="<?php echo wfMessage( 'editaccount-submit-account' )->plain(); ?>" />
 		<input type="hidden" name="wpAction" value="displayuser" />
 	</fieldset>
 	<fieldset>
-		<legend><?php echo wfMsg( 'editaccount-frame-usage' ); ?></legend>
-		<?php echo wfMsg( 'editaccount-usage' ); ?>
+		<legend><?php echo wfMessage( 'editaccount-frame-usage' )->plain(); ?></legend>
+		<?php echo wfMessage( 'editaccount-usage' )->escaped(); ?>
 	</fieldset>
 </form>
 <!-- e:<?php echo __FILE__ ?> -->

@@ -21,10 +21,7 @@ class EditAccount extends SpecialPage {
 	 * Constructor -- set up the new special page
 	 */
 	public function __construct() {
-		parent::__construct( 'EditAccount' ); // restriction intentionally removed
-		// Show this special page on Special:SpecialPages only for registered
-		// users
-		$this->setListed( $this->getUser()->isLoggedIn() );
+		parent::__construct( 'EditAccount', 'editaccount' );
 	}
 
 	/**
@@ -60,9 +57,10 @@ class EditAccount extends SpecialPage {
 		$request = $this->getRequest();
 		$user = $this->getUser();
 
-		// Anons should not be allowed to access this special page
-		if ( !$user->isLoggedIn() ) {
-			throw new PermissionsError( 'editaccount' );
+		// Redirect mortals to Special:CloseAccount
+		if ( !$user->isAllowed( 'editaccount' ) ) {
+			//throw new PermissionsError( 'editaccount' );
+			$out->redirect( SpecialPage::getTitleFor( 'CloseAccount' )->getFullURL() );
 		}
 
 		// Show a message if the database is in read-only mode
@@ -82,16 +80,9 @@ class EditAccount extends SpecialPage {
 		// Special:EditAccount is a fairly stupid page title
 		$out->setPageTitle( $this->getDescription() );
 
-		// If the user isn't permitted to access this special page, display an error
-		if ( $user->isAllowed( 'editaccount' ) ) {
-			// Get name to work on. Subpage is supported, but form submit name trumps
-			$userName = $request->getVal( 'wpUserName', $par );
-			$action = $request->getVal( 'wpAction' );
-		} else {
-			// Mortals can only close their own account
-			$userName = $user->getName();
-			$action = 'closeaccount';
-		}
+		// Get name to work on. Subpage is supported, but form submit name trumps
+		$userName = $request->getVal( 'wpUserName', $par );
+		$action = $request->getVal( 'wpAction' );
 
 		if( $userName !== null ) {
 			// Got a name, clean it up
@@ -492,6 +483,39 @@ class EditAccount extends SpecialPage {
 		$this->mUser->setOption( 'disabled', null );
 		$this->mUser->setOption( 'disabled_date', null );
 		$this->mUser->saveSettings();
+
+		// ShoutWiki patch begin
+		// We also need to clear GlobalPreferences data; otherwise it's possible
+		// (though unlikely) that a staff member reactivates a disabled account
+		// but the "this account has been disabled" notice on Special:Contributions
+		// won't go away.
+		if ( class_exists( 'GlobalPreferences' ) ) {
+			$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
+
+			$dbw->begin();
+			$dbw->delete(
+				'global_preferences',
+				array(
+					'gp_property' => 'disabled',
+					'gp_value' => 1,
+					'gp_user' => $this->mUser->getId()
+				),
+				__METHOD__
+			);
+			$dbw->commit();
+
+			$dbw->begin();
+			$dbw->delete(
+				'global_preferences',
+				array(
+					'gp_property' => 'disabled_date',
+					'gp_user' => $this->mUser->getId()
+				),
+				__METHOD__
+			);
+			$dbw->commit();
+		}
+		// ShoutWiki patch end
 
 		$this->mStatusMsg = $this->msg( 'editaccount-success-disable', $this->mUser->mName )->text();
 
