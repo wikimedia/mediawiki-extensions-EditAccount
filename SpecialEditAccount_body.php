@@ -492,7 +492,7 @@ class EditAccount extends SpecialPage {
 		if ( class_exists( 'GlobalPreferences' ) ) {
 			$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
 
-			$dbw->begin();
+			$dbw->begin( __METHOD__ );
 			$dbw->delete(
 				'global_preferences',
 				array(
@@ -502,9 +502,9 @@ class EditAccount extends SpecialPage {
 				),
 				__METHOD__
 			);
-			$dbw->commit();
+			$dbw->commit( __METHOD__ );
 
-			$dbw->begin();
+			$dbw->begin( __METHOD__ );
 			$dbw->delete(
 				'global_preferences',
 				array(
@@ -513,7 +513,7 @@ class EditAccount extends SpecialPage {
 				),
 				__METHOD__
 			);
-			$dbw->commit();
+			$dbw->commit( __METHOD__ );
 		}
 		// ShoutWiki patch end
 
@@ -690,7 +690,7 @@ class EditAccount extends SpecialPage {
 		}
 		$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
 
-		$dbw->begin();
+		$dbw->begin( __METHOD__ );
 		$dbw->insert(
 			'global_preferences',
 			array(
@@ -700,9 +700,9 @@ class EditAccount extends SpecialPage {
 			),
 			__METHOD__
 		);
-		$dbw->commit();
+		$dbw->commit( __METHOD__ );
 
-		$dbw->begin();
+		$dbw->begin( __METHOD__ );
 		$dbw->insert(
 			'global_preferences',
 			array(
@@ -712,7 +712,7 @@ class EditAccount extends SpecialPage {
 			),
 			__METHOD__
 		);
-		$dbw->commit();
+		$dbw->commit( __METHOD__ );
 	}
 
 	/**
