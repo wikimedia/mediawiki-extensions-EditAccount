@@ -653,9 +653,6 @@ class EditAccount extends SpecialPage {
 										$logMsg->text()
 									);
 								}
-
-								// For good measure, yo.
-								$dbw->commit();
 							}
 						} else {
 							//error_log( getcwd() . '/avatars/ does not exist, skipping.' );
