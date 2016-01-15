@@ -24,6 +24,10 @@ class EditAccount extends SpecialPage {
 		parent::__construct( 'EditAccount', 'editaccount' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * Group this special page under the correct header in Special:SpecialPages.
 	 *
