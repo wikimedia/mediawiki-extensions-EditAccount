@@ -8,6 +8,7 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:EditAccount",
 	"descriptionmsg": "editaccount-desc",
 	"type": "specialpage",
+	"license-name": "GPL-2.0+",
 	"GroupPermissions": {
 		"*": {
 			"editaccount": false
