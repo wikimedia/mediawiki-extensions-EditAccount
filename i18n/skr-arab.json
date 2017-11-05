@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saraiki"
+		]
+	},
+	"editaccount": "کھاتے وچ تبدیلی کرو",
+	"editaccount-return": "ولدا واپس",
+	"editaccount-frame-manage": "کھاتے وچ تبدیلی کرو",
+	"editaccount-frame-usage": "نوٹ",
+	"editaccount-label-pass": "نواں پاس ورڈ بݨاؤ",
+	"editaccount-label-realname": "نواں اصل ناں درج کرو",
+	"editaccount-label-reason": "وجہ:",
+	"editaccount-submit-pass": "پاسورڈ بچاؤ",
+	"editaccount-submit-realname": "اصل ناں بچاؤ",
+	"editaccount-submit-close": "کھاتہ بند کرو",
+	"editaccount-submit-button": "بچاؤ",
+	"editaccount-status-confirmed": "تصدیق تھی ڳئی",
+	"editaccount-status-unconfirmed": "تصدیق کائنی تھئی",
+	"editaccount-status-realuser": "اصلی ورتاؤ",
+	"editaccount-status-tempuser": "عارضی ورتاؤ"
+}

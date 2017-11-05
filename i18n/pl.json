@@ -3,10 +3,13 @@
 		"authors": [
 			"BeginaFelicysym",
 			"Sovq",
-			"Woytecr"
+			"Woytecr",
+			"Chrumps"
 		]
 	},
 	"editaccount": "Edytuj konto",
+	"editaccount-user-reg-date": "Data rejestracji konta: $1",
+	"editaccount-return": "Powrót",
 	"editaccount-desc": "Pozwala zmienić informacje o koncie użytkownika",
 	"editaccount-frame-manage": "Edytuj konto",
 	"editaccount-frame-usage": "Komentarz",
@@ -19,12 +22,14 @@
 	"editaccount-label-pass": "Ustaw nowe hasło",
 	"editaccount-label-realname": "Ustaw nowe nazwisko",
 	"editaccount-label-clearunsub": "Zakończono subskrypcję",
+	"editaccount-label-reason": "Powód:",
 	"editaccount-submit-email": "Zapisz adres e-mail",
 	"editaccount-submit-pass": "Zapisz hasło",
 	"editaccount-submit-realname": "Zapisz nazwisko",
 	"editaccount-submit-clearunsub": "Wyczyść subskrypcję",
 	"editaccount-submit-cleardisable": "Wyczyść wyłączenie konta",
 	"editaccount-submit-close": "Zamknij konto",
+	"editaccount-submit-button": "Zapisz",
 	"editaccount-usage-close": "Możesz także wyłączyć konto użytkownika poprzez zmianę jego hasła i usunięcie adresu e-mail. Dane zostaną utracone bez możliwości ich odzyskania.",
 	"editaccount-warning-close": "<b>Uwaga!</b> Zamierzasz trwale wyłączyć konto użytkownika <b>$1</b>. Tej zmiany nie można cofnąć. Jesteś pewien?",
 	"editaccount-status": "Komunikat o postępie",

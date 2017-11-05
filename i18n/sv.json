@@ -8,6 +8,9 @@
 		]
 	},
 	"editaccount": "Redigera konto",
+	"editaccount-general-description": "Stäng ditt användarkonto",
+	"editaccount-user-id": "Användar-ID: $1",
+	"editaccount-user-reg-date": "Kontots registreringsdatum: $1",
 	"editaccount-desc": "Enables staff members to manage user account information",
 	"editaccount-frame-manage": "Redigera ett konto",
 	"editaccount-frame-usage": "Notis",
@@ -20,12 +23,14 @@
 	"editaccount-label-pass": "Ange nytt lösenord",
 	"editaccount-label-realname": "Ange ett nytt riktigt namn",
 	"editaccount-label-clearunsub": "Prenumeration avslutad",
+	"editaccount-label-reason": "Anledning:",
 	"editaccount-submit-email": "Spara e-postadress",
 	"editaccount-submit-pass": "Spara lösenord",
 	"editaccount-submit-realname": "Spara riktigt namn",
 	"editaccount-submit-clearunsub": "Rensa avprenumerering",
 	"editaccount-submit-cleardisable": "Rensa inaktiveringsflagga",
 	"editaccount-submit-close": "Stäng konto",
+	"editaccount-submit-button": "Spara",
 	"editaccount-usage-close": "Du kan också inaktivera ett användarkonto genom att förvränga lösenordet och ta bort e-postadressen. Observera att på detta sätt gåt data förlorad och kommer inte att återvinnas.",
 	"editaccount-warning-close": "<b>Varning!</b> Du håller på att permanent inaktivera kontot för användare <b>$1</b>. Detta kan inte återställas. Är du säker på att det är vad du vill göra?",
 	"editaccount-status": "Statusmeddelande",
@@ -58,5 +63,6 @@
 	"logentry-editaccnt-realnamechange": "$1 ändrade riktigt namn för användare $3",
 	"logentry-editaccnt-closeaccnt": "$1 inaktiverade kontot $3",
 	"edit-account-closed-flag": "Detta konto har inaktiverat globalt av ShoutWiki.",
+	"action-editaccount": "redigera information för andra användare",
 	"right-editaccount": "Redigera andra användares inställningar"
 }
