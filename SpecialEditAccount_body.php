@@ -737,7 +737,7 @@ class EditAccount extends SpecialPage {
 
 	/**
 	 * Copypasta from pre-1.23 /includes/GlobalFunctions.php
-	 * @see https://git.wikimedia.org/commitdiff/mediawiki%2Fcore/118567a4ba0ded669f43a58713733cab915afe39
+	 * @see https://phabricator.wikimedia.org/rMW118567a4ba0ded669f43a58713733cab915afe39
 	 */
 	public static function generateToken( $salt = '' ) {
 		$salt = serialize( $salt );
