@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bishnu Saikia"
+			"Bishnu Saikia",
+			"Gitartha.bordoloi"
 		]
 	},
 	"editaccount": "একাউণ্ট সম্পাদনা কৰক",
@@ -10,8 +11,8 @@
 	"editaccount-label-email": "নতুন ই-মেইল ঠিকনা সাঁচি ৰাখক",
 	"editaccount-label-pass": "নতুন গুপ্তশব্দ লিখক",
 	"editaccount-submit-pass": "গুপ্তশব্দ সাঁচক",
-	"editaccount-submit-close": "একাউন্ট বন্ধ কৰক",
-	"editaccount-status": "বাৰ্তাৰ স্থিতি",
+	"editaccount-submit-close": "একাউণ্ট বন্ধ কৰক",
+	"editaccount-status": "স্থিতি বাৰ্তা",
 	"editaccount-label-account-status": "একাউণ্টৰ স্থিতি: $1",
 	"editaccount-label-email-status": "ই-মেইলৰ স্থিতি:",
 	"editaccount-status-realuser": "প্ৰকৃত সদস্য"

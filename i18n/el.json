@@ -67,7 +67,7 @@
 	"log-name-editaccnt": "Σύνδεση λογαριασμού χρήστη",
 	"log-description-editaccnt": "Αυτή η σελίδα προβάλλει αλλαγές στα στοιχεία χρήστη μέσω του προσωπικού ShoutWiki",
 	"logentry-editaccnt-mailchange": " Το $1 άλλαξε το e-mail για τον χρήστη $3",
-	"logentry-editaccnt-passchange": "Έγινε αλλαγή στον κωδικό πρόσβασης του χρήστη $2",
+	"logentry-editaccnt-passchange": "La contrasena de este usuario ha cambiado: $1, $3",
 	"logentry-editaccnt-realnamechange": "$1 άλλαξε το πραγματικό όνομα του χρήστη $3",
 	"logentry-editaccnt-closeaccnt": "$1 ανενεργός  λογαριασμός $3",
 	"edit-account-closed-flag": "Αυτός ο λογαριασμός έχει διαγραφεί από το ShoutWiki.",

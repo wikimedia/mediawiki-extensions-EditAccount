@@ -2,10 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Toliño",
-			"Elisardojm"
+			"Elisardojm",
+			"Banjo"
 		]
 	},
 	"editaccount": "Editar a conta",
+	"editaccount-general-description": "Pechar a túa conta de usuario",
+	"editaccount-user-id": "Identificador de usuario: $1",
+	"editaccount-user-reg-date": "Data de rexistro da conta: $1",
 	"editaccount-return": "Volver",
 	"editaccount-desc": "Permite que os membros do persoal xestionen a información das contas de usuario",
 	"editaccount-frame-manage": "Editar unha conta",
@@ -62,5 +66,6 @@
 	"logentry-editaccnt-realnamechange": "$1 cambiou o nome real do usuario $3",
 	"logentry-editaccnt-closeaccnt": "$1 desactivou a conta $3",
 	"edit-account-closed-flag": "ShoutWiki desactivou esta conta globalmente.",
+	"action-editaccount": "editar a información doutros usuarios",
 	"right-editaccount": "Editar as preferencias doutros usuarios"
 }

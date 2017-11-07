@@ -17,5 +17,8 @@
 	"editaccount-frame-account": "সম্পাদনা করছেন ব্যবহারকারী অ্যাকাউন্ট: $1",
 	"editaccount-label-reason": "কারণ:",
 	"editaccount-submit-button": "সংরক্ষণ",
-	"log-name-editaccnt": "ব্যবহারকারী অ্যাকাউন্টের লগ"
+	"editaccount-success-email": "$1 থেকে $2-এ অ্যাকাউন্টের ই-মেইল ঠিকানা পরিবর্তিত হয়েছে।",
+	"editaccount-not-requested": "সতর্কতা: ব্যবহারকারী অ্যাকাউন্ট বন্ধ করার অনুরোধ করেন নি",
+	"log-name-editaccnt": "ব্যবহারকারী অ্যাকাউন্টের লগ",
+	"right-editaccount": "অন্য ব্যবহারকারীদের তথ্য সম্পাদন করা"
 }

@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"editaccount": "Editar la cuenta",
+	"editaccount-general-description": "Zarrar la cuenta d'usuariu",
+	"editaccount-user-id": "ID d'usuariu: $1",
+	"editaccount-user-reg-date": "Data de rexistru de la cuenta: $1",
+	"editaccount-return": "Volver",
+	"editaccount-desc": "Permite a los miembros de los usuarios privilexaos [[Special:EditAccount|alministrar la información de cuenta d'usuariu]]",
+	"editaccount-frame-manage": "Editar una cuenta",
+	"editaccount-frame-usage": "Nota",
+	"editaccount-usage": "Los datos d'usuariu tán nuna caché separada pa cada wiki.\nCuando reanicies una contraseña o cuenta de corréu electrónicu, la caché va anulase sólo pa esta wiki.\nEmpobina l'usuariu a esta wiki p'aniciar sesión con una nueva contraseña y evitar problemes cola caché.",
+	"editaccount-label-select": "Seleiciona una cuenta d'usuariu",
+	"editaccount-submit-account": "Alministrar cuenta",
+	"editaccount-frame-account": "Editando la cuenta d'usuariu: $1",
+	"editaccount-frame-close": "Desactivar la cuenta d'usuariu: $1",
+	"editaccount-label-email": "Afitar una nueva dirección de corréu electrónicu",
+	"editaccount-label-pass": "Afitar una contraseña nueva",
+	"editaccount-label-realname": "Afitar un nuevu nome real",
+	"editaccount-label-clearunsub": "Non soscritu",
+	"editaccount-label-toggleadopt": "Cambiar l'estáu d'adoptador (pa AutomaticWikiAdopt):",
+	"editaccount-label-toggleadopt-prevent": "Torgar auto-adopción",
+	"editaccount-label-toggleadopt-allow": "Permitir auto-adopción",
+	"editaccount-label-reason": "Motivu:",
+	"editaccount-submit-email": "Guardar y confirmar corréu electrónicu",
+	"editaccount-submit-pass": "Guardar contraseña",
+	"editaccount-submit-realname": "Guardar nome real",
+	"editaccount-submit-clearunsub": "Borrar baxa de suscripción",
+	"editaccount-submit-cleardisable": "Borrar la marca de desactiváu",
+	"editaccount-submit-close": "Zarrar la cuenta",
+	"editaccount-submit-button": "Guardar"
+}
