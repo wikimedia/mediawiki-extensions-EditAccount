@@ -11,6 +11,7 @@
 	"editaccount-user-reg-date": "계정 등록일: $1",
 	"editaccount-frame-manage": "계정 편집",
 	"editaccount-frame-usage": "참고",
+	"editaccount-usage": "사용자 데이터는 각 위키마다 별도로 캐시됩니다.\n비밀번호나 이메일을 초기화할 때 캐시는 이 위키에만 영향을 받게 됩니다.\n캐시 문제를 막으려면 사용자가 새로 설정한 비밀번호로 이 위키에 로그인하도록 지시하십시오.",
 	"editaccount-label-select": "사용자 계정 선택",
 	"editaccount-submit-account": "계정 관리",
 	"editaccount-frame-account": "사용자 계정 편집: $1",
