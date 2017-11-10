@@ -18,7 +18,7 @@
 	"editaccount-label-pass": "Neit Passwuert festleeën",
 	"editaccount-label-realname": "Neie richtegen Numm aginn",
 	"editaccount-label-reason": "Grond:",
-	"editaccount-submit-email": "E-Mailadress späicheren",
+	"editaccount-submit-email": "E-Mailadress späicheren a confiréieren",
 	"editaccount-submit-pass": "Passwuert späicheren",
 	"editaccount-submit-realname": "Richtegen Numm späicheren",
 	"editaccount-submit-close": "Kont zoumaachen",
@@ -27,11 +27,12 @@
 	"editaccount-invalid-email": "\"$1\" ass keng valabel E-Mailadress!",
 	"editaccount-nouser": "De Kont \"$1\" gëtt et net!",
 	"editaccount-status-confirmed": "Confirméiert",
+	"editaccount-status-unconfirmed": "net-confirméiert",
 	"editaccount-status-realuser": "Richtege Benotzer",
 	"editaccount-status-tempuser": "Temporäre Benotzer",
 	"log-name-editaccnt": "Logbuch vun de Benotzerkonten",
 	"logentry-editaccnt-realnamechange": "$1 huet de richtegen Numm vum Benotzer $3 geännert",
-	"edit-account-closed-flag": "Dëse Benotzerkont gouf global desaktivéiert.",
+	"edit-account-closed-flag": "Dëse Benotzerkont gouf global vu ShoutWiki desaktivéiert.",
 	"action-editaccount": "Informatioune vun anere Benotzer änneren",
-	"right-editaccount": "Aner Benotzerastellungen änneren"
+	"right-editaccount": "Informatioune vun anere Benotzer änneren"
 }

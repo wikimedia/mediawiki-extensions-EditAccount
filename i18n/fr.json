@@ -27,6 +27,7 @@
 	"editaccount-label-pass": "Définir un nouveau mot de passe",
 	"editaccount-label-realname": "Définir un nouveau nom complet",
 	"editaccount-label-clearunsub": "Désabonné",
+	"editaccount-label-toggleadopt": "Modifer l'état de l'adopteur (pour AutomaticWikiAdopt) :",
 	"editaccount-label-toggleadopt-prevent": "Empêcher l'auto-adoption",
 	"editaccount-label-toggleadopt-allow": "Autoriser l'auto-adoption",
 	"editaccount-label-reason": "Motif :",
@@ -37,7 +38,7 @@
 	"editaccount-submit-cleardisable": "Retirer le flag « désactivé »",
 	"editaccount-submit-close": "Clore le compte",
 	"editaccount-submit-button": "Enregistrer",
-	"editaccount-usage-close": "Vous pouvez également désactiver un compte utilisateur en cryptant son mot de passe et en supprimant son adresse électronique. Veuillez noter que les données seront définitivement perdues et non récupérables.",
+	"editaccount-usage-close": "Vous pouvez également désactiver un compte utilisateur en cryptant son mot de passe et en supprimant son adresse électronique. Veuillez noter que ces données seront définitivement perdues et non récupérables.",
 	"editaccount-warning-close": "<b>Attention !</b> Vous êtes sur le point de désactiver le compte utilisateur <b>$1</b> de manière permanente. Cette action est irréversible. Êtes-vous certain de vouloir effectuer cette opération ?",
 	"editaccount-status": "Message de statut",
 	"editaccount-success-email": "L'adresse électronique du compte $1 a été modifiée avec succès à $2.",
@@ -54,6 +55,7 @@
 	"editaccount-error-close": "Un problème est survenu lors de la fermeture du compte. Veuillez ré-essayer ou contacter l'équipe technique.",
 	"editaccount-invalid-email": "« $1 » n'est pas une adresse électronique valide !",
 	"editaccount-nouser": "Le compte « $1 » n'existe pas !",
+	"editaccount-not-loaded": "Erreur: chargement incorrect des données utilisateur, veuillez recharger la page.",
 	"editaccount-remove-avatar-fail": "Problème durant l’auto-suppression de l’avatar.",
 	"editaccount-requested": "Note : l’utilisateur a demandé la fermeture de son compte",
 	"editaccount-not-requested": "ATTENTION : l’utilisateur n’a pas demandé la fermeture de son compte",
@@ -72,5 +74,6 @@
 	"logentry-editaccnt-realnamechange": "$1 a modifié le nom complet du compte $3",
 	"logentry-editaccnt-closeaccnt": "$1 a désactivé le compte $3",
 	"edit-account-closed-flag": "Ce compte a été désactivé globalement par ShoutWiki.",
+	"action-editaccount": "modifier d'autres informations utilisateur",
 	"right-editaccount": "Modifier les préférences d'autres utilisateurs"
 }

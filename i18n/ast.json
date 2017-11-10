@@ -31,5 +31,14 @@
 	"editaccount-submit-clearunsub": "Borrar baxa de suscripción",
 	"editaccount-submit-cleardisable": "Borrar la marca de desactiváu",
 	"editaccount-submit-close": "Zarrar la cuenta",
-	"editaccount-submit-button": "Guardar"
+	"editaccount-submit-button": "Guardar",
+	"editaccount-usage-close": "Tamién puedes desactivar una cuenta d'usuariu desordenando la so contraseña y desaniciando la dirección de corréu electrónicu. Ten en cuenta qu'estos datos van perdese y nun podrán recuperase.",
+	"editaccount-warning-close": "<b>¡Atención!</b>: tas a piques de desactivar permanentemente la cuenta del usuariu $1. Esta aición nun ye reversible. ¿Confirmes que ye esto lo que quies facer?",
+	"editaccount-status": "Mensaxe d'estáu",
+	"editaccount-success-email": "Camudóse la direición de corréu electrónicu de la cuenta $1 a $2.",
+	"editaccount-success-email-blank": "Desanicióse la direición de corréu electrónicu de la cuenta $1.",
+	"editaccount-success-pass": "Camudóse la contraseña de la cuenta $1.",
+	"editaccount-success-realname": "Camudóse'l nome real de la cuenta $1.",
+	"editaccount-success-unsub": "Desanicióse'l bit d'encaboxar suscripción de la cuenta $1.",
+	"editaccount-success-disable": "Desanicióse'l bit de desactivada pa la cuenta $1."
 }
