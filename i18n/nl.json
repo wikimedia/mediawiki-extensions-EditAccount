@@ -3,10 +3,15 @@
 		"authors": [
 			"SPQRobin",
 			"Siebrand",
-			"Tjcool007"
+			"Tjcool007",
+			"Mainframe98"
 		]
 	},
 	"editaccount": "Gebruiker bewerken",
+	"editaccount-general-description": "Uw account sluiten",
+	"editaccount-user-id": "Gebruikers ID: $1",
+	"editaccount-user-reg-date": "Datum account registratie: $1",
+	"editaccount-return": "Terug",
 	"editaccount-desc": "Stelt stafleden in staat gebruikersinformatie te beheren",
 	"editaccount-frame-manage": "Gebruiker bewerken",
 	"editaccount-frame-usage": "Let op",
@@ -19,12 +24,14 @@
 	"editaccount-label-pass": "Nieuw wachtwoord instellen",
 	"editaccount-label-realname": "Nieuwe echte naam instellen",
 	"editaccount-label-clearunsub": "Uitgeschreven",
+	"editaccount-label-reason": "Reden:",
 	"editaccount-submit-email": "E-mailadres opslaan",
 	"editaccount-submit-pass": "Wachtwoord opslaan",
 	"editaccount-submit-realname": "Echte naam opslaan",
 	"editaccount-submit-clearunsub": "Uitschrijven leegmaken",
 	"editaccount-submit-cleardisable": "Gebruiker weer vrijgeven",
 	"editaccount-submit-close": "Gebruiker afsluiten",
+	"editaccount-submit-button": "Opslaan",
 	"editaccount-usage-close": "U kunt een gebruiker ook uitschakelen door een onbekend wachtwoord in te stellen en het e-mailadres te verwijderen.\nDe huidige gegevens gaan dan verloren en zijn niet te herstellen.",
 	"editaccount-warning-close": "<b>Let op!</b>\nU staat op het punt de gebruiker <b>$1</b> permanent af te sluiten.\nDit kan niet ongedaan gemaakt worden.\nWeet u zeker dat u dit wilt doen?",
 	"editaccount-status": "Statusbericht",
@@ -60,5 +67,6 @@
 	"logentry-editaccnt-realnamechange": "$1 heeft de echte naam voor gebruiker $3 aangepast",
 	"logentry-editaccnt-closeaccnt": "$1 heeft gebruiker $3 uitgeschakeld",
 	"edit-account-closed-flag": "Deze gebruiker is globaal uitgeschakeld door ShoutWiki.",
+	"action-editaccount": "gegevens van andere gebruikers te bewerken",
 	"right-editaccount": "Voorkeuren van gebruikers bewerken"
 }
