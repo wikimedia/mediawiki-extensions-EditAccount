@@ -49,7 +49,7 @@
 	"editaccount-success-disable": "Flag « désactivé » retiré avec succès pour le compte $1.",
 	"editaccount-success-toggleadopt": "Activation avec succès de l’état d’éligibilité à l’adoption pour le compte $1.",
 	"editaccount-success-close": "Le compte $1 est désactivé.",
-	"editaccount-error-email": "L'adresse électronique n'a pas été modifiée. Essayez de nouveau ou contactez l'équipe technique.",
+	"editaccount-error-email": "L'adresse de courriel n'a pas été modifiée. Essayez de nouveau ou contactez l'équipe technique.",
 	"editaccount-error-pass": "Le mot de passe n'a pas été modifié. Essayez de nouveau ou contactez l'équipe technique.",
 	"editaccount-error-realname": "Le nom complet n'a pas été modifié. Essayez de nouveau ou contactez l'équipe technique.",
 	"editaccount-error-close": "Un problème est survenu lors de la fermeture du compte. Veuillez ré-essayer ou contacter l'équipe technique.",
