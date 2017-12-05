@@ -61,7 +61,7 @@
 	"editaccount-not-requested": "A status message",
 	"editaccount-label-account-status": "A label message",
 	"editaccount-label-email-status": "A label message",
-	"editaccount-status-confirmed": "An email text part",
+	"editaccount-status-confirmed": "An email text part\n{{Identical|Confirmed}}",
 	"editaccount-status-unconfirmed": "An email text part",
 	"editaccount-status-realuser": "This is the status of the account in the UserLogin system – a \"real user\" means an active account, while a \"temporary user\" means it's an inactive account. Accounts are activated once the user clicks on a link in an e-mail we send them.",
 	"editaccount-status-tempuser": "\"Temporary user\" indicates an account that is inactive. An account is activated and becomes a \"real user\" once the user clicks on a link in an e-mail we send them.",
