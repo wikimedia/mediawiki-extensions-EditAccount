@@ -12,7 +12,7 @@
 		]
 	},
 	"editaccount": "Modifier le compte",
-	"editaccount-general-description": "Fermez votre compte utilisateur",
+	"editaccount-general-description": "Fermez votre compte d’utilisateur",
 	"editaccount-user-id": "ID utilisateur : $1",
 	"editaccount-user-reg-date": "Date d'enregistrement du compte : $1",
 	"editaccount-return": "Retour",
@@ -20,7 +20,7 @@
 	"editaccount-frame-manage": "Modifier un compte",
 	"editaccount-frame-usage": "Note",
 	"editaccount-usage": "Les données des utilisateurs sont mises en cache  séparément pour chaque wiki. Si vous réinitialisez le mot de passe ou l'adresse électronique, le cache ne sera annulé que pour ce wiki. Veuillez rediriger l'utilisateur vers ce wiki pour qu'il se connecte avec son nouveau mot de passe pour éviter les problèmes de cache.",
-	"editaccount-label-select": "Sélectionner un compte utilisateur",
+	"editaccount-label-select": "Sélectionner un compte d’utilisateur",
 	"editaccount-submit-account": "Gérer le compte",
 	"editaccount-frame-account": "Modification du compte utilisateur : $1",
 	"editaccount-frame-close": "Désactiver le compte utilisateur : $1",

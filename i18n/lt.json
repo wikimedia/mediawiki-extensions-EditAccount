@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eitvys200"
+			"Eitvys200",
+			"Agne1992"
 		]
 	},
 	"editaccount": "Redaguoti paskyrą",
@@ -14,10 +15,10 @@
 	"editaccount-submit-pass": "Išsaugoti slaptažodį",
 	"editaccount-submit-realname": "Išsaugoti tikrą vardą",
 	"editaccount-submit-close": "Uždaryti paskyrą",
-	"editaccount-label-account-status": "Paskyros Būsena: $1",
-	"editaccount-label-email-status": "El. pašto Būsena: $1",
+	"editaccount-label-account-status": "Paskyros būsena: $1",
+	"editaccount-label-email-status": "El. pašto būsena: $1",
 	"editaccount-status-confirmed": "Patvirtinta",
 	"editaccount-status-unconfirmed": "Nepatvirtinta",
-	"editaccount-status-realuser": "Realus Vartotojas",
-	"editaccount-status-tempuser": "Laikinas Vartotojas"
+	"editaccount-status-realuser": "Realus vartotojas",
+	"editaccount-status-tempuser": "Laikinas vartotojas"
 }
