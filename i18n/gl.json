@@ -11,7 +11,7 @@
 	"editaccount-user-id": "Identificador de usuario: $1",
 	"editaccount-user-reg-date": "Data de rexistro da conta: $1",
 	"editaccount-return": "Volver",
-	"editaccount-desc": "Permite que os membros do persoal xestionen a información das contas de usuario",
+	"editaccount-desc": "Permite que os membros cos permisos requiridos [[Special:EditAccount|xestionen a información de contas de usuario]]",
 	"editaccount-frame-manage": "Editar unha conta",
 	"editaccount-frame-usage": "Nota",
 	"editaccount-usage": "Os datos de usuario gárdanse na memoria caché por separado para cada wiki. Cando restablece un contrasinal ou correo electrónico, a caché só se anulará para este wiki. Por favor, dirixa ao usuario ata este wiki para que acceda ao sistema co seu novo contrasinal para así evitar problemas de caché.",
