@@ -5,10 +5,14 @@
 			"Kuzura",
 			"Lockal",
 			"Александр Сигачёв",
-			"Wirbel78"
+			"Wirbel78",
+			"MaksimPinigin"
 		]
 	},
 	"editaccount": "Изменение учётной записи",
+	"editaccount-general-description": "Отключить вашу учетную запись",
+	"editaccount-user-id": "ID пользователя: $1",
+	"editaccount-user-reg-date": "Дата регистрации аккаунта: $1",
 	"editaccount-return": "Вернуться",
 	"editaccount-desc": "Позволяет управлять учётными записями пользователей",
 	"editaccount-frame-manage": "Изменение учётной записи",
@@ -22,6 +26,8 @@
 	"editaccount-label-pass": "Установка нового пароля",
 	"editaccount-label-realname": "Установка нового настоящего имени",
 	"editaccount-label-clearunsub": "Отписаться",
+	"editaccount-label-toggleadopt-allow": "Разрешить автоматическое принятие",
+	"editaccount-label-reason": "Причина:",
 	"editaccount-submit-email": "Сохранить и подтвердить адрес эл. почты",
 	"editaccount-submit-pass": "Сохранить пароль",
 	"editaccount-submit-realname": "Сохранить настоящее имя",
@@ -46,6 +52,7 @@
 	"editaccount-error-close": "Возникла проблема при закрытии учётной записи. Попробуйте ещё раз или свяжитесь с технической командой.",
 	"editaccount-invalid-email": "«$1» не является допустимым адресом электронной почты!",
 	"editaccount-nouser": "Учётная запись «$1» не существует!",
+	"editaccount-not-loaded": "Ошибка: пользовательские данные не загружаются должным образом, попробуйте перезагрузить страницу.",
 	"editaccount-remove-avatar-fail": "Проблема с перезагрузкой аватара",
 	"editaccount-requested": "Примечание: участник запросил закрытие учётной записи",
 	"editaccount-not-requested": "ВНИМАНИЕ: участник не запрашивал закрытие учётной записи",
@@ -59,6 +66,11 @@
 	"editaccount-email-change-requested": "Участник запросил изменения адреса электронной почты через настройки для  $1 . Для подтверждения изменения адреса запрошенной электронной почты для участника, введите требуемый адрес в поле ниже и нажмите кнопку «{{int:editaccount-submit-email}}».",
 	"log-name-editaccnt": "Журнал учётных записей",
 	"log-description-editaccnt": "На этой странице показаны изменения настроек участника, выполненные сотрудниками ShoutWiki",
+	"logentry-editaccnt-mailchange": "$1 изменил электронную почту пользователя $3",
+	"logentry-editaccnt-passchange": "$1 изменил пароль пользователя $3",
+	"logentry-editaccnt-realnamechange": "$1 изменил настоящее имя пользователя $3",
+	"logentry-editaccnt-closeaccnt": "$1 отключил учетную запись $3",
 	"edit-account-closed-flag": "Эта учётная запись была отключена на всей ShoutWiki.",
+	"action-editaccount": "изменить информацию других пользователей",
 	"right-editaccount": "Редактировать настройки других участников"
 }
