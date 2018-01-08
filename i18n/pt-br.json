@@ -62,9 +62,15 @@
 	"editaccount-status-unconfirmed": "Não confirmado",
 	"editaccount-status-realuser": "Usuário real",
 	"editaccount-status-tempuser": "Usuário temporário",
+	"editaccount-error-tempuser-email": "Os usuários temporários não podem ter um campo de endereço de e-mail em branco, digite um endereço de e-mail.",
+	"editaccount-email-change-requested": "O usuário solicitou mudanças de e-mail por meio de Preferências para $1. Para confirmar a alteração do endereço de e-mail solicitado para o usuário, insira o endereço de e-mail solicitado no campo abaixo e clique em \"{{int:editaccount-submit-email}}.\"",
 	"log-name-editaccnt": "Use o log de contas",
 	"log-description-editaccnt": "Essa página lista mudanças feitas nas preferências de usuário pela equipe do ShoutWiki.",
+	"logentry-editaccnt-mailchange": "$1 mudou o e-mail para do usuário $3",
+	"logentry-editaccnt-passchange": "$1 mudou senha do usuário $3",
+	"logentry-editaccnt-realnamechange": "$1 mudou o nome verdadeiro do usuário $3",
 	"logentry-editaccnt-closeaccnt": "$1 desabilitada a conta $3",
 	"edit-account-closed-flag": "Essa conta foi desabilitada.",
+	"action-editaccount": "editar a informação de outros usuários",
 	"right-editaccount": "Editar outras preferências de usuário"
 }
