@@ -8,6 +8,7 @@
 		]
 	},
 	"editaccount": "Edytuj konto",
+	"editaccount-general-description": "Zamknij swoje konto użytkownika",
 	"editaccount-user-reg-date": "Data rejestracji konta: $1",
 	"editaccount-return": "Powrót",
 	"editaccount-desc": "Pozwala zmienić informacje o koncie użytkownika",
