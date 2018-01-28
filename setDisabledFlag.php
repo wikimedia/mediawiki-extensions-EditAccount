@@ -28,6 +28,8 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 		parent::__construct();
 		$this->mDescription = 'Updates global preferences for accounts that have their real name set to "Account Disabled".';
 		$this->addOption( 'doit', 'Actually perform the database updates, too, instead of doing a dry run?' );
+
+		$this->requireExtension( 'EditAccount' );
 	}
 
 	public function execute() {
