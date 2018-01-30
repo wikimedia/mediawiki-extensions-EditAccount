@@ -67,7 +67,7 @@
 	"editaccount-status-realuser": "Echter Benutzer",
 	"editaccount-status-tempuser": "Vorläufiger Benutzer",
 	"editaccount-error-tempuser-email": "Vorläufige Benutzer müssen eine E-Mail-Adresse angeben. Bitte gib eine E-Mail-Adresse an.",
-	"editaccount-email-change-requested": "Der Benutzer änderte die E-Mail-Einstellungen hin zu $1. Um die Änderung der E-Mail-Adresse zu bewilligen, muss die angefragte E-Mail-Adresse in das untere Feld eingegeben und danach „{{int:editaccount-submit-email}}“ angeklickt werden.",
+	"editaccount-email-change-requested": "Der Benutzer änderte die E-Mail-Einstellungen zu $1. Um die Änderung der E-Mail-Adresse zu bewilligen, muss die angefragte E-Mail-Adresse in das untere Feld eingegeben und danach „{{int:editaccount-submit-email}}“ angeklickt werden.",
 	"log-name-editaccnt": "Benutzerkonten-Logbuch",
 	"log-description-editaccnt": "Diese Seite listet Änderungen von Benutzereinstellungen durch berechtigte Benutzer auf.",
 	"logentry-editaccnt-mailchange": "$1 änderte die E-Mail-Adresse von Benutzer $3",
