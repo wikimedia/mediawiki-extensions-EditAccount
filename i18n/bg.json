@@ -2,10 +2,17 @@
 	"@metadata": {
 		"authors": [
 			"DCLXVI",
-			"StanProg"
+			"StanProg",
+			"ShockD"
 		]
 	},
+	"editaccount": "Редакция на профил",
+	"editaccount-general-description": "Затваряне на сметка",
+	"editaccount-submit-account": "Управление на сметка",
 	"editaccount-submit-pass": "Съхраняване на паролата",
 	"editaccount-invalid-email": "„$1“ не е валиден адрес за електронна поща!",
+	"editaccount-status-confirmed": "Потвърден",
+	"editaccount-status-unconfirmed": "Непотвърден",
+	"editaccount-status-tempuser": "Временен потребител",
 	"right-editaccount": "Редактиране на настройките на други потребители"
 }
