@@ -6,7 +6,8 @@
 			"Lockal",
 			"Александр Сигачёв",
 			"Wirbel78",
-			"MaksimPinigin"
+			"MaksimPinigin",
+			"Mouse21"
 		]
 	},
 	"editaccount": "Изменение учётной записи",
@@ -26,6 +27,8 @@
 	"editaccount-label-pass": "Установка нового пароля",
 	"editaccount-label-realname": "Установка нового настоящего имени",
 	"editaccount-label-clearunsub": "Отписаться",
+	"editaccount-label-toggleadopt": "Изменить статус усыновителя (для AutomaticWikiAdopt):",
+	"editaccount-label-toggleadopt-prevent": "Предотвратить автоматическое принятие",
 	"editaccount-label-toggleadopt-allow": "Разрешить автоматическое принятие",
 	"editaccount-label-reason": "Причина:",
 	"editaccount-submit-email": "Сохранить и подтвердить адрес эл. почты",
