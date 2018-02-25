@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yusuke1109"
+		]
+	},
+	"editaccount-general-description": "ユーザーアカウントを閉じる",
+	"editaccount-user-id": "ユーザーID:$1",
+	"editaccount-user-reg-date": "アカウント登録日:$1",
+	"editaccount-return": "戻る",
+	"editaccount-desc": "特権ユーザーのメンバーに[[Special:EditAccount|ユーザーアカウント情報を管理する]]を有効化する",
+	"editaccount-frame-manage": "アカウントを編集する",
+	"editaccount-label-select": "ユーザーアカウントを選択",
+	"editaccount-submit-account": "アカウントの管理",
+	"editaccount-label-reason": "理由:",
+	"editaccount-submit-button": "保存"
+}
