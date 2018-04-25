@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"ترجمان05",
-			"أحمد غربية"
+			"أحمد غربية",
+			"ديفيد"
 		]
 	},
 	"editaccount": "عدّل حسابا",
@@ -62,7 +63,7 @@
 	"editaccount-status-tempuser": "مستخدم مؤقّت",
 	"editaccount-error-tempuser-email": "المستخدم المؤقت لا يمكن أن يكون حقل عنوان بريده الإلكتروني خاويا. أدخل عنوان بريد إلكتروني.",
 	"editaccount-email-change-requested": "طلب المستخدم بطريق تفيلاته تغيير عنوان بريده الإلكتروني إلى $1. لتوكيد طلب تغيير العنوان أدخل العنوان المطلوب في الحقل التالي و اضغط \"{{int:editaccount-submit-email}}.\"",
-	"log-name-editaccnt": "سِجِلُّ حسابات المستخدمين",
+	"log-name-editaccnt": "سجل حسابات المستخدمين",
 	"log-description-editaccnt": "هذه الصفحة تسرد التغييرات التي أجريت على بيانات حسابات المستخدمين.",
 	"logentry-editaccnt-mailchange": "$1 غيّر عنوان البريد الإلكتروني لحساب $3",
 	"logentry-editaccnt-passchange": "$1 غيّر كلمة سرِّ لحساب $3",
