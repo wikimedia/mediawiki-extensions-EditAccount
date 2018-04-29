@@ -4,6 +4,7 @@
 			"Yusuke1109"
 		]
 	},
+	"editaccount": "アカウントの編集",
 	"editaccount-general-description": "ユーザーアカウントを閉じる",
 	"editaccount-user-id": "ユーザーID:$1",
 	"editaccount-user-reg-date": "アカウント登録日:$1",
