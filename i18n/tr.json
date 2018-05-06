@@ -1,9 +1,46 @@
 {
 	"@metadata": {
 		"authors": [
-			"Suelnur"
+			"Suelnur",
+			"Hedda"
 		]
 	},
+	"editaccount": "Hesabı düzenle",
+	"editaccount-general-description": "Kullanıcı hesabınızı kapatın",
+	"editaccount-user-id": "Kullanıcı ID: $1",
+	"editaccount-user-reg-date": "Hesap kayıt tarihi: $1",
+	"editaccount-return": "Geri dön",
+	"editaccount-desc": "[[Special:EditAccount|Kullanıcı hesabı bilgilerini yönetmek]] için ayrıcalıklı kullanıcı üyelerini etkinleştirir",
+	"editaccount-frame-manage": "Bir hesabı düzenle",
+	"editaccount-frame-usage": "Not",
+	"editaccount-usage": "Kullanıcı verileri her bir viki için ayrı ayrı önbelleğe alınır.\nBir şifre veya e-posta sıfırladığınızda önbellek sadece bu viki için ön belleğe alınacaktır.\nÖnbellek sorunlarından kaçınmak için lütfen yeni ayarlanmış bir şifreyle giriş yaparak kullanıcıyı bu vikiye yönlendirin.",
+	"editaccount-label-select": "Bir kullanıcı hesabı seçin",
+	"editaccount-submit-account": "Hesabı düzenle",
+	"editaccount-frame-account": "Düzenlenen kullanıcı hesabı: $1",
+	"editaccount-frame-close": "Devre dışı bırakılan kullanıcı hesabı: $1",
+	"editaccount-label-email": "Yeni e-posta adresi ayarla",
+	"editaccount-label-pass": "Yeni parola ayarla",
+	"editaccount-label-realname": "Yeni gerçek isim ayarla",
+	"editaccount-label-clearunsub": "Abonelikten çık",
+	"editaccount-label-toggleadopt": "Benimseme durumunu değiştir (AutomaticWikiAdopt için):",
+	"editaccount-label-toggleadopt-prevent": "Otomatik kabulü engelle",
+	"editaccount-label-toggleadopt-allow": "Otomatik kabule izin ver",
+	"editaccount-label-reason": "Gerekçe:",
+	"editaccount-submit-email": "E-posta adresini kaydet ve onayla",
+	"editaccount-submit-pass": "Parolayı kaydet",
+	"editaccount-submit-realname": "Gerçek adı kaydet",
+	"editaccount-submit-clearunsub": "Aboneliği iptal et'i temizle",
+	"editaccount-submit-cleardisable": "Devre dışı bırakma bayrağını temizle",
 	"editaccount-submit-close": "Hesabı kapat",
+	"editaccount-submit-button": "Kaydet",
+	"editaccount-usage-close": "Bir kullanıcı hesabını, şifresini karıştırıp e-posta adresini kaldırarak da kapatabilirsiniz. Bu verinin kaybedildiğini ve kurtarılamayacağını unutmayın.",
+	"editaccount-warning-close": "<b>Dikkat!</b> <b>$1</b> kullanıcısının hesabını kalıcı olarak devre dışı bırakmak üzeresiniz. Bu geri alınamaz. Ne yapmak istediğine emin misin?",
+	"editaccount-status": "Durum mesajı",
+	"editaccount-success-email": "$1 hesabı için e-posta adresi $2 olarak değiştirildi.",
+	"editaccount-success-email-blank": "$1 hesabı için e-posta adresi kaldırıldı.",
+	"editaccount-success-pass": "$1 hesabı için şifre değiştirildi.",
+	"editaccount-success-realname": "$1 hesabı için gerçek ad değiştirildi.",
+	"editaccount-success-unsub": "$1 hesabı için abonelikten çıkma kısmı kaldırıldı.",
+	"editaccount-success-disable": "$1 hesabı için engel kısmı kaldırıldı.",
 	"edit-account-closed-flag": "Bu hesap devre dışı bırakıldı."
 }
