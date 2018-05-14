@@ -5,7 +5,8 @@
 			"Horacewai2",
 			"Waihorace",
 			"Liuxinyu970226",
-			"Kly"
+			"Kly",
+			"LNDDYL"
 		]
 	},
 	"editaccount": "編輯帳號",
@@ -41,7 +42,7 @@
 	"editaccount-status": "狀態訊息",
 	"editaccount-success-email": "已更改使用者 $1 的電子郵件地址為 $2。",
 	"editaccount-success-email-blank": "已移除使用者 $1 的電子郵件地址。",
-	"editaccount-success-pass": "已更改使用者 $1 的密碼。",
+	"editaccount-success-pass": "已變更帳號 $1 的密碼。",
 	"editaccount-success-realname": "已更改使用者 $1 的真實名稱。",
 	"editaccount-success-unsub": "已移除帳號 $1 些許取消訂閱。",
 	"editaccount-success-disable": "已移除帳號 $1 些許停用。",
@@ -67,9 +68,9 @@
 	"editaccount-email-change-requested": "使用者透過偏好設定來請求將電子郵件更改為 $1。要確認使用者請求的電子郵件地址更改，輸入所請求的電子郵件地址至下方欄位並點擊「{{int:editaccount-submit-email}}」。",
 	"log-name-editaccnt": "使用者帳號日誌",
 	"log-description-editaccnt": "此頁面列出透過 ShoutWiki 成員對於使用者資訊的更改模式。",
-	"logentry-editaccnt-mailchange": "$1 更改了 $3 的電子郵件",
-	"logentry-editaccnt-passchange": "$1 更改了 $3 的密碼",
-	"logentry-editaccnt-realnamechange": "$1 更改了 $3 的真實名稱",
+	"logentry-editaccnt-mailchange": "$1 變更了使用者 $3 的電子郵件",
+	"logentry-editaccnt-passchange": "$1 變更了使用者 $3 的密碼",
+	"logentry-editaccnt-realnamechange": "$1 變更了使用者 $3 的真實姓名",
 	"logentry-editaccnt-closeaccnt": "$1 停用了帳號 $3",
 	"edit-account-closed-flag": "此帳號已透過 ShoutWiki 停用。",
 	"action-editaccount": "編輯其他使用者的資訊",
