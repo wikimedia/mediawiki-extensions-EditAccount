@@ -28,7 +28,7 @@
 	"editaccount-success-email": "Thay đổi thành công địa chỉ e-mail cho tài khoản $1 đến $2 .",
 	"editaccount-success-email-blank": "Thành công gỡ bỏ địa chỉ thư điện tử cho tài khoản $1.",
 	"editaccount-success-pass": "Thay đổi thành công mật khẩu cho tài khoản $1 .",
-	"editaccount-success-realname": "Thay đổi thành công tên thật cho tài khoản $1 .",
+	"editaccount-success-realname": "Thay đổi thành công tên thật cho tài khoản $1.",
 	"editaccount-success-unsub": "Thành công hủy bỏ nhỏ đăng ký cho tài khoản $1 .",
 	"editaccount-success-close": "Thành công vô hiệu hóa tài khoản $1 .",
 	"editaccount-error-email": "E-mail không được thay đổi. Thử lại hoặc liên hệ với đội ngũ công nghệ cao.",
