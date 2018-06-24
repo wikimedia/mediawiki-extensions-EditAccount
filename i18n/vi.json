@@ -20,7 +20,7 @@
 	"editaccount-submit-email": "Lưu địa chỉ e-mail",
 	"editaccount-submit-pass": "Lưu mật khẩu",
 	"editaccount-submit-realname": "Lưu tên thật",
-	"editaccount-submit-clearunsub": "Xoá bỏ đăng ký",
+	"editaccount-submit-clearunsub": "Xóa bỏ đăng ký",
 	"editaccount-submit-close": "Đóng tài khoản",
 	"editaccount-usage-close": "Bạn cũng có thể vô hiệu hóa một tài khoản người dùng bằng cách xáo trộn mật khẩu và loại bỏ các địa chỉ e-mail. Lưu ý rằng dữ liệu này bị mất và sẽ không được khôi phục.",
 	"editaccount-warning-close": "<b>Thận trọng!</b> Bạn đang định vô hiệu hóa vĩnh viễn tài khoản của người dùng <b>$1</b>. Điều này không thể quay trở lại được. Bạn có chắc chắn đó là những gì bạn muốn làm?",
@@ -43,6 +43,6 @@
 	"logentry-editaccnt-passchange": "$1 đã thay đổi mật khẩu cho người dùng $3",
 	"logentry-editaccnt-realnamechange": "$1 đã thay đổi tên thật cho người dùng $3",
 	"logentry-editaccnt-closeaccnt": "$1 vô hiệu hóa tài khoản $3",
-	"edit-account-closed-flag": "Tài khoản này đã bị vô hiệu hoá trên toàn cầu bởi ShoutWiki.",
+	"edit-account-closed-flag": "Tài khoản này đã bị vô hiệu hóa trên toàn cầu bởi ShoutWiki.",
 	"right-editaccount": "Sửa đổi thông tin người dùng khác"
 }
