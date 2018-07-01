@@ -9,7 +9,8 @@
 			"Translationista",
 			"VegaDark",
 			"Fitoschido",
-			"KATRINE1992"
+			"KATRINE1992",
+			"Esteban"
 		]
 	},
 	"editaccount": "Editar cuenta",
@@ -70,7 +71,7 @@
 	"editaccount-error-tempuser-email": "Los usuarios temporales no pueden tener el campo de dirección de correo electrónico en blanco, escriba una dirección de correo electrónico.",
 	"editaccount-email-change-requested": "Un usuario pidió cambio de correo electrónico a través de sus Preferencias en $1. Para confirmar el cambio de dirección de correo electrónico solicitado por el usuario, escriba la dirección de correo electrónico solicitada en el campo de más abajo y haga clic en \"{{int:editaccount-submit-email}}\".",
 	"log-name-editaccnt": "Registro de cuentas del usuario",
-	"log-description-editaccnt": "En esta página se enumeran los cambios que el personal de ShoutWiki ha realizado a las preferencias de usuario.",
+	"log-description-editaccnt": "En esta página se enumeran los cambios hechos a las preferencias de usuario.",
 	"logentry-editaccnt-mailchange": "$1 cambió el correo electrónico del usuario $3",
 	"logentry-editaccnt-passchange": "$1 se ha cambiado la contraseña del usuario $3",
 	"logentry-editaccnt-realnamechange": "$1 se ha cambiado el nombre real del usuario $3",
