@@ -4,11 +4,13 @@
 			"BeginaFelicysym",
 			"Sovq",
 			"Woytecr",
-			"Chrumps"
+			"Chrumps",
+			"Railfail536"
 		]
 	},
 	"editaccount": "Edytuj konto",
 	"editaccount-general-description": "Zamknij swoje konto użytkownika",
+	"editaccount-user-id": "ID użytkownika: $1",
 	"editaccount-user-reg-date": "Data rejestracji konta: $1",
 	"editaccount-return": "Powrót",
 	"editaccount-desc": "Pozwala zmienić informacje o koncie użytkownika",
@@ -66,5 +68,6 @@
 	"logentry-editaccnt-realnamechange": "$1 zmieniono nazwisko użytkownika $3",
 	"logentry-editaccnt-closeaccnt": "$1 wyłączono konto $3",
 	"edit-account-closed-flag": "To konto zostało wyłączone globalnie przez ShoutWiki.",
+	"action-editaccount": "edytowania informacji o innych użytkownikach",
 	"right-editaccount": "Edycja informacji innych użytkowników"
 }
