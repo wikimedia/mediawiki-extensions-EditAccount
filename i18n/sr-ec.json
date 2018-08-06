@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Rancher",
-			"Verlor"
+			"Verlor",
+			"BadDog"
 		]
 	},
 	"editaccount": "Измена налога",
@@ -24,5 +25,5 @@
 	"editaccount-success-close": "Налог $1 је успешно затворен.",
 	"editaccount-invalid-email": "„$1“ није исправна е-адреса!",
 	"editaccount-nouser": "„$1“ налог не постоји!",
-	"log-name-editaccnt": "Дневник корисничких налога"
+	"log-name-editaccnt": "Евиденција корисничких налога"
 }
