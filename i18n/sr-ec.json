@@ -23,7 +23,7 @@
 	"editaccount-success-pass": "Лозинка за налог $1 је измењена.",
 	"editaccount-success-realname": "Право име за налог $1 је измењено.",
 	"editaccount-success-close": "Налог $1 је успешно затворен.",
-	"editaccount-invalid-email": "„$1“ није исправна е-адреса!",
+	"editaccount-invalid-email": "„$1“ није важећа имејл адреса!",
 	"editaccount-nouser": "„$1“ налог не постоји!",
 	"log-name-editaccnt": "Евиденција корисничких налога",
 	"action-editaccount": "уређујете информације других корисника"
