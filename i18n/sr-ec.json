@@ -25,6 +25,6 @@
 	"editaccount-success-close": "Налог $1 је успешно затворен.",
 	"editaccount-invalid-email": "„$1“ није важећа имејл адреса!",
 	"editaccount-nouser": "„$1“ налог не постоји!",
-	"log-name-editaccnt": "Евиденција корисничких налога",
+	"log-name-editaccnt": "Дневник корисничких налога",
 	"action-editaccount": "уређујете информације других корисника"
 }
