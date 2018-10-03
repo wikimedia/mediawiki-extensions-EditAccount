@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saederup92"
+		]
+	},
+	"editaccount": "Rediger konto",
+	"editaccount-general-description": "Luk din brugerkonto",
+	"editaccount-user-id": "Bruger-id: $1",
+	"editaccount-frame-manage": "Rediger en konto",
+	"editaccount-label-select": "Vælg en brugerkonto",
+	"editaccount-submit-button": "Gem",
+	"editaccount-status-confirmed": "Bekræftet",
+	"editaccount-status-unconfirmed": "Ubekræftet"
+}
