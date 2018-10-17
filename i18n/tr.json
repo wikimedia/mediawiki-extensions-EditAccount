@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Suelnur",
-			"Hedda"
+			"Hedda",
+			"TmY e12"
 		]
 	},
 	"editaccount": "Hesabı düzenle",
@@ -42,5 +43,29 @@
 	"editaccount-success-realname": "$1 hesabı için gerçek ad değiştirildi.",
 	"editaccount-success-unsub": "$1 hesabı için abonelikten çıkma kısmı kaldırıldı.",
 	"editaccount-success-disable": "$1 hesabı için engel kısmı kaldırıldı.",
-	"edit-account-closed-flag": "Bu hesap devre dışı bırakıldı."
+	"editaccount-success-toggleadopt": "Hesap $1 için geçiş aşamasındaki uygunluk durumu.",
+	"editaccount-success-close": "Devre dışı hesap $1.",
+	"editaccount-error-email": "E-posta değiştirilemedi. Tekrar deneyin veya Teknik Ekiple iletişime geçin.",
+	"editaccount-error-pass": "Şifre değiştirilemedi. Tekrar deneyin veya Teknik Ekiple iletişime geçin.",
+	"editaccount-error-realname": "Gerçek isim değiştirilemedi. Tekrar deneyin veya Teknik Ekiple iletişime geçin.",
+	"editaccount-error-close": "Hesap kapatılırken bir sorun oluştu. Tekrar deneyin veya Teknik Ekiple iletişime geçin.",
+	"editaccount-invalid-email": "\"$1\" geçerli bir e-posta adresi değil!",
+	"editaccount-nouser": "\"$1\" hesabı mevcut değil!",
+	"editaccount-not-loaded": "Hata: Kullanıcı verileri düzgün yüklenemedi, lütfen sayfayı yeniden yüklemeyi deneyin.",
+	"editaccount-remove-avatar-fail": "Avatarı otomatik kaldırma sorunu.",
+	"editaccount-requested": "Not: Kullanıcı hesap kapatma talebinde bulundu",
+	"editaccount-not-requested": "DİKKAT: Kullanıcı hesap kapatma işlemi istemedi",
+	"editaccount-label-account-status": "Hesap durumu: $1",
+	"editaccount-label-email-status": "E-posta durumu: $1",
+	"editaccount-status-confirmed": "Onaylandı",
+	"editaccount-status-unconfirmed": "Onaylanmadı",
+	"editaccount-status-realuser": "Gerçek kullanıcı",
+	"editaccount-status-tempuser": "Geçici kullanıcı",
+	"editaccount-error-tempuser-email": "Geçici kullanıcıların boş e-posta adresi alanı olamaz, lütfen bir e-posta adresi girin.",
+	"editaccount-email-change-requested": "Kullanıcı Tercihler yoluyla e-posta değişikliğini $1 olarak talep etti. Kullanıcı için istenen e-posta adresi değişikliğini onaylamak için, istenen e-posta adresini aşağıdaki alana girin ve \"{{int:editaccount-submit-email}}\" seçeneğine tıklayın.",
+	"log-name-editaccnt": "Kullanıcı hesapları günlüğü",
+	"log-description-editaccnt": "Bu sayfa, ShoutWiki personeli tarafından kullanıcı bilgilerine yapılan değişiklikleri listeler.",
+	"edit-account-closed-flag": "Bu hesap devre dışı bırakıldı.",
+	"action-editaccount": "diğer kullanıcıların bilgilerini değiştir",
+	"right-editaccount": "Diğer kullanıcıların bilgilerini değiştir"
 }
