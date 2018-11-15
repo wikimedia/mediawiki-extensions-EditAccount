@@ -10,6 +10,9 @@
 	"editaccount-frame-manage": "Rediger en konto",
 	"editaccount-label-select": "Vælg en brugerkonto",
 	"editaccount-submit-button": "Gem",
+	"editaccount-nouser": "Kontoen \"$1\" findes ikke!",
 	"editaccount-status-confirmed": "Bekræftet",
-	"editaccount-status-unconfirmed": "Ubekræftet"
+	"editaccount-status-unconfirmed": "Ubekræftet",
+	"editaccount-status-tempuser": "Midlertidig bruger",
+	"logentry-editaccnt-closeaccnt": "$1 deaktiverede kontoen $3"
 }
