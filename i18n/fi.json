@@ -5,7 +5,8 @@
 			"Crt",
 			"Jack Phoenix",
 			"Nike",
-			"Tm T"
+			"Tm T",
+			"Valtlait"
 		]
 	},
 	"editaccount": "Muokkaa käyttäjätunnuksia",
@@ -42,8 +43,8 @@
 	"editaccount-error-pass": "Salasanaa ei vaihdettu. Yritä uudelleen tai ota yhteyttä tekniseen tiimiin.",
 	"editaccount-error-realname": "Oikea nimi ei vaihtunut. Yritä uudelleen tai ota yhteys tekniseen ryhmään.",
 	"editaccount-error-close": "Tunnusta suljettaessa tapahtui virhe. Yritä uudelleen tai ota yhteyttä tekniseen tiimiin.",
-	"editaccount-invalid-email": "\"$1\" ei ole kelvollinen sähköpostiosoite!",
-	"editaccount-nouser": "Tunnusta nimeltä \"$1\" ei ole olemassa!",
+	"editaccount-invalid-email": "”$1” ei ole kelvollinen sähköpostiosoite!",
+	"editaccount-nouser": "Tunnusta nimeltä ”$1” ei ole olemassa!",
 	"editaccount-label-account-status": "Tilin tila: $1",
 	"editaccount-label-email-status": "Sähköpostin tila: $1",
 	"editaccount-status-confirmed": "Vahvistettu",
