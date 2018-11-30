@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"editaccount": "Cange 'u cunde",
+	"editaccount-general-description": "Achiude 'u cunde utende tune",
+	"editaccount-user-id": "ID de l'utende: $1",
+	"editaccount-frame-usage": "Note",
+	"editaccount-label-reason": "Mutive:",
+	"editaccount-submit-button": "Reggìstre"
+}
