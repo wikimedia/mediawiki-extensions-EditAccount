@@ -3,7 +3,8 @@
 		"authors": [
 			"ترجمان05",
 			"أحمد غربية",
-			"ديفيد"
+			"ديفيد",
+			"Meno25"
 		]
 	},
 	"editaccount": "عدّل حسابا",
@@ -27,13 +28,13 @@
 	"editaccount-label-toggleadopt-prevent": "امنع التّبني التلقائي",
 	"editaccount-label-toggleadopt-allow": "اسمح بالتّبني التلقائي",
 	"editaccount-label-reason": "السبب:",
-	"editaccount-submit-email": "احفظ و وكِّد عنوان البريد الإلكتروني",
-	"editaccount-submit-pass": "احفظ كلمة السِّر",
-	"editaccount-submit-realname": "احفظ الاسم الحقيقي",
+	"editaccount-submit-email": "حفظ وتأكيد عنوان البريد الإلكتروني",
+	"editaccount-submit-pass": "حفظ كلمة السر",
+	"editaccount-submit-realname": "حفظ الاسم الحقيقي",
 	"editaccount-submit-clearunsub": "أخل إلغاء الاشتراك",
 	"editaccount-submit-cleardisable": "أخل راية التعطيل",
 	"editaccount-submit-close": "أغلق الحساب",
-	"editaccount-submit-button": "احفظ",
+	"editaccount-submit-button": "حفظ",
 	"editaccount-usage-close": "يمكن كذلك تعطيل حساب مستخدمٍ بتغيير كلمة سرِّه و إزالة عنوان بريده الإلكتروني، مع ملاحظة أن تلك البيانات ستُفقد و لن يُمكن استرجاعها.",
 	"editaccount-warning-close": "<b>تحذير</b> أنت بصدد تعطيل حساب المستخدم <b>$1</b> بلا رجعة! هذا لا يمكن تداركه. أمتأكد أنّك تريد فعل هذا؟",
 	"editaccount-status": "رسالة الحالة",
