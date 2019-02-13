@@ -618,9 +618,9 @@ class EditAccount extends SpecialPage {
 										getcwd() . '/avatars/' . $dbName . '_' .
 										$this->mUser->getId() .  '_' . $size . '*'
 									);
-									wfSuppressWarnings();
+									Wikimedia\suppressWarnings();
 									$img = basename( $files[0] );
-									wfRestoreWarnings();
+									Wikimedia\restoreWarnings();
 									if ( $img && $img[0] ) {
 										unlink( getcwd() . '/avatars/' . $img );
 									}
