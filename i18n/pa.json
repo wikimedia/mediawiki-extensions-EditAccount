@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Aalam"
+			"Aalam",
+			"ਗੁਰਪ੍ਰੀਤ ਹੁੰਦਲ"
 		]
 	},
 	"editaccount": "ਅਕਾਊਂਟ ਸੋਧ",
@@ -12,9 +13,9 @@
 	"editaccount-submit-account": "ਅਕਾਊਂਟ ਪਰਬੰਧ",
 	"editaccount-frame-account": "ਯੂਜ਼ਰ ਅਕਾਊਂਟ ਸੋਧ ਜਾਰੀ: $1",
 	"editaccount-label-email": "ਨਵਾਂ ਈਮੇਲ ਐਡਰੈੱਸ ਸੈੱਟ ਕਰੋ",
-	"editaccount-label-pass": "ਨਵਾਂ ਪਾਸਵਰਡ ਸੈੱਟ ਕਰੋ",
+	"editaccount-label-pass": "ਨਵਾਂ ਲੰਘ-ਸ਼ਬਦ ਸੂਤਰ ਕਰੋ",
 	"editaccount-label-realname": "ਨਵਾਂ ਅਸਲੀ ਨਾਂ ਸੈੱਟ ਕਰੋ",
 	"editaccount-submit-email": "ਈਮੇਲ ਐਡਰੈੱਸ ਸੰਭਾਲੋ",
-	"editaccount-submit-pass": "ਪਾਸਵਰਡ ਸੰਭਾਲੋ",
+	"editaccount-submit-pass": "ਲੰਘ-ਸ਼ਬਦ ਸਾਂਭੋ",
 	"editaccount-submit-realname": "ਅਸਲੀ ਨਾਂ ਸੰਭਾਲੋ"
 }
