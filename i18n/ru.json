@@ -7,11 +7,12 @@
 			"Александр Сигачёв",
 			"Wirbel78",
 			"MaksimPinigin",
-			"Mouse21"
+			"Mouse21",
+			"Diralik"
 		]
 	},
 	"editaccount": "Изменение учётной записи",
-	"editaccount-general-description": "Отключить вашу учетную запись",
+	"editaccount-general-description": "Отключить вашу учётную запись",
 	"editaccount-user-id": "ID пользователя: $1",
 	"editaccount-user-reg-date": "Дата регистрации аккаунта: $1",
 	"editaccount-return": "Вернуться",
@@ -72,7 +73,7 @@
 	"logentry-editaccnt-mailchange": "$1 изменил электронную почту пользователя $3",
 	"logentry-editaccnt-passchange": "$1 изменил пароль пользователя $3",
 	"logentry-editaccnt-realnamechange": "$1 изменил настоящее имя пользователя $3",
-	"logentry-editaccnt-closeaccnt": "$1 отключил учетную запись $3",
+	"logentry-editaccnt-closeaccnt": "$1 отключил учётную запись $3",
 	"edit-account-closed-flag": "Эта учётная запись была отключена на всей ShoutWiki.",
 	"action-editaccount": "изменить информацию других пользователей",
 	"right-editaccount": "Редактировать настройки других участников"
