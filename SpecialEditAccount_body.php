@@ -1,4 +1,7 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * Main logic of the EditAccount extension
  *
@@ -11,10 +14,13 @@
  */
 
 class EditAccount extends SpecialPage {
+
+	/** @var User|null */
 	public $mUser = null;
 	public $mStatus = null;
 	public $mStatusMsg;
 	public $mStatusMsg2 = null;
+	/** @var User|null */
 	public $mTempUser = null;
 
 	/**
@@ -196,7 +202,7 @@ class EditAccount extends SpecialPage {
 			'isUnsub' => null,
 			'isDisabled' => null,
 			'isAdopter' => null,
-			'returnURL' => $this->getTitle()->getFullURL(),
+			'returnURL' => $this->getFullTitle()->getFullURL(),
 			'logLink' => Linker::linkKnown(
 				SpecialPage::getTitleFor( 'Log', 'editaccnt' ),
 				$this->msg( 'log-name-editaccnt' )->escaped()
@@ -322,10 +328,10 @@ class EditAccount extends SpecialPage {
 	 * @return bool True on success, false on failure
 	 */
 	function setPassword( $pass, $changeReason = '' ) {
-		if ( $this->mUser->setPassword( $pass ) ) {
+		if ( $this->setPasswordForUser( $this->mUser, $pass ) ) {
 			// Save the new settings
 			if ( $this->mTempUser ) {
-				$this->mTempUser->setPassword( $this->mUser->mPassword );
+				$this->setPasswordForUser( $this->mTempUser, $pass );
 				$this->mTempUser->updateData();
 				$this->mTempUser->saveSettingsTempUserToUser( $this->mUser );
 				$this->mUser->mName = $this->mTempUser->getName();
@@ -348,6 +354,42 @@ class EditAccount extends SpecialPage {
 			$this->mStatusMsg = $this->msg( 'editaccount-error-pass', $this->mUser->mName )->text();
 			return false;
 		}
+	}
+
+	/**
+	 * Set the password on a user
+	 *
+	 * @param User $user
+	 * @param string $password
+	 */
+	public static function setPasswordForUser( User $user, $password ) {
+		if ( !$user->getId() ) {
+			return false;
+			// throw new MWException( "Passed User has not been added to the database yet!" );
+		}
+
+		$dbw = wfGetDB( DB_MASTER );
+		$row = $dbw->selectRow(
+			'user',
+			'user_id',
+			[ 'user_id' => $user->getId() ],
+			__METHOD__
+		);
+		if ( !$row ) {
+			return false;
+			// throw new MWException( "Passed User has an ID but is not in the database?" );
+		}
+
+		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
+		$passwordHash = $passwordFactory->newFromPlaintext( $password );
+		$dbw->update(
+			'user',
+			[ 'user_password' => $passwordHash->toString() ],
+			[ 'user_id' => $user->getId() ],
+			__METHOD__
+		);
+
+		return true;
 	}
 
 	/**
@@ -419,7 +461,7 @@ class EditAccount extends SpecialPage {
 		// Remove e-mail address and password
 		$this->mUser->setEmail( '' );
 		$newPass = $this->generateRandomScrambledPassword();
-		$this->mUser->setPassword( $newPass );
+		$this->setPasswordForUser( $this->mUser, $newPass );
 
 		// Save the new settings
 		$this->mUser->saveSettings();
