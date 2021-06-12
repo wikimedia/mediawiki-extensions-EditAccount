@@ -13,24 +13,24 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Templates
  */
 class EditAccountSelectUserTemplate extends QuickTemplate {
-	function execute() {
+	public function execute() {
 		$status = $this->data['status'];
 		$statusMsg = $this->data['statusMsg'];
 		$statusMsg2 = $this->data['statusMsg2'];
 		$user_hsc = $this->data['user_hsc'];
 ?>
 <!-- s:<?php echo __FILE__ ?> -->
-<?php if ( !is_null( $status ) ) { ?>
+<?php if ( $status !== null ) { ?>
 <fieldset>
 	<legend><?php echo wfMessage( 'editaccount-status' )->plain(); ?></legend>
 	<?php
 		if ( $status ) {
-			echo Xml::element( 'span', array( 'style' => 'color: darkgreen; font-weight: bold;' ), $statusMsg );
+			echo Xml::element( 'span', [ 'style' => 'color: darkgreen; font-weight: bold;' ], $statusMsg );
 		} else {
-			echo Xml::element( 'span', array( 'style' => 'color: #fe0000; font-weight: bold;' ), $statusMsg );
+			echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg );
 		}
 		if ( !empty( $statusMsg2 ) ) {
-			echo Xml::element( 'span', array( 'style' => 'color: #fe0000; font-weight: bold;' ), $statusMsg2 );
+			echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg2 );
 		}
 	?>
 </fieldset>

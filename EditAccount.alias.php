@@ -6,15 +6,15 @@
  * @ingroup Extensions
  */
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English */
-$specialPageAliases['en'] = array(
-	'EditAccount' => array( 'EditAccount', 'DisableAccount' ),
-	'CloseAccount' => array( 'CloseAccount' ),
-);
+$specialPageAliases['en'] = [
+	'EditAccount' => [ 'EditAccount', 'DisableAccount' ],
+	'CloseAccount' => [ 'CloseAccount' ],
+];
 
 /** Finnish (Suomi) */
-$specialPageAliases['fi'] = array(
-	'EditAccount' => array( 'Muokkaa käyttäjätunnusta', 'Sulje käyttäjätunnus', 'Sulje tunnus', 'Poista tunnus', 'Poista käyttäjätunnus' ),
-);
+$specialPageAliases['fi'] = [
+	'EditAccount' => [ 'Muokkaa käyttäjätunnusta', 'Sulje käyttäjätunnus', 'Sulje tunnus', 'Poista tunnus', 'Poista käyttäjätunnus' ],
+];

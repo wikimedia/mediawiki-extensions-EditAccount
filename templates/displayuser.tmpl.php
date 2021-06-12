@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Templates
  */
 class EditAccountDisplayUserTemplate extends QuickTemplate {
-	function execute() {
+	public function execute() {
 		$returnURL = $this->data['returnURL'];
 		$logLink = $this->data['logLink'];
 		$status = $this->data['status'];
@@ -35,18 +35,18 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 ?>
 <!-- s:<?php echo __FILE__ ?> -->
 <small><a href="<?php echo $returnURL; ?>"><?php echo wfMessage( 'editaccount-return' )->plain() ?></a><?php echo wfMessage( 'pipe-separator' )->plain() . $logLink ?></small>
-<?php if ( !is_null( $status ) ) { ?>
+<?php if ( $status !== null ) { ?>
 <fieldset>
 	<legend><?php echo wfMessage( 'editaccount-status' )->plain() ?></legend>
 	<?php
 		if ( $status ) {
-			echo Xml::element( 'span', array( 'style' => 'color: darkgreen; font-weight: bold;' ), $statusMsg );
+			echo Xml::element( 'span', [ 'style' => 'color: darkgreen; font-weight: bold;' ], $statusMsg );
 		} else {
-			echo Xml::element( 'span', array( 'style' => 'color: #fe0000; font-weight: bold;' ), $statusMsg );
+			echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg );
 		}
 
 		if ( !empty( $statusMsg2 ) ) {
-			echo Xml::element( 'span', array( 'style' => 'color: #fe0000; font-weight: bold;' ), $statusMsg2 );
+			echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg2 );
 		}
 	?>
 </fieldset>
@@ -92,7 +92,8 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 			<input type="radio" id="wpActionClearUnsub" name="wpAction" value="clearunsub" <?php echo $disabled; ?> />
 			<label for="wpActionClearUnsub"><?php echo wfMessage( 'editaccount-submit-clearunsub' )->escaped() ?></label>
 		</div>
-		<?php } // end unsub ?>
+		<?php }
+		// end unsub ?>
 
 		<div>
 			<label for="wpReason"><?php echo wfMessage( 'editaccount-label-reason' )->escaped() ?></label>
@@ -121,7 +122,8 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 		<input type="hidden" name="wpAction" value="cleardisable" />
 		<input type="hidden" name="wpUserName" value="<?php echo $user_hsc ?>" />
 	</form>
-<?php } // end undisable ?>
+<?php }
+// end undisable ?>
 </fieldset>
 <script type="text/javascript">
 jQuery( document ).ready( function( $ ) {

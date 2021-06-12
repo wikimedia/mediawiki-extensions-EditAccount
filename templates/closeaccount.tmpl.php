@@ -12,7 +12,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
  * @ingroup Templates
  */
 class EditAccountCloseAccountTemplate extends QuickTemplate {
-	function execute() {
+	public function execute() {
 		$status = $this->data['status'];
 		$statusMsg = $this->data['statusMsg'];
 		$user = $this->data['user'];
@@ -22,14 +22,14 @@ class EditAccountCloseAccountTemplate extends QuickTemplate {
 <?php
 // Display a warning if the user hasn't requested their account to be closed or
 // something *and* they are not the current user performing the action
-if ( !is_null( $status ) && $user !== $user_hsc ) { ?>
+if ( $status !== null && $user !== $user_hsc ) { ?>
 <fieldset>
 	<legend><?php echo wfMessage( 'editaccount-status' )->plain() ?></legend>
 	<?php
 	if ( $status ) {
-		echo Xml::element( 'span', array( 'style' => 'color: darkgreen; font-weight: bold;' ), $statusMsg );
+		echo Xml::element( 'span', [ 'style' => 'color: darkgreen; font-weight: bold;' ], $statusMsg );
 	} else {
-		echo Xml::element( 'span', array( 'style' => 'color: #fe0000; font-weight: bold;' ), $statusMsg );
+		echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg );
 	}
 	?>
 </fieldset>

@@ -10,7 +10,7 @@
  * @author Łukasz Garczewski (TOR) <tor@wikia-inc.com>
  * @date 2008-01-29
  * @copyright Copyright © 2009 Łukasz Garczewski, Wikia Inc.
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL-2.0-or-later
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) {
@@ -24,6 +24,10 @@ $wgHooks['SpecialContributionsBeforeMainOutput'][] = 'efFlagClosedAccounts';
 
 $wgMessagesDirs['EditAccount'] = __DIR__ . '/i18n';
 
+/**
+ * @param int $id
+ * @return bool
+ */
 function efFlagClosedAccounts( $id ) {
 	$u = User::newFromId( $id );
 	// Quick safeguard, *just* in case...probably not even needed.
@@ -37,7 +41,7 @@ function efFlagClosedAccounts( $id ) {
 	// @date 27 October 2013
 	// @author Jack Phoenix <jack@shoutwiki.com>
 	$isDisabled = EditAccount::isAccountDisabled( $u );
-	#$disOpt = $u->getOption( 'disabled' );
+	# $disOpt = $u->getOption( 'disabled' );
 
 	if ( $isDisabled ) {
 	/*if ( !empty( $disOpt ) ) {*/

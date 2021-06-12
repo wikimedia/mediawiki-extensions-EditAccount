@@ -46,8 +46,8 @@
 		"EditAccountAliases": "EditAccount.alias.php"
 	},
 	"AutoloadClasses": {
-		"CloseAccount": "SpecialCloseAccount.body.php",
-		"EditAccount": "SpecialEditAccount_body.php"
+		"CloseAccount": "includes/specials/SpecialCloseAccount.php",
+		"EditAccount": "includes/specials/SpecialEditAccount.php"
 	},
 	"manifest_version": 1
 }

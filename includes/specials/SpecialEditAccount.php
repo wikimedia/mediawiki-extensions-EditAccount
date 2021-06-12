@@ -10,15 +10,18 @@ use MediaWiki\MediaWikiServices;
  * @author Łukasz Garczewski (TOR) <tor@wikia-inc.com>
  * @date 2008-09-17
  * @copyright Copyright © 2008 Łukasz Garczewski, Wikia Inc.
- * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License 2.0 or later
+ * @license GPL-2.0-or-later
  */
 
 class EditAccount extends SpecialPage {
 
 	/** @var User|null */
 	public $mUser = null;
+	/** @var bool|null */
 	public $mStatus = null;
+	/** @var string */
 	public $mStatusMsg;
+	/** @var string|null */
 	public $mStatusMsg2 = null;
 	/** @var User|null */
 	public $mTempUser = null;
@@ -39,7 +42,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return string
 	 */
-	function getGroupName() {
+	public function getGroupName() {
 		return 'users';
 	}
 
@@ -49,7 +52,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return string Special page description
 	 */
-	function getDescription() {
+	public function getDescription() {
 		if ( $this->getUser()->isAllowed( 'editaccount' ) ) {
 			return $this->msg( 'editaccount' )->plain();
 		} else {
@@ -69,7 +72,7 @@ class EditAccount extends SpecialPage {
 
 		// Redirect mortals to Special:CloseAccount
 		if ( !$user->isAllowed( 'editaccount' ) ) {
-			//throw new PermissionsError( 'editaccount' );
+			// throw new PermissionsError( 'editaccount' );
 			$out->redirect( SpecialPage::getTitleFor( 'CloseAccount' )->getFullURL() );
 		}
 
@@ -93,7 +96,7 @@ class EditAccount extends SpecialPage {
 		$userName = $request->getVal( 'wpUserName', $par );
 		$action = $request->getVal( 'wpAction' );
 
-		if( $userName !== null ) {
+		if ( $userName !== null ) {
 			// Got a name, clean it up
 			$userName = str_replace( '_', ' ', trim( $userName ) );
 			// User names begin with a capital letter
@@ -104,7 +107,7 @@ class EditAccount extends SpecialPage {
 				$this->mUser = User::newFromName( $userName );
 				$id = $this->mUser->idFromName( $userName );
 
-				if( empty( $action ) ) {
+				if ( empty( $action ) ) {
 					$action = 'displayuser';
 				}
 
@@ -134,7 +137,7 @@ class EditAccount extends SpecialPage {
 		$changeReason = $request->getVal( 'wpReason' );
 
 		// What to do, what to show? Hmm...
-		switch( $action ) {
+		switch ( $action ) {
 			case 'setemail':
 				$newEmail = $request->getVal( 'wpNewEmail' );
 				$this->mStatus = $this->setEmail( $newEmail, $changeReason );
@@ -152,7 +155,7 @@ class EditAccount extends SpecialPage {
 				break;
 			case 'closeaccount':
 				$template = 'CloseAccount';
-				$this->mStatus = (bool) $this->mUser->getOption( 'requested-closure', 0 );
+				$this->mStatus = (bool)$this->mUser->getOption( 'requested-closure', 0 );
 				if ( $this->mStatus ) {
 					$this->mStatusMsg = $this->msg( 'editaccount-requested' )->text();
 				} else {
@@ -184,11 +187,11 @@ class EditAccount extends SpecialPage {
 
 		// Load the correct template file, build the class name and initiate a
 		// new template object (so that we can set variables later on)
-		include( 'templates/' . strtolower( $template ) . '.tmpl.php' );
+		include __DIR__ . '/../../templates/' . strtolower( $template ) . '.tmpl.php';
 		$templateClassName = 'EditAccount' . $template . 'Template';
 		$tmpl = new $templateClassName;
 
-		$templateVariables = array(
+		$templateVariables = [
 			'status' => $this->mStatus,
 			'statusMsg' => $this->mStatusMsg,
 			'statusMsg2' => $this->mStatusMsg2,
@@ -211,7 +214,7 @@ class EditAccount extends SpecialPage {
 			'emailStatus' => null,
 			'disabled' => null,
 			'changeEmailRequested' => null,
-		);
+		];
 		foreach ( $templateVariables as $templateVariable => $variableValue ) {
 			$tmpl->set( $templateVariable, $variableValue );
 		}
@@ -241,7 +244,7 @@ class EditAccount extends SpecialPage {
 				$emailStatus = $this->msg( 'editaccount-status-unconfirmed' )->plain();
 			}
 
-			$templateVariables2 = array(
+			$templateVariables2 = [
 				'userEmail' => $this->mUser->getEmail(),
 				'userRealName' => $this->mUser->getRealName(),
 				'userId' => $this->mUser->getId(),
@@ -252,7 +255,7 @@ class EditAccount extends SpecialPage {
 				'userStatus' => $userStatus,
 				'emailStatus' => $emailStatus,
 				'changeEmailRequested' => $changeEmailRequested,
-			);
+			];
 			// This will overwrite the previous variables which are null
 			foreach ( $templateVariables2 as $templateVariable2 => $variableValue2 ) {
 				$tmpl->set( $templateVariable2, $variableValue2 );
@@ -270,7 +273,7 @@ class EditAccount extends SpecialPage {
 	 * @param string $changeReason Reason for change
 	 * @return bool True on success, false on failure (i.e. if we were given an invalid email address)
 	 */
-	function setEmail( $email, $changeReason = '' ) {
+	public function setEmail( $email, $changeReason = '' ) {
 		$oldEmail = $this->mUser->getEmail();
 		if ( Sanitizer::validateEmail( $email ) || $email == '' ) {
 			if ( $this->mTempUser ) {
@@ -301,7 +304,8 @@ class EditAccount extends SpecialPage {
 				$logEntry = new ManualLogEntry( 'editaccnt', 'mailchange' );
 				$logEntry->setPerformer( $this->getUser() );
 				$logEntry->setTarget( $this->mUser->getUserPage() );
-				$logEntry->setComment( $changeReason ); // JP 13 April 2013: not sure if this is the correct one, CHECKME
+				// JP 13 April 2013: not sure if this is the correct one, CHECKME
+				$logEntry->setComment( $changeReason );
 				$logId = $logEntry->insert();
 
 				if ( $email == '' ) {
@@ -327,7 +331,7 @@ class EditAccount extends SpecialPage {
 	 * @param string $changeReason Reason for change
 	 * @return bool True on success, false on failure
 	 */
-	function setPassword( $pass, $changeReason = '' ) {
+	public function setPassword( $pass, $changeReason = '' ) {
 		if ( $this->setPasswordForUser( $this->mUser, $pass ) ) {
 			// Save the new settings
 			if ( $this->mTempUser ) {
@@ -343,7 +347,8 @@ class EditAccount extends SpecialPage {
 			$logEntry = new ManualLogEntry( 'editaccnt', 'passchange' );
 			$logEntry->setPerformer( $this->getUser() );
 			$logEntry->setTarget( $this->mUser->getUserPage() );
-			$logEntry->setComment( $changeReason ); // JP 13 April 2013: not sure if this is the correct one, CHECKME
+			// JP 13 April 2013: not sure if this is the correct one, CHECKME
+			$logEntry->setComment( $changeReason );
 			$logId = $logEntry->insert();
 
 			// And finally, inform the user that everything went as planned
@@ -361,6 +366,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @param User $user
 	 * @param string $password
+	 * @return bool
 	 */
 	public static function setPasswordForUser( User $user, $password ) {
 		if ( !$user->getId() ) {
@@ -395,11 +401,11 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Set a user's real name.
 	 *
-	 * @param mixed $pass Real name to set to the user
+	 * @param mixed $realName Real name to set to the user
 	 * @param string $changeReason Reason for change
 	 * @return bool True on success, false on failure
 	 */
-	function setRealName( $realName, $changeReason = '' ) {
+	public function setRealName( $realName, $changeReason = '' ) {
 		$this->mUser->setRealName( $realName );
 		$this->mUser->saveSettings();
 
@@ -410,7 +416,8 @@ class EditAccount extends SpecialPage {
 			$logEntry = new ManualLogEntry( 'editaccnt', 'realnamechange' );
 			$logEntry->setPerformer( $this->getUser() );
 			$logEntry->setTarget( $this->mUser->getUserPage() );
-			$logEntry->setComment( $changeReason ); // JP 13 April 2013: not sure if this is the correct one, CHECKME
+			// JP 13 April 2013: not sure if this is the correct one, CHECKME
+			$logEntry->setComment( $changeReason );
 			$logId = $logEntry->insert();
 
 			// And finally, inform the user that everything went as planned
@@ -430,7 +437,7 @@ class EditAccount extends SpecialPage {
 	 * @param string $changeReason Reason for change
 	 * @return bool True on success, false on failure
 	 */
-	function closeAccount( $changeReason = '' ) {
+	public function closeAccount( $changeReason = '' ) {
 		// Set flag for Special:Contributions
 		// NOTE: requires FlagClosedAccounts.php to be included separately
 		if ( defined( 'CLOSED_ACCOUNT_FLAG' ) ) {
@@ -441,16 +448,18 @@ class EditAccount extends SpecialPage {
 		}
 
 		// remove user's avatar
-		if ( class_exists( 'wAvatar' ) ) { // SocialProfile
+		if ( class_exists( 'wAvatar' ) ) {
+			// SocialProfile
 			// Commented out because as of 17 June 2013, ShoutWiki has only 8
 			// wikis with SocialProfile enabled and this method is probably
 			// *very* expensive since it does operations for everything in the
 			// images directory...
 			//$this->removeSocialProfileAvatars();
-		} elseif ( class_exists( 'Masthead' ) ) { // Wikia's avatar extension
+		} elseif ( class_exists( 'Masthead' ) ) {
+			// Wikia's avatar extension
 			$avatar = Masthead::newFromUser( $this->mUser );
 			if ( !$avatar->isDefault() ) {
-				if( !$avatar->removeFile( false ) ) {
+				if ( !$avatar->removeFile( false ) ) {
 					// don't quit here, since the avatar is a non-critical part
 					// of closing, but flag for later
 					$this->mStatusMsg2 = $this->msg( 'editaccount-remove-avatar-fail' )->plain();
@@ -492,7 +501,8 @@ class EditAccount extends SpecialPage {
 			$logEntry = new ManualLogEntry( 'editaccnt', 'closeaccnt' );
 			$logEntry->setPerformer( $this->getUser() );
 			$logEntry->setTarget( $this->mUser->getUserPage() );
-			$logEntry->setComment( $changeReason ); // JP 13 April 2013: not sure if this is the correct one, CHECKME
+			// JP 13 April 2013: not sure if this is the correct one, CHECKME
+			$logEntry->setComment( $changeReason );
 			$logId = $logEntry->insert();
 
 			// All clear!
@@ -510,7 +520,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return bool Always true
 	 */
-	function clearUnsubscribe() {
+	public function clearUnsubscribe() {
 		$this->mUser->setOption( 'unsubscribed', null );
 		$this->mUser->saveSettings();
 
@@ -524,7 +534,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return bool Always true
 	 */
-	function clearDisable() {
+	public function clearDisable() {
 		$this->mUser->setOption( 'disabled', null );
 		$this->mUser->setOption( 'disabled_date', null );
 		$this->mUser->saveSettings();
@@ -540,19 +550,19 @@ class EditAccount extends SpecialPage {
 			$dbw->startAtomic( __METHOD__ );
 			$dbw->delete(
 				'global_preferences',
-				array(
+				[
 					'gp_property' => 'disabled',
 					'gp_value' => 1,
 					'gp_user' => $this->mUser->getId()
-				),
+				],
 				__METHOD__
 			);
 			$dbw->delete(
 				'global_preferences',
-				array(
+				[
 					'gp_property' => 'disabled_date',
 					'gp_user' => $this->mUser->getId()
-				),
+				],
 				__METHOD__
 			);
 			$dbw->endAtomic( __METHOD__ );
@@ -570,8 +580,8 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return bool Always true
 	 */
-	function toggleAdopterStatus() {
-		$this->mUser->setOption( 'AllowAdoption', (int) !$this->mUser->getOption( 'AllowAdoption', 1 ) );
+	public function toggleAdopterStatus() {
+		$this->mUser->setOption( 'AllowAdoption', (int)!$this->mUser->getOption( 'AllowAdoption', 1 ) );
 		$this->mUser->saveSettings();
 
 		$this->mStatusMsg = $this->msg( 'editaccount-success-toggleadopt', $this->mUser->mName )->text();
@@ -585,7 +595,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return string
 	 */
-	function generateRandomScrambledPassword() {
+	public function generateRandomScrambledPassword() {
 		// Password requirements need a capital letter, a digit, and a lowercase letter.
 		// wfGenerateToken() returns a 32 char hex string, which will almost
 		// always satisfy the digit/letter but not always.
@@ -605,8 +615,9 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return bool Always true
 	 */
-	function removeSocialProfileAvatars() {
-		global $IP, $wgUploadDirectory, $wgDBname, $wgMemc, $wgUploadAvatarInRecentChanges;
+	public function removeSocialProfileAvatars() {
+		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
+		global $IP, $wgMemc, $wgUploadAvatarInRecentChanges;
 
 		// @see http://www.developerfusion.com/code/2058/determine-execution-time-in-php/
 		$mtime = microtime();
@@ -654,11 +665,11 @@ class EditAccount extends SpecialPage {
 								$dbName = str_replace( '-', '_', $dbName );
 
 								// ACTUALLY REMOVE THE DAMN THINGS!
-								foreach ( array( 's', 'm', 'ml', 'l' ) as $size ) {
+								foreach ( [ 's', 'm', 'ml', 'l' ] as $size ) {
 									$avatar = new wAvatar( $this->mUser->getId(), $size );
 									$files = glob(
 										getcwd() . '/avatars/' . $dbName . '_' .
-										$this->mUser->getId() .  '_' . $size . '*'
+										$this->mUser->getId() . '_' . $size . '*'
 									);
 									Wikimedia\suppressWarnings();
 									$img = basename( $files[0] );
@@ -673,7 +684,7 @@ class EditAccount extends SpecialPage {
 								}
 
 								// Ensure that the logs are placed into the correct DB
-								$dbw = wfGetDB( DB_MASTER, array(), $dbName );
+								$dbw = wfGetDB( DB_MASTER, [], $dbName );
 								// Log it!
 								// Note: old-school logging style is
 								// intentionally used here because it's what
@@ -697,7 +708,7 @@ class EditAccount extends SpecialPage {
 								}
 							}
 						} else {
-							//error_log( getcwd() . '/avatars/ does not exist, skipping.' );
+							// error_log( getcwd() . '/avatars/ does not exist, skipping.' );
 						}
 					}
 				}
@@ -722,7 +733,7 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Marks the account as disabled, the ShoutWiki way.
 	 */
-	function setDisabled() {
+	public function setDisabled() {
 		if ( !class_exists( 'GlobalPreferences' ) ) {
 			error_log( 'Cannot use the GlobalPreferences class in ' . __METHOD__ );
 			return;
@@ -732,20 +743,20 @@ class EditAccount extends SpecialPage {
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->insert(
 			'global_preferences',
-			array(
+			[
 				'gp_property' => 'disabled',
 				'gp_value' => 1,
 				'gp_user' => $this->mUser->getId()
-			),
+			],
 			__METHOD__
 		);
 		$dbw->insert(
 			'global_preferences',
-			array(
+			[
 				'gp_property' => 'disabled_date',
 				'gp_value' => wfTimestamp( TS_DB ),
 				'gp_user' => $this->mUser->getId()
-			),
+			],
 			__METHOD__
 		);
 		$dbw->endAtomic( __METHOD__ );
@@ -754,8 +765,8 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Is the given user account disabled?
 	 *
-	 * @param $user User
-	 * @return bool True if it is disabled, otherwise false
+	 * @param User $user
+	 * @return bool|void True if it is disabled, otherwise false
 	 */
 	public static function isAccountDisabled( $user ) {
 		if ( !class_exists( 'GlobalPreferences' ) ) {
@@ -766,19 +777,22 @@ class EditAccount extends SpecialPage {
 		$retVal = $dbr->selectField(
 			'global_preferences',
 			'gp_value',
-			array(
+			[
 				'gp_property' => 'disabled',
 				'gp_user' => $user->getId()
-			),
+			],
 			__METHOD__
 		);
 
-		return (bool) $retVal;
+		return (bool)$retVal;
 	}
 
 	/**
 	 * Copypasta from pre-1.23 /includes/GlobalFunctions.php
 	 * @see https://phabricator.wikimedia.org/rMW118567a4ba0ded669f43a58713733cab915afe39
+	 *
+	 * @param string $salt
+	 * @return string
 	 */
 	public static function generateToken( $salt = '' ) {
 		$salt = serialize( $salt );

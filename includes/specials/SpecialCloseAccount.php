@@ -15,7 +15,7 @@
 class CloseAccount extends EditAccount {
 
 	/**
-	 * @var User $mUser User object for the account that is to be disabled
+	 * @var User User object for the account that is to be disabled
 	 */
 	public $mUser;
 
@@ -31,7 +31,7 @@ class CloseAccount extends EditAccount {
 	 *
 	 * @return string
 	 */
-	function getGroupName() {
+	public function getGroupName() {
 		return 'users';
 	}
 
@@ -40,7 +40,7 @@ class CloseAccount extends EditAccount {
 	 *
 	 * @return string Special page description
 	 */
-	function getDescription() {
+	public function getDescription() {
 		return $this->msg( 'editaccount-general-description' )->plain();
 	}
 
@@ -50,10 +50,10 @@ class CloseAccount extends EditAccount {
 	 *
 	 * @return bool
 	 */
-	function isListed() {
+	public function isListed() {
 		$user = $this->getUser();
 		$isStaff = in_array( 'staff', $user->getEffectiveGroups() );
-		return (bool) $user->isLoggedIn() && !$isStaff;
+		return (bool)$user->isLoggedIn() && !$isStaff;
 	}
 
 	/**
@@ -117,23 +117,24 @@ class CloseAccount extends EditAccount {
 			$out->addHTML(
 				"<fieldset>\n<legend>" . $this->msg( 'editaccount-status' )->plain() .
 				'</legend>' .
-				Xml::element( 'span', array( 'style' => "color: {$color}; font-weight: bold;" ), $this->mStatusMsg ) .
+				Xml::element( 'span', [ 'style' => "color: {$color}; font-weight: bold;" ], $this->mStatusMsg ) .
 				'</fieldset>'
 			);
 		} else {
 			// Load the correct template file and initiate a new template object
-			include( 'templates/closeaccount.tmpl.php' );
+			include __DIR__ . '/../../templates/closeaccount.tmpl.php';
 			$tmpl = new EditAccountCloseAccountTemplate;
 
-			$templateVariables = array(
+			$templateVariables = [
 				// the value of this is irrelevant, it just needs to be defined
 				// for the template because we're reusing EditAccount's UI template
 				// and otherwise we'll get "undefined index" notices
 				'status' => '',
-				'statusMsg' => '', // likewise
+				'statusMsg' => '',
+				// likewise
 				'user' => $userName,
 				'user_hsc' => htmlspecialchars( $userName )
-			);
+			];
 			foreach ( $templateVariables as $templateVariable => $variableValue ) {
 				$tmpl->set( $templateVariable, $variableValue );
 			}

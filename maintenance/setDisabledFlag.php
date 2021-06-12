@@ -19,9 +19,9 @@
  * $IP/extensions/EditAccount and we don't need to move this file to
  * $IP/maintenance/.
  */
-ini_set( 'include_path', __DIR__ . '/../../maintenance' );
+ini_set( 'include_path', __DIR__ . '/../../../maintenance' );
 
-require_once( 'Maintenance.php' );
+require_once 'Maintenance.php';
 
 class AddEntriesForAllDisabledUsers extends Maintenance {
 	public function __construct() {
@@ -36,8 +36,8 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 		$dbw = wfGetDB( DB_MASTER );
 		$res = $dbw->select(
 			'user',
-			array( 'user_id', 'user_name' ),
-			array( 'user_real_name' => 'Account Disabled' ),
+			[ 'user_id', 'user_name' ],
+			[ 'user_real_name' => 'Account Disabled' ],
 			__METHOD__
 		);
 
@@ -52,25 +52,25 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 				if ( $this->getOption( 'doit' ) ) {
 					$res = $dbw->update(
 						'global_preferences',
-						array(
+						[
 							'gp_property' => 'disabled',
 							'gp_value' => 1
-						),
-						array(
+						],
+						[
 							'gp_user' => $row->user_id
-						),
+						],
 						__METHOD__
 					);
 
 					$res = $dbw->update(
 						'global_preferences',
-						array(
+						[
 							'gp_property' => 'disabled_date',
 							'gp_value' => wfTimestamp( TS_DB )
-						),
-						array(
+						],
+						[
 							'gp_user' => $row->user_id
-						),
+						],
 						__METHOD__
 					);
 				}
@@ -84,4 +84,4 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 }
 
 $maintClass = 'AddEntriesForAllDisabledUsers';
-require_once( RUN_MAINTENANCE_IF_MAIN );
+require_once RUN_MAINTENANCE_IF_MAIN;
