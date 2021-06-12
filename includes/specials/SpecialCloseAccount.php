@@ -114,6 +114,7 @@ class CloseAccount extends EditAccount {
 				$color = '#fe0000';
 			}
 
+			// @phan-suppress-next-line SecurityCheck-XSS
 			$out->addHTML(
 				"<fieldset>\n<legend>" . $this->msg( 'editaccount-status' )->plain() .
 				'</legend>' .
@@ -140,6 +141,7 @@ class CloseAccount extends EditAccount {
 			}
 
 			// Output everything!
+			// @phan-suppress-next-line PhanTypeMismatchArgument
 			$out->addTemplate( $tmpl );
 		}
 	}

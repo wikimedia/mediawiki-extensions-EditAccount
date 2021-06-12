@@ -441,6 +441,7 @@ class EditAccount extends SpecialPage {
 		// Set flag for Special:Contributions
 		// NOTE: requires FlagClosedAccounts.php to be included separately
 		if ( defined( 'CLOSED_ACCOUNT_FLAG' ) ) {
+			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
 			$this->mUser->setRealName( CLOSED_ACCOUNT_FLAG );
 		} else {
 			// magic value not found, so let's at least blank it
@@ -679,6 +680,7 @@ class EditAccount extends SpecialPage {
 									}
 
 									// clear cache
+									// @phan-suppress-next-line PhanUndeclaredFunction
 									$key = wfMemcKey( 'user', 'profile', 'avatar', $this->mUser->getId(), $size );
 									$wgMemc->delete( $key );
 								}
@@ -700,6 +702,7 @@ class EditAccount extends SpecialPage {
 								);
 								// It should never be empty or disabled, but...
 								if ( !$logMsg->isEmpty() || !$logMsg->isDisabled() ) {
+									// @phan-suppress-next-line PhanParamTooFew
 									$log->addEntry(
 										'avatar',
 										$this->getUser()->getUserPage(),
