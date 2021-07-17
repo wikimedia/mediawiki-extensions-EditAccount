@@ -114,9 +114,8 @@ class CloseAccount extends EditAccount {
 				$color = '#fe0000';
 			}
 
-			// @phan-suppress-next-line SecurityCheck-XSS
 			$out->addHTML(
-				"<fieldset>\n<legend>" . $this->msg( 'editaccount-status' )->plain() .
+				"<fieldset>\n<legend>" . $this->msg( 'editaccount-status' )->escaped() .
 				'</legend>' .
 				Xml::element( 'span', [ 'style' => "color: {$color}; font-weight: bold;" ], $this->mStatusMsg ) .
 				'</fieldset>'
