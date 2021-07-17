@@ -53,7 +53,7 @@ class CloseAccount extends EditAccount {
 	public function isListed() {
 		$user = $this->getUser();
 		$isStaff = in_array( 'staff', $user->getEffectiveGroups() );
-		return (bool)$user->isLoggedIn() && !$isStaff;
+		return $user->isRegistered() && !$isStaff;
 	}
 
 	/**
@@ -67,7 +67,7 @@ class CloseAccount extends EditAccount {
 		$user = $this->getUser();
 
 		// Anons should not be allowed to access this special page
-		if ( !$user->isLoggedIn() ) {
+		if ( !$user->isRegistered() ) {
 			throw new PermissionsError( 'editaccount' );
 		}
 
