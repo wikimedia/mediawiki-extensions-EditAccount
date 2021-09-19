@@ -374,7 +374,7 @@ class EditAccount extends SpecialPage {
 			// throw new MWException( "Passed User has not been added to the database yet!" );
 		}
 
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$row = $dbw->selectRow(
 			'user',
 			'user_id',
@@ -546,7 +546,7 @@ class EditAccount extends SpecialPage {
 		// but the "this account has been disabled" notice on Special:Contributions
 		// won't go away.
 		if ( class_exists( 'GlobalPreferences' ) ) {
-			$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
+			$dbw = GlobalPreferences::getPrefsDB( DB_PRIMARY );
 
 			$dbw->startAtomic( __METHOD__ );
 			$dbw->delete(
@@ -686,7 +686,7 @@ class EditAccount extends SpecialPage {
 								}
 
 								// Ensure that the logs are placed into the correct DB
-								$dbw = wfGetDB( DB_MASTER, [], $dbName );
+								$dbw = wfGetDB( DB_PRIMARY, [], $dbName );
 								// Log it!
 								// Note: old-school logging style is
 								// intentionally used here because it's what
@@ -741,7 +741,7 @@ class EditAccount extends SpecialPage {
 			error_log( 'Cannot use the GlobalPreferences class in ' . __METHOD__ );
 			return;
 		}
-		$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
+		$dbw = GlobalPreferences::getPrefsDB( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->insert(

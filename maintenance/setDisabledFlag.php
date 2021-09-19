@@ -33,7 +33,7 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 		$res = $dbw->select(
 			'user',
 			[ 'user_id', 'user_name' ],
@@ -47,7 +47,7 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 		} else {
 			$this->output( 'Got ' . $dbw->numRows( $res ) . " accounts to mark as disabled\n" );
 
-			$dbw = GlobalPreferences::getPrefsDB( DB_MASTER );
+			$dbw = GlobalPreferences::getPrefsDB( DB_PRIMARY );
 			foreach ( $res as $row ) {
 				// Are we in it for real?
 				if ( $this->getOption( 'doit' ) ) {
