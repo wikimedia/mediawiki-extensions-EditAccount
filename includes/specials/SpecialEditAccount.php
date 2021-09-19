@@ -618,7 +618,7 @@ class EditAccount extends SpecialPage {
 	 */
 	public function removeSocialProfileAvatars() {
 		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
-		global $IP, $wgMemc, $wgUploadAvatarInRecentChanges;
+		global $IP, $wgUploadAvatarInRecentChanges;
 
 		// @see http://www.developerfusion.com/code/2058/determine-execution-time-in-php/
 		$mtime = microtime();
@@ -680,9 +680,9 @@ class EditAccount extends SpecialPage {
 									}
 
 									// clear cache
-									// @phan-suppress-next-line PhanUndeclaredFunction
-									$key = wfMemcKey( 'user', 'profile', 'avatar', $this->mUser->getId(), $size );
-									$wgMemc->delete( $key );
+									$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+									$key = $cache->makeKey( 'user', 'profile', 'avatar', $this->mUser->getId(), $size );
+									$cache->delete( $key );
 								}
 
 								// Ensure that the logs are placed into the correct DB
