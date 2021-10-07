@@ -11,6 +11,8 @@
  * @see https://bugzilla.shoutwiki.com/show_bug.cgi?id=294
  */
 
+use MediaWiki\MediaWikiServices;
+
 // @note Extends EditAccount so that we don't have to duplicate closeAccount() etc.
 class CloseAccount extends EditAccount {
 
@@ -52,7 +54,10 @@ class CloseAccount extends EditAccount {
 	 */
 	public function isListed() {
 		$user = $this->getUser();
-		$isStaff = in_array( 'staff', $user->getEffectiveGroups() );
+		$effectiveGroups = MediaWikiServices::getInstance()
+			->getUserGroupManager()
+			->getUserEffectiveGroups( $user );
+		$isStaff = in_array( 'staff', $effectiveGroups );
 		return $user->isRegistered() && !$isStaff;
 	}
 
@@ -82,7 +87,10 @@ class CloseAccount extends EditAccount {
 		}
 
 		// Redirect staff members to Special:EditAccount instead
-		if ( in_array( 'staff', $user->getEffectiveGroups() ) ) {
+		$effectiveGroups = MediaWikiServices::getInstance()
+			->getUserGroupManager()
+			->getUserEffectiveGroups( $user );
+		if ( in_array( 'staff', $effectiveGroups ) ) {
 			$out->redirect( SpecialPage::getTitleFor( 'EditAccount' )->getFullURL() );
 		}
 
