@@ -108,7 +108,7 @@ class CloseAccount extends EditAccount {
 		$userName = $this->getLanguage()->ucfirst( $userName );
 
 		// Check if user name is an existing user
-		if ( User::isValidUserName( $userName ) ) {
+		if ( MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $userName ) ) {
 			$this->mUser = User::newFromName( $userName );
 		}
 
