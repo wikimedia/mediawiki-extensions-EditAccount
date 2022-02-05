@@ -41,11 +41,11 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 			__METHOD__
 		);
 
-		if ( $dbw->numRows( $res ) === 0 ) {
+		if ( $res->numRows() === 0 ) {
 			// @phan-suppress-next-line PhanTypeMismatchArgument
 			$this->error( 'Nothing to do...', true );
 		} else {
-			$this->output( 'Got ' . $dbw->numRows( $res ) . " accounts to mark as disabled\n" );
+			$this->output( 'Got ' . $res->numRows() . " accounts to mark as disabled\n" );
 
 			$dbw = GlobalPreferences::getPrefsDB( DB_PRIMARY );
 			foreach ( $res as $row ) {
