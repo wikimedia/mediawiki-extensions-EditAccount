@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\AtEase\AtEase;
 
 /**
  * Main logic of the EditAccount extension
@@ -670,9 +671,9 @@ class EditAccount extends SpecialPage {
 										getcwd() . '/avatars/' . $dbName . '_' .
 										$this->mUser->getId() . '_' . $size . '*'
 									);
-									Wikimedia\suppressWarnings();
+									AtEase::suppressWarnings();
 									$img = basename( $files[0] );
-									Wikimedia\restoreWarnings();
+									AtEase::restoreWarnings();
 									if ( $img && $img[0] ) {
 										unlink( getcwd() . '/avatars/' . $img );
 									}
