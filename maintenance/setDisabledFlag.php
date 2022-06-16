@@ -84,5 +84,5 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 	}
 }
 
-$maintClass = 'AddEntriesForAllDisabledUsers';
+$maintClass = AddEntriesForAllDisabledUsers::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
