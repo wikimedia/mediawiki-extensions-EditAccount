@@ -81,7 +81,8 @@ class CloseAccount extends EditAccount {
 
 		// If user is blocked, s/he doesn't need to access this page
 		if ( $user->getBlock() ) {
-			throw new UserBlockedError( $user->mBlock );
+			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
+			throw new UserBlockedError( $user->getBlock() );
 		}
 
 		// Redirect staff members to Special:EditAccount instead
