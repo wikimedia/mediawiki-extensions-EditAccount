@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserOptionsManager;
 use Wikimedia\AtEase\AtEase;
 
 /**
@@ -27,11 +28,15 @@ class EditAccount extends SpecialPage {
 	/** @var User|null */
 	public $mTempUser = null;
 
+	/** @var UserOptionsManager */
+	private $userOptionsManager;
+
 	/**
-	 * Constructor -- set up the new special page
+	 * @param UserOptionsManager $userOptionsManager
 	 */
-	public function __construct() {
+	public function __construct( UserOptionsManager $userOptionsManager ) {
 		parent::__construct( 'EditAccount', 'editaccount' );
+		$this->userOptionsManager = $userOptionsManager;
 	}
 
 	public function doesWrites() {
@@ -155,7 +160,7 @@ class EditAccount extends SpecialPage {
 				break;
 			case 'closeaccount':
 				$template = 'CloseAccount';
-				$this->mStatus = (bool)$this->mUser->getOption( 'requested-closure', 0 );
+				$this->mStatus = (bool)$this->userOptionsManager->getOption( $this->mUser, 'requested-closure', 0 );
 				if ( $this->mStatus ) {
 					$this->mStatusMsg = $this->msg( 'editaccount-requested' )->text();
 				} else {
@@ -230,7 +235,7 @@ class EditAccount extends SpecialPage {
 			$this->mUser->load();
 
 			// get new e-mail (unconfirmed)
-			$optionNewEmail = $this->mUser->getOption( 'new_email' );
+			$optionNewEmail = $this->userOptionsManager->getOption( $this->mUser, 'new_email' );
 			if ( empty( $optionNewEmail ) ) {
 				$changeEmailRequested = '';
 			} else {
@@ -249,9 +254,9 @@ class EditAccount extends SpecialPage {
 				'userRealName' => $this->mUser->getRealName(),
 				'userId' => $this->mUser->getId(),
 				'userReg' => date( 'r', strtotime( $this->mUser->getRegistration() ) ),
-				'isUnsub' => $this->mUser->getOption( 'unsubscribed' ),
-				'isDisabled' => $this->mUser->getOption( 'disabled' ),
-				'isAdopter' => $this->mUser->getOption( 'AllowAdoption', 1 ),
+				'isUnsub' => $this->userOptionsManager->getOption( $this->mUser, 'unsubscribed' ),
+				'isDisabled' => $this->userOptionsManager->getOption( $this->mUser, 'disabled' ),
+				'isAdopter' => $this->userOptionsManager->getOption( $this->mUser, 'AllowAdoption', 1 ),
 				'userStatus' => $userStatus,
 				'emailStatus' => $emailStatus,
 				'changeEmailRequested' => $changeEmailRequested,
@@ -291,7 +296,7 @@ class EditAccount extends SpecialPage {
 				$this->mUser->setEmail( $email );
 				if ( $email != '' ) {
 					$this->mUser->confirmEmail();
-					$this->mUser->setOption( 'new_email', null );
+					$this->userOptionsManager->setOption( $this->mUser, 'new_email', null );
 				} else {
 					$this->mUser->invalidateEmail();
 				}
@@ -486,8 +491,8 @@ class EditAccount extends SpecialPage {
 			$this->setDisabled();
 			// ShoutWiki patch end
 			// Mark as disabled in a more real way, that doesn't depend on the real_name text
-			$this->mUser->setOption( 'disabled', 1 );
-			$this->mUser->setOption( 'disabled_date', wfTimestamp( TS_DB ) );
+			$this->userOptionsManager->setOption( $this->mUser, 'disabled', 1 );
+			$this->userOptionsManager->setOption( $this->mUser, 'disabled_date', wfTimestamp( TS_DB ) );
 			// BugId:18085 - setting a new token causes the user to be logged out.
 			$this->mUser->setToken( md5( microtime() . mt_rand( 0, 0x7fffffff ) ) );
 
@@ -522,8 +527,8 @@ class EditAccount extends SpecialPage {
 	 * @return bool Always true
 	 */
 	public function clearUnsubscribe() {
-		$this->mUser->setOption( 'unsubscribed', null );
-		$this->mUser->saveSettings();
+		$this->userOptionsManager->setOption( $this->mUser, 'unsubscribed', null );
+		$this->userOptionsManager->saveOptions( $this->mUser );
 
 		$this->mStatusMsg = $this->msg( 'editaccount-success-unsub', $this->mUser->mName )->text();
 
@@ -536,9 +541,9 @@ class EditAccount extends SpecialPage {
 	 * @return bool Always true
 	 */
 	public function clearDisable() {
-		$this->mUser->setOption( 'disabled', null );
-		$this->mUser->setOption( 'disabled_date', null );
-		$this->mUser->saveSettings();
+		$this->userOptionsManager->setOption( $this->mUser, 'disabled', null );
+		$this->userOptionsManager->setOption( $this->mUser, 'disabled_date', null );
+		$this->userOptionsManager->saveOptions( $this->mUser );
 
 		// ShoutWiki patch begin
 		// We also need to clear GlobalPreferences data; otherwise it's possible
@@ -582,8 +587,12 @@ class EditAccount extends SpecialPage {
 	 * @return bool Always true
 	 */
 	public function toggleAdopterStatus() {
-		$this->mUser->setOption( 'AllowAdoption', (int)!$this->mUser->getOption( 'AllowAdoption', 1 ) );
-		$this->mUser->saveSettings();
+		$this->userOptionsManager->setOption(
+			$this->mUser,
+			'AllowAdoption',
+			(int)!$this->userOptionsManager->getOption( $this->mUser, 'AllowAdoption', 1 )
+		);
+		$this->userOptionsManager->saveOptions( $this->mUser );
 
 		$this->mStatusMsg = $this->msg( 'editaccount-success-toggleadopt', $this->mUser->mName )->text();
 

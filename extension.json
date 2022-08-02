@@ -26,7 +26,12 @@
 	],
 	"SpecialPages": {
 		"CloseAccount": "CloseAccount",
-		"EditAccount": "EditAccount"
+		"EditAccount": {
+			"class": "EditAccount",
+			"services": [
+				"UserOptionsManager"
+			]
+		}
 	},
 	"LogTypes": [
 		"editaccnt"
