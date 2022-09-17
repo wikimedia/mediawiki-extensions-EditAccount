@@ -11,7 +11,8 @@
  * @see https://bugzilla.shoutwiki.com/show_bug.cgi?id=294
  */
 
-use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserGroupManager;
+use MediaWiki\User\UserNameUtils;
 
 // @note Extends EditAccount so that we don't have to duplicate closeAccount() etc.
 class CloseAccount extends EditAccount {
@@ -21,11 +22,25 @@ class CloseAccount extends EditAccount {
 	 */
 	public $mUser;
 
+	/** @var UserGroupManager */
+	private $userGroupManager;
+
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
 	/**
 	 * Constructor -- set up the new special page
+	 *
+	 * @param UserGroupManager $userGroupManager
+	 * @param UserNameUtils $userNameUtils
 	 */
-	public function __construct() {
+	public function __construct(
+		UserGroupManager $userGroupManager,
+		UserNameUtils $userNameUtils
+	) {
 		SpecialPage::__construct( 'CloseAccount' );
+		$this->userGroupManager = $userGroupManager;
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	/**
@@ -54,9 +69,7 @@ class CloseAccount extends EditAccount {
 	 */
 	public function isListed() {
 		$user = $this->getUser();
-		$effectiveGroups = MediaWikiServices::getInstance()
-			->getUserGroupManager()
-			->getUserEffectiveGroups( $user );
+		$effectiveGroups = $this->userGroupManager->getUserEffectiveGroups( $user );
 		$isStaff = in_array( 'staff', $effectiveGroups );
 		return $user->isRegistered() && !$isStaff;
 	}
@@ -86,9 +99,7 @@ class CloseAccount extends EditAccount {
 		}
 
 		// Redirect staff members to Special:EditAccount instead
-		$effectiveGroups = MediaWikiServices::getInstance()
-			->getUserGroupManager()
-			->getUserEffectiveGroups( $user );
+		$effectiveGroups = $this->userGroupManager->getUserEffectiveGroups( $user );
 		if ( in_array( 'staff', $effectiveGroups ) ) {
 			$out->redirect( SpecialPage::getTitleFor( 'EditAccount' )->getFullURL() );
 		}
@@ -107,7 +118,7 @@ class CloseAccount extends EditAccount {
 		$userName = $this->getLanguage()->ucfirst( $userName );
 
 		// Check if user name is an existing user
-		if ( MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $userName ) ) {
+		if ( $this->userNameUtils->isValid( $userName ) ) {
 			$this->mUser = User::newFromName( $userName );
 		}
 

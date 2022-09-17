@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserOptionsManager;
 use Wikimedia\AtEase\AtEase;
 
@@ -28,15 +28,35 @@ class EditAccount extends SpecialPage {
 	/** @var User|null */
 	public $mTempUser = null;
 
+	/** @var PasswordFactory */
+	private $passwordFactory;
+
+	/** @var UserNameUtils */
+	private $userNameUtils;
+
 	/** @var UserOptionsManager */
 	private $userOptionsManager;
 
+	/** @var WANObjectCache */
+	private $cache;
+
 	/**
+	 * @param PasswordFactory $passwordFactory
+	 * @param UserNameUtils $userNameUtils
 	 * @param UserOptionsManager $userOptionsManager
+	 * @param WANObjectCache $cache
 	 */
-	public function __construct( UserOptionsManager $userOptionsManager ) {
+	public function __construct(
+		PasswordFactory $passwordFactory,
+		UserNameUtils $userNameUtils,
+		UserOptionsManager $userOptionsManager,
+		WANObjectCache $cache
+	) {
 		parent::__construct( 'EditAccount', 'editaccount' );
+		$this->passwordFactory = $passwordFactory;
+		$this->userNameUtils = $userNameUtils;
 		$this->userOptionsManager = $userOptionsManager;
+		$this->cache = $cache;
 	}
 
 	public function doesWrites() {
@@ -108,7 +128,7 @@ class EditAccount extends SpecialPage {
 			$userName = $this->getLanguage()->ucfirst( $userName );
 
 			// Check if user name is an existing user
-			if ( MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $userName ) ) {
+			if ( $this->userNameUtils->isValid( $userName ) ) {
 				$this->mUser = User::newFromName( $userName );
 				$id = $this->mUser->idFromName( $userName );
 
@@ -373,7 +393,7 @@ class EditAccount extends SpecialPage {
 	 * @param string $password
 	 * @return bool
 	 */
-	public static function setPasswordForUser( User $user, $password ) {
+	public function setPasswordForUser( User $user, $password ) {
 		if ( !$user->getId() ) {
 			return false;
 			// throw new MWException( "Passed User has not been added to the database yet!" );
@@ -391,8 +411,7 @@ class EditAccount extends SpecialPage {
 			// throw new MWException( "Passed User has an ID but is not in the database?" );
 		}
 
-		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
-		$passwordHash = $passwordFactory->newFromPlaintext( $password );
+		$passwordHash = $this->passwordFactory->newFromPlaintext( $password );
 		$dbw->update(
 			'user',
 			[ 'user_password' => $passwordHash->toString() ],
@@ -689,9 +708,8 @@ class EditAccount extends SpecialPage {
 									}
 
 									// clear cache
-									$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-									$key = $cache->makeKey( 'user', 'profile', 'avatar', $this->mUser->getId(), $size );
-									$cache->delete( $key );
+									$key = $this->cache->makeKey( 'user', 'profile', 'avatar', $this->mUser->getId(), $size );
+									$this->cache->delete( $key );
 								}
 
 								// Ensure that the logs are placed into the correct DB

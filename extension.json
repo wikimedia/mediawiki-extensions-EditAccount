@@ -25,11 +25,20 @@
 		"editaccount"
 	],
 	"SpecialPages": {
-		"CloseAccount": "CloseAccount",
+		"CloseAccount": {
+			"class": "CloseAccount",
+			"services": [
+				"UserGroupManager",
+				"UserNameUtils"
+			]
+		},
 		"EditAccount": {
 			"class": "EditAccount",
 			"services": [
-				"UserOptionsManager"
+				"PasswordFactory",
+				"UserNameUtils",
+				"UserOptionsManager",
+				"MainWANObjectCache"
 			]
 		}
 	},
