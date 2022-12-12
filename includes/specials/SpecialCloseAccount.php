@@ -11,6 +11,7 @@
  * @see https://bugzilla.shoutwiki.com/show_bug.cgi?id=294
  */
 
+use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserGroupManager;
 use MediaWiki\User\UserNameUtils;
 
@@ -18,15 +19,17 @@ use MediaWiki\User\UserNameUtils;
 class CloseAccount extends EditAccount {
 
 	/**
-	 * @var User User object for the account that is to be disabled
+	 * @var null|User User object for the account that is to be disabled
 	 */
-	public $mUser;
+	public ?User $mUser;
 
-	/** @var UserGroupManager */
-	private $userGroupManager;
+	/**
+	 * @var UserGroupManager
+	 */
+	private UserGroupManager $userGroupManager;
 
 	/** @var UserNameUtils */
-	private $userNameUtils;
+	private UserNameUtils $userNameUtils;
 
 	/**
 	 * Constructor -- set up the new special page
@@ -48,7 +51,7 @@ class CloseAccount extends EditAccount {
 	 *
 	 * @return string
 	 */
-	public function getGroupName() {
+	public function getGroupName(): string {
 		return 'users';
 	}
 
@@ -57,7 +60,7 @@ class CloseAccount extends EditAccount {
 	 *
 	 * @return string Special page description
 	 */
-	public function getDescription() {
+	public function getDescription(): string {
 		return $this->msg( 'editaccount-general-description' )->plain();
 	}
 
@@ -67,7 +70,7 @@ class CloseAccount extends EditAccount {
 	 *
 	 * @return bool
 	 */
-	public function isListed() {
+	public function isListed(): bool {
 		$user = $this->getUser();
 		$effectiveGroups = $this->userGroupManager->getUserEffectiveGroups( $user );
 		$isStaff = in_array( 'staff', $effectiveGroups );
@@ -77,9 +80,9 @@ class CloseAccount extends EditAccount {
 	/**
 	 * Show the special page
 	 *
-	 * @param string|null $par Parameter (user name) passed to the page or null
+	 * @param string|null $subPage Parameter (user name) passed to the page or null
 	 */
-	public function execute( $par ) {
+	public function execute( $subPage ) {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 		$user = $this->getUser();
@@ -119,7 +122,7 @@ class CloseAccount extends EditAccount {
 
 		// Check if user name is an existing user
 		if ( $this->userNameUtils->isValid( $userName ) ) {
-			$this->mUser = User::newFromName( $userName );
+			$this->mUser = MediaWikiServices::getInstance()->getUserFactory()->newFromName( $userName );
 		}
 
 		$changeReason = $request->getVal( 'wpReason' );
@@ -135,7 +138,7 @@ class CloseAccount extends EditAccount {
 			$out->addHTML(
 				"<fieldset>\n<legend>" . $this->msg( 'editaccount-status' )->escaped() .
 				'</legend>' .
-				Xml::element( 'span', [ 'style' => "color: {$color}; font-weight: bold;" ], $this->mStatusMsg ) .
+				Xml::element( 'span', [ 'style' => "color: $color; font-weight: bold;" ], $this->mStatusMsg ) .
 				'</fieldset>'
 			);
 		} else {
