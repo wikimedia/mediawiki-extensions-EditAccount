@@ -1,8 +1,8 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserOptionsManager;
-use Wikimedia\AtEase\AtEase;
 
 /**
  * Main logic of the EditAccount extension
@@ -18,28 +18,42 @@ use Wikimedia\AtEase\AtEase;
 class EditAccount extends SpecialPage {
 
 	/** @var User|null */
-	public $mUser = null;
+	public ?User $mUser = null;
 	/** @var bool|null */
-	public $mStatus = null;
-	/** @var string */
-	public $mStatusMsg;
+	public ?bool $mStatus = null;
 	/** @var string|null */
-	public $mStatusMsg2 = null;
+	public ?string $mStatusMsg = null;
+	/** @var string|null */
+	public ?string $mStatusMsg2 = null;
 	/** @var User|null */
-	public $mTempUser = null;
+	public ?User $mTempUser = null;
+
+	/** @var PasswordFactory */
+	private PasswordFactory $passwordFactory;
+
+	/** @var UserNameUtils */
+	private UserNameUtils $userNameUtils;
 
 	/** @var UserOptionsManager */
-	private $userOptionsManager;
+	private UserOptionsManager $userOptionsManager;
 
 	/**
+	 * @param PasswordFactory $passwordFactory
+	 * @param UserNameUtils $userNameUtils
 	 * @param UserOptionsManager $userOptionsManager
 	 */
-	public function __construct( UserOptionsManager $userOptionsManager ) {
+	public function __construct(
+		PasswordFactory $passwordFactory,
+		UserNameUtils $userNameUtils,
+		UserOptionsManager $userOptionsManager
+	) {
 		parent::__construct( 'EditAccount', 'editaccount' );
+		$this->passwordFactory = $passwordFactory;
+		$this->userNameUtils = $userNameUtils;
 		$this->userOptionsManager = $userOptionsManager;
 	}
 
-	public function doesWrites() {
+	public function doesWrites(): bool {
 		return true;
 	}
 
@@ -48,7 +62,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return string
 	 */
-	public function getGroupName() {
+	public function getGroupName(): string {
 		return 'users';
 	}
 
@@ -58,7 +72,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return string Special page description
 	 */
-	public function getDescription() {
+	public function getDescription(): string {
 		if ( $this->getUser()->isAllowed( 'editaccount' ) ) {
 			return $this->msg( 'editaccount' )->plain();
 		} else {
@@ -69,12 +83,13 @@ class EditAccount extends SpecialPage {
 	/**
 	 * Show the special page
 	 *
-	 * @param string|null $par Parameter (user name) passed to the page or null
+	 * @param string|null $subPage Parameter (user name) passed to the page or null
 	 */
-	public function execute( $par ) {
+	public function execute( $subPage ) {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 		$user = $this->getUser();
+		$services = MediaWikiServices::getInstance();
 
 		// Redirect mortals to Special:CloseAccount
 		if ( !$user->isAllowed( 'editaccount' ) ) {
@@ -98,7 +113,7 @@ class EditAccount extends SpecialPage {
 		$out->setPageTitle( $this->getDescription() );
 
 		// Get name to work on. Subpage is supported, but form submit name trumps
-		$userName = $request->getVal( 'wpUserName', $par );
+		$userName = $request->getVal( 'wpUserName', $subPage );
 		$action = $request->getVal( 'wpAction' );
 
 		if ( $userName !== null ) {
@@ -108,9 +123,11 @@ class EditAccount extends SpecialPage {
 			$userName = $this->getLanguage()->ucfirst( $userName );
 
 			// Check if user name is an existing user
-			if ( MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $userName ) ) {
-				$this->mUser = User::newFromName( $userName );
-				$id = $this->mUser->idFromName( $userName );
+			if ( $this->userNameUtils->isValid( $userName ) ) {
+				$userFactory = $services->getUserFactory();
+				$this->mUser = $userFactory->newFromName( $userName );
+				$actor = $services->getUserIdentityLookup()->getUserIdentityByName( $userName );
+				$id = $actor ? $actor->getId() : null;
 
 				if ( empty( $action ) ) {
 					$action = 'displayuser';
@@ -124,7 +141,7 @@ class EditAccount extends SpecialPage {
 
 					if ( $this->mTempUser ) {
 						$id = $this->mTempUser->getId();
-						$this->mUser = User::newFromId( $id );
+						$this->mUser = $userFactory->newFromId( $id );
 					} else {
 						$this->mStatus = false;
 						$this->mStatusMsg = $this->msg( 'editaccount-nouser', $userName )->text();
@@ -196,6 +213,7 @@ class EditAccount extends SpecialPage {
 		$templateClassName = 'EditAccount' . $template . 'Template';
 		$tmpl = new $templateClassName;
 
+		$linkRenderer = $services->getLinkRenderer();
 		$templateVariables = [
 			'status' => $this->mStatus,
 			'statusMsg' => $this->mStatusMsg,
@@ -211,9 +229,9 @@ class EditAccount extends SpecialPage {
 			'isDisabled' => null,
 			'isAdopter' => null,
 			'returnURL' => $this->getFullTitle()->getFullURL(),
-			'logLink' => Linker::linkKnown(
+			'logLink' => $linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Log', 'editaccnt' ),
-				$this->msg( 'log-name-editaccnt' )->escaped()
+				$this->msg( 'log-name-editaccnt' )
 			),
 			'userStatus' => null,
 			'emailStatus' => null,
@@ -278,8 +296,7 @@ class EditAccount extends SpecialPage {
 	 * @param string $changeReason Reason for change
 	 * @return bool True on success, false on failure (i.e. if we were given an invalid email address)
 	 */
-	public function setEmail( $email, $changeReason = '' ) {
-		$oldEmail = $this->mUser->getEmail();
+	public function setEmail( string $email, string $changeReason = '' ): bool {
 		if ( Sanitizer::validateEmail( $email ) || $email == '' ) {
 			if ( $this->mTempUser ) {
 				if ( $email == '' ) {
@@ -311,7 +328,7 @@ class EditAccount extends SpecialPage {
 				$logEntry->setTarget( $this->mUser->getUserPage() );
 				// JP 13 April 2013: not sure if this is the correct one, CHECKME
 				$logEntry->setComment( $changeReason );
-				$logId = $logEntry->insert();
+				$logEntry->insert();
 
 				if ( $email == '' ) {
 					$this->mStatusMsg = $this->msg( 'editaccount-success-email-blank', $this->mUser->mName )->text();
@@ -336,7 +353,7 @@ class EditAccount extends SpecialPage {
 	 * @param string $changeReason Reason for change
 	 * @return bool True on success, false on failure
 	 */
-	public function setPassword( $pass, $changeReason = '' ) {
+	public function setPassword( $pass, string $changeReason = '' ): bool {
 		if ( $this->setPasswordForUser( $this->mUser, $pass ) ) {
 			// Save the new settings
 			if ( $this->mTempUser ) {
@@ -354,7 +371,7 @@ class EditAccount extends SpecialPage {
 			$logEntry->setTarget( $this->mUser->getUserPage() );
 			// JP 13 April 2013: not sure if this is the correct one, CHECKME
 			$logEntry->setComment( $changeReason );
-			$logId = $logEntry->insert();
+			$logEntry->insert();
 
 			// And finally, inform the user that everything went as planned
 			$this->mStatusMsg = $this->msg( 'editaccount-success-pass', $this->mUser->mName )->text();
@@ -373,13 +390,13 @@ class EditAccount extends SpecialPage {
 	 * @param string $password
 	 * @return bool
 	 */
-	public static function setPasswordForUser( User $user, $password ) {
+	public function setPasswordForUser( User $user, string $password ): bool {
 		if ( !$user->getId() ) {
 			return false;
 			// throw new MWException( "Passed User has not been added to the database yet!" );
 		}
 
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 		$row = $dbw->selectRow(
 			'user',
 			'user_id',
@@ -391,8 +408,7 @@ class EditAccount extends SpecialPage {
 			// throw new MWException( "Passed User has an ID but is not in the database?" );
 		}
 
-		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
-		$passwordHash = $passwordFactory->newFromPlaintext( $password );
+		$passwordHash = $this->passwordFactory->newFromPlaintext( $password );
 		$dbw->update(
 			'user',
 			[ 'user_password' => $passwordHash->toString() ],
@@ -410,7 +426,7 @@ class EditAccount extends SpecialPage {
 	 * @param string $changeReason Reason for change
 	 * @return bool True on success, false on failure
 	 */
-	public function setRealName( $realName, $changeReason = '' ) {
+	public function setRealName( $realName, string $changeReason = '' ): bool {
 		$this->mUser->setRealName( $realName );
 		$this->mUser->saveSettings();
 
@@ -423,7 +439,7 @@ class EditAccount extends SpecialPage {
 			$logEntry->setTarget( $this->mUser->getUserPage() );
 			// JP 13 April 2013: not sure if this is the correct one, CHECKME
 			$logEntry->setComment( $changeReason );
-			$logId = $logEntry->insert();
+			$logEntry->insert();
 
 			// And finally, inform the user that everything went as planned
 			$this->mStatusMsg = $this->msg( 'editaccount-success-realname', $this->mUser->mName )->text();
@@ -442,7 +458,7 @@ class EditAccount extends SpecialPage {
 	 * @param string $changeReason Reason for change
 	 * @return bool True on success, false on failure
 	 */
-	public function closeAccount( $changeReason = '' ) {
+	public function closeAccount( string $changeReason = '' ): bool {
 		// Set flag for Special:Contributions
 		// NOTE: requires FlagClosedAccounts.php to be included separately
 		if ( defined( 'CLOSED_ACCOUNT_FLAG' ) ) {
@@ -453,15 +469,7 @@ class EditAccount extends SpecialPage {
 			$this->mUser->setRealName( '' );
 		}
 
-		// remove user's avatar
-		if ( class_exists( 'wAvatar' ) ) {
-			// SocialProfile
-			// Commented out because as of 17 June 2013, ShoutWiki has only 8
-			// wikis with SocialProfile enabled and this method is probably
-			// *very* expensive since it does operations for everything in the
-			// images directory...
-			//$this->removeSocialProfileAvatars();
-		} elseif ( class_exists( 'Masthead' ) ) {
+		if ( class_exists( 'Masthead' ) ) {
 			// Wikia's avatar extension
 			$avatar = Masthead::newFromUser( $this->mUser );
 			if ( !$avatar->isDefault() ) {
@@ -484,7 +492,7 @@ class EditAccount extends SpecialPage {
 		$id = $this->mUser->getId();
 
 		// Reload user
-		$this->mUser = User::newFromId( $id );
+		$this->mUser = MediaWikiServices::getInstance()->getUserFactory()->newFromId( $id );
 
 		if ( $this->mUser->getEmail() == '' ) {
 			// ShoutWiki patch begin
@@ -509,7 +517,7 @@ class EditAccount extends SpecialPage {
 			$logEntry->setTarget( $this->mUser->getUserPage() );
 			// JP 13 April 2013: not sure if this is the correct one, CHECKME
 			$logEntry->setComment( $changeReason );
-			$logId = $logEntry->insert();
+			$logEntry->insert();
 
 			// All clear!
 			$this->mStatusMsg = $this->msg( 'editaccount-success-close', $this->mUser->mName )->text();
@@ -526,7 +534,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return bool Always true
 	 */
-	public function clearUnsubscribe() {
+	public function clearUnsubscribe(): bool {
 		$this->userOptionsManager->setOption( $this->mUser, 'unsubscribed', null );
 		$this->userOptionsManager->saveOptions( $this->mUser );
 
@@ -540,7 +548,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return bool Always true
 	 */
-	public function clearDisable() {
+	public function clearDisable(): bool {
 		$this->userOptionsManager->setOption( $this->mUser, 'disabled', null );
 		$this->userOptionsManager->setOption( $this->mUser, 'disabled_date', null );
 		$this->userOptionsManager->saveOptions( $this->mUser );
@@ -586,7 +594,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return bool Always true
 	 */
-	public function toggleAdopterStatus() {
+	public function toggleAdopterStatus(): bool {
 		$this->userOptionsManager->setOption(
 			$this->mUser,
 			'AllowAdoption',
@@ -605,7 +613,7 @@ class EditAccount extends SpecialPage {
 	 *
 	 * @return string
 	 */
-	public function generateRandomScrambledPassword() {
+	public function generateRandomScrambledPassword(): string {
 		// Password requirements need a capital letter, a digit, and a lowercase letter.
 		// wfGenerateToken() returns a 32 char hex string, which will almost
 		// always satisfy the digit/letter but not always.
@@ -613,133 +621,6 @@ class EditAccount extends SpecialPage {
 		// scrambled password.
 		$REQUIRED_CHARS = 'A1a';
 		return ( self::generateToken() . $REQUIRED_CHARS );
-	}
-
-	/**
-	 * Remove SocialProfile avatars from all wikis.
-	 *
-	 * @note The foreach loop is almost a verbatim copy-paste of the private method
-	 * RemoveAvatar::deleteImage() from extensions/SocialProfile/UserProfile/SpecialRemoveAvatar.php
-	 * That method should be made public and this should then be rewritten
-	 * accordingly.
-	 *
-	 * @return bool Always true
-	 */
-	public function removeSocialProfileAvatars() {
-		// phpcs:ignore MediaWiki.NamingConventions.ValidGlobalName.allowedPrefix
-		global $IP, $wgUploadAvatarInRecentChanges;
-
-		// @see http://www.developerfusion.com/code/2058/determine-execution-time-in-php/
-		$mtime = microtime();
-		$mtime = explode( ' ', $mtime );
-		$mtime = $mtime[1] + $mtime[0];
-		$startTime = $mtime;
-
-		// @todo FIXME: horribly ShoutWiki-specific
-		$path = $IP . '/images/';
-		$handle = opendir( $path );
-		if ( $handle ) {
-			$file = readdir( $handle );
-			while ( $file !== false ) {
-				// do something with the file
-				// note that '.' and '..' is returned even
-				if ( $file != '.' && $file != '..' ) {
-					$fullpath = $path . $file;
-					// If this is a directory...
-					if ( is_dir( $fullpath ) ) {
-						// change our current working directory to it, then!
-						chdir( $fullpath );
-						// Look for the avatars directory
-						if ( is_dir( getcwd() . '/avatars' ) ) {
-							// Split the current directory name from right to left
-							// @see http://stackoverflow.com/questions/717328/how-to-explode-string-right-to-left
-							$result = array_map( 'strrev', explode( '/', strrev( getcwd() ) ) );
-							// $result[0] should now hold the image directory
-							// name, from which we can construct the DB name
-							// easily
-							if ( isset( $result[0] ) && $result[0] ) {
-								// Oh fuck, the directory name contains a
-								// period (i.e. "fi.starwars")
-								if ( strpos( $result[0], '.' ) !== false ) {
-									$splitDirName = explode( '.', $result[0] );
-									// for fi.starwars, this would look like "starwars_fiwiki"
-									// which is the expected result.
-									// Phew, finally!
-									$dbName = $splitDirName[1] . '_' . $splitDirName[0] . '_wiki';
-								} else {
-									// Just append "_wiki" to the image dir
-									// name to get the DB name.
-									$dbName = $result[0] . '_wiki';
-								}
-								// Normalization...
-								$dbName = str_replace( '-', '_', $dbName );
-
-								// ACTUALLY REMOVE THE DAMN THINGS!
-								foreach ( [ 's', 'm', 'ml', 'l' ] as $size ) {
-									$avatar = new wAvatar( $this->mUser->getId(), $size );
-									$files = glob(
-										getcwd() . '/avatars/' . $dbName . '_' .
-										$this->mUser->getId() . '_' . $size . '*'
-									);
-									AtEase::suppressWarnings();
-									$img = basename( $files[0] );
-									AtEase::restoreWarnings();
-									if ( $img && $img[0] ) {
-										unlink( getcwd() . '/avatars/' . $img );
-									}
-
-									// clear cache
-									$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-									$key = $cache->makeKey( 'user', 'profile', 'avatar', $this->mUser->getId(), $size );
-									$cache->delete( $key );
-								}
-
-								// Ensure that the logs are placed into the correct DB
-								$dbw = wfGetDB( DB_PRIMARY, [], $dbName );
-								// Log it!
-								// Note: old-school logging style is
-								// intentionally used here because it's what
-								// SocialProfile uses, too.
-								$log = new LogPage( 'avatar' );
-								if ( !$wgUploadAvatarInRecentChanges ) {
-									$log->updateRecentChanges = false;
-								}
-
-								$logMsg = $this->msg(
-									'user-profile-picture-log-delete-entry',
-									$this->mUser->getName()
-								);
-								// It should never be empty or disabled, but...
-								if ( !$logMsg->isEmpty() || !$logMsg->isDisabled() ) {
-									// @phan-suppress-next-line PhanParamTooFew
-									$log->addEntry(
-										'avatar',
-										$this->getUser()->getUserPage(),
-										$logMsg->text()
-									);
-								}
-							}
-						} else {
-							// error_log( getcwd() . '/avatars/ does not exist, skipping.' );
-						}
-					}
-				}
-			}
-			closedir( $handle );
-		}
-
-		$mtime = microtime();
-		$mtime = explode( ' ', $mtime );
-		$mtime = $mtime[1] + $mtime[0];
-		$endTime = $mtime;
-		$totalTime = ( $endTime - $startTime );
-
-		error_log(
-			__METHOD__ . ': checking for (and possibly deleting) avatars took ' .
-				$totalTime
-		);
-
-		return true;
 	}
 
 	/**
@@ -780,7 +661,7 @@ class EditAccount extends SpecialPage {
 	 * @param User $user
 	 * @return bool|void True if it is disabled, otherwise false
 	 */
-	public static function isAccountDisabled( $user ) {
+	public static function isAccountDisabled( User $user ) {
 		if ( !class_exists( 'GlobalPreferences' ) ) {
 			error_log( 'Cannot use the GlobalPreferences class in ' . __METHOD__ );
 			return;
@@ -806,7 +687,7 @@ class EditAccount extends SpecialPage {
 	 * @param string $salt
 	 * @return string
 	 */
-	public static function generateToken( $salt = '' ) {
+	public static function generateToken( string $salt = '' ): string {
 		$salt = serialize( $salt );
 		return md5( mt_rand( 0, 0x7fffffff ) . $salt );
 	}

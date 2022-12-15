@@ -12,20 +12,38 @@
  */
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserGroupManager;
+use MediaWiki\User\UserNameUtils;
 
 // @note Extends EditAccount so that we don't have to duplicate closeAccount() etc.
 class CloseAccount extends EditAccount {
 
 	/**
-	 * @var User User object for the account that is to be disabled
+	 * @var null|User User object for the account that is to be disabled
 	 */
-	public $mUser;
+	public ?User $mUser;
+
+	/**
+	 * @var UserGroupManager
+	 */
+	private UserGroupManager $userGroupManager;
+
+	/** @var UserNameUtils */
+	private UserNameUtils $userNameUtils;
 
 	/**
 	 * Constructor -- set up the new special page
+	 *
+	 * @param UserGroupManager $userGroupManager
+	 * @param UserNameUtils $userNameUtils
 	 */
-	public function __construct() {
+	public function __construct(
+		UserGroupManager $userGroupManager,
+		UserNameUtils $userNameUtils
+	) {
 		SpecialPage::__construct( 'CloseAccount' );
+		$this->userGroupManager = $userGroupManager;
+		$this->userNameUtils = $userNameUtils;
 	}
 
 	/**
@@ -33,7 +51,7 @@ class CloseAccount extends EditAccount {
 	 *
 	 * @return string
 	 */
-	public function getGroupName() {
+	public function getGroupName(): string {
 		return 'users';
 	}
 
@@ -42,7 +60,7 @@ class CloseAccount extends EditAccount {
 	 *
 	 * @return string Special page description
 	 */
-	public function getDescription() {
+	public function getDescription(): string {
 		return $this->msg( 'editaccount-general-description' )->plain();
 	}
 
@@ -52,11 +70,9 @@ class CloseAccount extends EditAccount {
 	 *
 	 * @return bool
 	 */
-	public function isListed() {
+	public function isListed(): bool {
 		$user = $this->getUser();
-		$effectiveGroups = MediaWikiServices::getInstance()
-			->getUserGroupManager()
-			->getUserEffectiveGroups( $user );
+		$effectiveGroups = $this->userGroupManager->getUserEffectiveGroups( $user );
 		$isStaff = in_array( 'staff', $effectiveGroups );
 		return $user->isRegistered() && !$isStaff;
 	}
@@ -64,9 +80,9 @@ class CloseAccount extends EditAccount {
 	/**
 	 * Show the special page
 	 *
-	 * @param string|null $par Parameter (user name) passed to the page or null
+	 * @param string|null $subPage Parameter (user name) passed to the page or null
 	 */
-	public function execute( $par ) {
+	public function execute( $subPage ) {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 		$user = $this->getUser();
@@ -86,9 +102,7 @@ class CloseAccount extends EditAccount {
 		}
 
 		// Redirect staff members to Special:EditAccount instead
-		$effectiveGroups = MediaWikiServices::getInstance()
-			->getUserGroupManager()
-			->getUserEffectiveGroups( $user );
+		$effectiveGroups = $this->userGroupManager->getUserEffectiveGroups( $user );
 		if ( in_array( 'staff', $effectiveGroups ) ) {
 			$out->redirect( SpecialPage::getTitleFor( 'EditAccount' )->getFullURL() );
 		}
@@ -107,8 +121,8 @@ class CloseAccount extends EditAccount {
 		$userName = $this->getLanguage()->ucfirst( $userName );
 
 		// Check if user name is an existing user
-		if ( MediaWikiServices::getInstance()->getUserNameUtils()->isValid( $userName ) ) {
-			$this->mUser = User::newFromName( $userName );
+		if ( $this->userNameUtils->isValid( $userName ) ) {
+			$this->mUser = MediaWikiServices::getInstance()->getUserFactory()->newFromName( $userName );
 		}
 
 		$changeReason = $request->getVal( 'wpReason' );
@@ -124,7 +138,7 @@ class CloseAccount extends EditAccount {
 			$out->addHTML(
 				"<fieldset>\n<legend>" . $this->msg( 'editaccount-status' )->escaped() .
 				'</legend>' .
-				Xml::element( 'span', [ 'style' => "color: {$color}; font-weight: bold;" ], $this->mStatusMsg ) .
+				Xml::element( 'span', [ 'style' => "color: $color; font-weight: bold;" ], $this->mStatusMsg ) .
 				'</fieldset>'
 			);
 		} else {

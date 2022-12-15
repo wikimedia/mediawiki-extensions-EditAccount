@@ -19,6 +19,9 @@
  * $IP/extensions/EditAccount and we don't need to move this file to
  * $IP/maintenance/.
  */
+
+use MediaWiki\MediaWikiServices;
+
 ini_set( 'include_path', __DIR__ . '/../../../maintenance' );
 
 require_once 'Maintenance.php';
@@ -26,14 +29,19 @@ require_once 'Maintenance.php';
 class AddEntriesForAllDisabledUsers extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->mDescription = 'Updates global preferences for accounts that have their real name set to "Account Disabled".';
+		$this->addDescription( 'Updates global preferences for accounts that have their real name set to "Account Disabled".' );
 		$this->addOption( 'doit', 'Actually perform the database updates, too, instead of doing a dry run?' );
 
 		$this->requireExtension( 'EditAccount' );
 	}
 
 	public function execute() {
-		$dbw = wfGetDB( DB_PRIMARY );
+		if ( !class_exists( 'GlobalPreferences' ) ) {
+			$this->error( 'This script requires the GlobalPreferences extension to be installed' );
+			return;
+		}
+
+		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 		$res = $dbw->select(
 			'user',
 			[ 'user_id', 'user_name' ],
@@ -51,7 +59,7 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 			foreach ( $res as $row ) {
 				// Are we in it for real?
 				if ( $this->getOption( 'doit' ) ) {
-					$res = $dbw->update(
+					$dbw->update(
 						'global_preferences',
 						[
 							'gp_property' => 'disabled',
@@ -63,7 +71,7 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 						__METHOD__
 					);
 
-					$res = $dbw->update(
+					$dbw->update(
 						'global_preferences',
 						[
 							'gp_property' => 'disabled_date',
@@ -76,7 +84,7 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 					);
 				}
 
-				$this->output( "Marked {$row->user_name} (UID: {$row->user_id}) as disabled\n" );
+				$this->output( "Marked $row->user_name (UID: $row->user_id) as disabled\n" );
 			}
 		}
 
