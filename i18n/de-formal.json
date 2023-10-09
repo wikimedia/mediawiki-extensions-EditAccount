@@ -1,8 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"LWChris",
-			"Kghbln"
+			"Kghbln",
+			"LWChris"
 		]
 	},
 	"editaccount-usage": "User-Daten werden separat für jedes Wiki gespeichert. Wenn Sie ein Passwort oder E-Mail-Adresse zurücksetzen, wird der Speicher nur für dieses Wiki gelöscht werden. Bitte schicken Sie den Benutzer zu diesem Wiki zum Einzuloggen mit neuem Passwort, um Cache-Probleme zu vermeiden.",

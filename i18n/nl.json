@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Mainframe98",
+			"McDutchie",
 			"SPQRobin",
 			"Siebrand",
-			"Tjcool007",
-			"Mainframe98"
+			"Tjcool007"
 		]
 	},
 	"editaccount": "Gebruiker bewerken",
@@ -12,7 +13,7 @@
 	"editaccount-user-id": "Gebruikers ID: $1",
 	"editaccount-user-reg-date": "Datum account registratie: $1",
 	"editaccount-return": "Terug",
-	"editaccount-desc": "Stelt stafleden in staat gebruikersinformatie te beheren",
+	"editaccount-desc": "Stelt bevoorrechte gebruikers in staat [[Special:EditAccount|gebruikersinformatie te beheren]]",
 	"editaccount-frame-manage": "Gebruiker bewerken",
 	"editaccount-frame-usage": "Let op",
 	"editaccount-usage": "Gebruikersgevens worden voor iedere wiki apart in een cache bijgehouden.\nAls u een wachtwoord of e-mailadres opnieuw instelt, wordt alleen de cache voor deze wiki ongeldig gemaakt.\nLaat de gebruiker bij deze wiki aanmelden met een nieuw wachtwoord om problemen met de cache te voorkomen.",
@@ -61,7 +62,7 @@
 	"editaccount-status-unconfirmed": "Niet bevestigd",
 	"editaccount-status-realuser": "Echte gebruiker",
 	"editaccount-status-tempuser": "Tijdelijke gebruiker",
-	"editaccount-error-tempuser-email": "Tijdelijke gebruikers moeten een e-mailadres opgeven. Geef een e-mailadres op.",
+	"editaccount-error-tempuser-email": "Voor tijdelijke gebruikers mag het e-mailadresveld niet leeg blijven. Voer een e-mailadres in.",
 	"editaccount-email-change-requested": "De gebruiker heeft via de voorkeuren een wijziging van het e-mailadres naar $1 aangevraagd. Voer het aangevraagde e-mailadres in het onderstaande veld in en klik op \"{{int:editaccount-submit-email}}\" om de gevraagde wijziging te bevestigen.",
 	"log-name-editaccnt": "Logboek gebruikers",
 	"log-description-editaccnt": "Op deze pagina staan wijzigingen in gebruikersvoorkeuren die door stafleden van ShoutWiki zijn gemaakt.",

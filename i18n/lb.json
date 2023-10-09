@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"editaccount": "Kont änneren",
@@ -29,10 +30,14 @@
 	"editaccount-success-pass": "D'Passwuert fir de Benotzerkont $1 gouf geännert.",
 	"editaccount-success-realname": "De richtegen Numm fir de Benotzerkont $1 gouf geännert.",
 	"editaccount-success-close": "Desaktivéierte Benotzerkont: $1",
+	"editaccount-error-email": "D'E-Mail-Adress gouf net geännert. Probéiert méi spéiter nach eng Kéier.",
+	"editaccount-error-pass": "D'Passwuert gouf net geännert. Probéiert méi spéit nach eng Kéier.",
+	"editaccount-error-realname": "De richtegen Numm gouf net geännert. Probéiert méi spéit nach eng Kéier.",
 	"editaccount-invalid-email": "\"$1\" ass keng valabel E-Mailadress!",
 	"editaccount-nouser": "De Kont \"$1\" gëtt et net!",
 	"editaccount-requested": "Notiz: De Benotzer huet ugefrot fir de Benotzerkont zouzemaachen",
 	"editaccount-not-requested": "OPGEPASST: De Benotzer huet net gefrot fir de Benotzerkont zouzemaachen",
+	"editaccount-label-email-status": "E-Mail-Status: $1",
 	"editaccount-status-confirmed": "Confirméiert",
 	"editaccount-status-unconfirmed": "net-confirméiert",
 	"editaccount-status-realuser": "Richtege Benotzer",
@@ -42,7 +47,7 @@
 	"logentry-editaccnt-passchange": "$1 huet d'Passwuert vum Benotzer $3 geännert",
 	"logentry-editaccnt-realnamechange": "$1 huet de richtegen Numm vum Benotzer $3 geännert",
 	"logentry-editaccnt-closeaccnt": "$1 huet de Benotzerkont $3 desaktivéiert",
-	"edit-account-closed-flag": "Dëse Benotzerkont gouf global vu ShoutWiki desaktivéiert.",
+	"edit-account-closed-flag": "Dëse Benotzerkont gouf global vu {{SITENAME}} desaktivéiert.",
 	"action-editaccount": "Informatioune vun anere Benotzer änneren",
 	"right-editaccount": "Informatioune vun anere Benotzer änneren"
 }

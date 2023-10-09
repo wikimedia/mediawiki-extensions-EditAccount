@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"Brettchenweber",
 			"Jan Luca",
+			"Kghbln",
 			"LWChris",
+			"Metalhead64",
 			"PtM",
 			"Quedel",
 			"The Evil IP address",
-			"Tiin",
-			"Metalhead64",
-			"Kghbln"
+			"Tiin"
 		]
 	},
 	"editaccount": "Benutzerkonto bearbeiten",
@@ -32,7 +33,7 @@
 	"editaccount-label-toggleadopt-prevent": "Automatische Adoption verhindern",
 	"editaccount-label-toggleadopt-allow": "Automatische Adoption gestatten",
 	"editaccount-label-reason": "Grund:",
-	"editaccount-submit-email": "E-Mail-Adresse speichern",
+	"editaccount-submit-email": "E-Mail-Adresse speichern und bestätigen",
 	"editaccount-submit-pass": "Passwort speichern",
 	"editaccount-submit-realname": "Bürgerlichen Namen speichern",
 	"editaccount-submit-clearunsub": "Abbestellung aufheben",
@@ -42,8 +43,8 @@
 	"editaccount-usage-close": "Ein Benutzerkonto kann auch deaktiviert werden, indem das Passwort ohne Benachrichtigung des Kontobenutzers geändert sowie die E-Mail-Adresse gelöscht wird. Diese Daten sind dann verloren und können nicht wiederhergestellt werden.",
 	"editaccount-warning-close": "<b>Achtung!</b> Du bist gerade dabei, das Konto von Benutzer <b>$1</b> dauerhaft zu deaktivieren. Dies kann nicht rückgängig gemacht werden. Bist du sicher, dass du das tun möchtest?",
 	"editaccount-status": "Statusmeldung",
-	"editaccount-success-email": "Die E-Mail-Adresse des Benutzerkontos $1 wurde erfolgreich zu $2 geändert.",
-	"editaccount-success-email-blank": "Die E-Mail-Adresse des Benutzerkontos $1 wurde erfolgreich entfernt.",
+	"editaccount-success-email": "Die E-Mail-Adresse des Benutzerkontos $1 wurde in $2 geändert.",
+	"editaccount-success-email-blank": "E-Mail-Adresse für Konto $1 entfernt.",
 	"editaccount-success-pass": "Das Passwort des Benutzerkontos $1 wurde erfolgreich geändert.",
 	"editaccount-success-realname": "Der bürgerliche Name des Benutzerkontos $1 wurde erfolgreich geändert.",
 	"editaccount-success-unsub": "Das Bit zum Abbestellen des Benutzerkontos $1 wurde erfolgreich entfernt.",
@@ -51,9 +52,9 @@
 	"editaccount-success-toggleadopt": "Die Berechtigung zur Adoption des Benutzerkontos $1 wurde erfolgreich entfernt.",
 	"editaccount-success-close": "Das Benutzerkonto $1 wurde erfolgreich deaktiviert.",
 	"editaccount-error-email": "Die E-Mail-Adresse des Benutzerkontos wurde nicht geändert. Versuche es bitte erneut oder kontaktiere den Systemadministrator.",
-	"editaccount-error-pass": "Das Passwort des Benutzerkontos wurde nicht geändert. Versuche es bitte erneut oder kontaktiere den Systemadministrator.",
+	"editaccount-error-pass": "Das Passwort des Benutzerkontos wurde nicht geändert. Versuche es bitte später erneut.",
 	"editaccount-error-realname": "Der bürgerliche Name des Benutzerkontos wurde nicht geändert. Versuche es bitte erneut oder kontaktiere den Systemadministrator.",
-	"editaccount-error-close": "Beim Schließen des Benutzerkontos trat ein Problem auf. Versuche es bitte erneut oder kontaktiere den Systemadministrator.",
+	"editaccount-error-close": "Beim Schließen des Benutzerkontos trat ein Problem auf. Versuche es bitte später erneut.",
 	"editaccount-invalid-email": "„$1“ ist keine gültige E-Mail-Adresse!",
 	"editaccount-nouser": "Das Benutzerkonto „$1“ ist nicht vorhanden!",
 	"editaccount-not-loaded": "Fehler: Die Benutzerdaten konnten nicht ordnungsgemäß geladen werden. Bitte versuche, die Seite neu zu laden.",
@@ -69,12 +70,12 @@
 	"editaccount-error-tempuser-email": "Vorläufige Benutzer müssen eine E-Mail-Adresse angeben. Bitte gib eine E-Mail-Adresse an.",
 	"editaccount-email-change-requested": "Der Benutzer änderte die E-Mail-Einstellungen zu $1. Um die Änderung der E-Mail-Adresse zu bewilligen, muss die angefragte E-Mail-Adresse in das untere Feld eingegeben und danach „{{int:editaccount-submit-email}}“ angeklickt werden.",
 	"log-name-editaccnt": "Benutzerkonten-Logbuch",
-	"log-description-editaccnt": "Diese Seite listet Änderungen von Benutzereinstellungen durch berechtigte Benutzer auf.",
+	"log-description-editaccnt": "Auf dieser Seite werden Änderungen aufgeführt, die von Benutzern von {{SITENAME}} an Benutzerinformationen vorgenommen wurden.",
 	"logentry-editaccnt-mailchange": "$1 änderte die E-Mail-Adresse von Benutzer $3",
 	"logentry-editaccnt-passchange": "$1 änderte das Passwort von Benutzer $3",
 	"logentry-editaccnt-realnamechange": "$1 änderte den bürgerlichen Namen von Benutzer $3",
 	"logentry-editaccnt-closeaccnt": "$1 deaktivierte das Konto $3",
-	"edit-account-closed-flag": "Dieses Benutzerkonto wurde über alle Wikis hinweg deaktiviert.",
+	"edit-account-closed-flag": "Dieses Konto wurde von {{SITENAME}} global deaktiviert.",
 	"action-editaccount": "die Informationen anderer Benutzer zu bearbeiten",
 	"right-editaccount": "Bearbeiten von Informationen in fremden Benutzerkonten"
 }
