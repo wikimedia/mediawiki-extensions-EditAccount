@@ -6,7 +6,8 @@
 			"Hydra",
 			"Hzy980512",
 			"Yfdyh000",
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"GuoPC"
 		]
 	},
 	"editaccount": "编辑账户",
@@ -40,7 +41,7 @@
 	"editaccount-usage-close": "您也可以通过打乱其密码，并移除电子邮件地址来禁用用户账户。注意该数据会丢失，并不可恢复。",
 	"editaccount-warning-close": "<b>小心！</b>您要永久地禁用用户<b>$1</b>的账户。这不能回退。您确定要这样做么？",
 	"editaccount-status": "状态消息",
-	"editaccount-success-email": "已更改账户$1的电子邮件地址为$2。",
+	"editaccount-success-email": "已更改账号$1的电子邮件地址为$2。",
 	"editaccount-success-email-blank": "已移除帐户$1的电子邮件地址。",
 	"editaccount-success-pass": "已更改帐户$1的密码。",
 	"editaccount-success-realname": "已更改帐户$1的真实姓名。",

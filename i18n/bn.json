@@ -27,7 +27,7 @@
 	"editaccount-submit-close": "অ্যাকাউন্ট বন্ধ করুন",
 	"editaccount-submit-button": "সংরক্ষণ",
 	"editaccount-status": "অবস্থার বার্তা",
-	"editaccount-success-email": "$1 থেকে $2-এ অ্যাকাউন্টের ই-মেইল ঠিকানা পরিবর্তিত হয়েছে।",
+	"editaccount-success-email": "$1-এর ই-মেইল ঠিকানা $2-এ পরিবর্তিত হয়েছে।",
 	"editaccount-success-close": "$1 অ্যাকাউন্ট নিস্ক্রিয় করা হয়েছে।",
 	"editaccount-not-requested": "সতর্কতা: ব্যবহারকারী অ্যাকাউন্ট বন্ধ করার অনুরোধ করেন নি",
 	"editaccount-label-account-status": "অ্যাকাউন্টের অবস্থা: $1",
@@ -38,7 +38,7 @@
 	"editaccount-status-tempuser": "অস্থায়ী ব্যবহারকারী",
 	"log-name-editaccnt": "ব্যবহারকারী অ্যাকাউন্টের লগ",
 	"logentry-editaccnt-realnamechange": "$1 ব্যবহারকারী $3-এর আসল নাম পরিবর্তন করেছেন",
-	"edit-account-closed-flag": "ShoutWiki দ্বারা এই অ্যাকাউন্টটি বৈশ্বিকভাবে অক্ষম করা হয়েছে।",
+	"edit-account-closed-flag": "{{SITENAME}} দ্বারা এই অ্যাকাউন্টটি বৈশ্বিকভাবে অক্ষম করা হয়েছে।",
 	"action-editaccount": "অন্য ব্যবহারকারীর তথ্য সম্পাদন করার",
 	"right-editaccount": "অন্য ব্যবহারকারীদের তথ্য সম্পাদন করা"
 }

@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ukabia"
+			"Ukabia",
+			"Oby Ezeilo"
 		]
 	},
-	"editaccount-submit-button": "Dònye"
+	"editaccount-submit-button": "Dònye",
+	"editaccount-success-email": "gbanwee adịresị imelu site n'akantụ $1 gaa n'akantụ $2",
+	"editaccount-success-email-blank": "wepụ adịresị imelu maka akaụntụ $!",
+	"editaccount-error-email": "agbanweghi imelu. nwaa ya ọzọ maọbụ kpọkuo ndị otu tech team"
 }
