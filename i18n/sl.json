@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"editaccount-return": "Vrnitev",
+	"editaccount-frame-usage": "Opombe",
+	"editaccount-usage": "Uporabniški podatki so za vsak viki shranjeni ločeno.\nKo ponastavite geslo ali e-pošto, bo predpomnilnik osvežen samo za ta viki.\nUporabnika usmerite na ta viki, da se prijavi z novo nastavljenim geslom in se izogne težavam s predpomnjenjem.",
+	"editaccount-label-email": "Nastavi nov e-poštni naslov",
+	"editaccount-label-reason": "Razlog:",
+	"editaccount-submit-email": "Shranite in potrdite e-poštni naslov",
+	"editaccount-usage-close": "Uporabniški račun lahko tudi onemogočite tako, da premešate njegovo geslo in odstranite e-poštni naslov. Upoštevajte, da bodo ti podatki izgubljeni in jih ne bo mogoče obnoviti.",
+	"editaccount-success-email": "Spremenjen e-poštni naslov za račun $1 v $2.",
+	"editaccount-success-email-blank": "Odstranjen e-poštni naslov za račun $1.",
+	"editaccount-error-email": "E-poštni naslov ni bila spremenjena. Poskusite znova pozneje.",
+	"editaccount-error-pass": "Geslo ni bilo spremenjeno. Poskusite znova pozneje.",
+	"editaccount-error-realname": "Resnično ime ni bilo spremenjeno. Poskusite znova pozneje.",
+	"editaccount-error-close": "Pri zapiranju računa je prišlo do težave. Poskusite znova pozneje.",
+	"editaccount-invalid-email": "»$1« ni veljaven e-poštni naslov!",
+	"editaccount-label-email-status": "Stanje e-pošte: $1",
+	"editaccount-error-tempuser-email": "Začasni uporabniki ne smejo imeti praznega polja za e-poštni naslov; vnesite e-poštni naslov.",
+	"editaccount-email-change-requested": "Uporabnik je prek nastavitev zahteval spremembo e-pošte v $1. Če želite za uporabnika potrditi zahtevano spremembo e-poštnega naslova, vnesite zahtevani e-poštni naslov v spodnje polje in kliknite »{{int:editaccount-submit-email}}«.",
+	"log-description-editaccnt": "Na tej strani so navedene spremembe uporabniških podatkov, ki jih je izvedlo osebje {{SITENAME}}.",
+	"logentry-editaccnt-mailchange": "$1 je spremenil_a e-poštni naslov uporabnika $3",
+	"edit-account-closed-flag": "Ta račun je globalno onemogočil_a {{SITENAME}}."
+}

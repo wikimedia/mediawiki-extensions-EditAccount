@@ -5,7 +5,8 @@
 			"Sovq",
 			"Woytecr",
 			"Chrumps",
-			"Railfail536"
+			"Railfail536",
+			"Rail"
 		]
 	},
 	"editaccount": "Edytuj konto",
@@ -39,7 +40,7 @@
 	"editaccount-usage-close": "Możesz także wyłączyć konto użytkownika poprzez zmianę jego hasła i usunięcie adresu e-mail. Dane zostaną utracone bez możliwości ich odzyskania.",
 	"editaccount-warning-close": "<b>Uwaga!</b> Zamierzasz trwale wyłączyć konto użytkownika <b>$1</b>. Tej zmiany nie można cofnąć. Jesteś pewien?",
 	"editaccount-status": "Komunikat o postępie",
-	"editaccount-success-email": "Pomyślnie zmieniono adres e-mail konta $1 na $2.",
+	"editaccount-success-email": "Zmieniono adres e-mail konta $1 na $2.",
 	"editaccount-success-email-blank": "Pomyślnie usunięto adres e-mail konta  $1.",
 	"editaccount-success-pass": "Pomyślnie zmieniono hasło dla konta  $1 .",
 	"editaccount-success-realname": "Pomyślnie zmieniono nazwisko dla konta $1.",
@@ -71,7 +72,7 @@
 	"logentry-editaccnt-passchange": "$1 zmieniono hasło użytkownika $3",
 	"logentry-editaccnt-realnamechange": "$1 zmieniono nazwisko użytkownika $3",
 	"logentry-editaccnt-closeaccnt": "$1 wyłączono konto $3",
-	"edit-account-closed-flag": "To konto zostało wyłączone globalnie przez ShoutWiki.",
+	"edit-account-closed-flag": "To konto zostało wyłączone globalnie przez {{GRAMMAR:B.lp|{{SITENAME}}}}.",
 	"action-editaccount": "edytowania informacji o innych użytkownikach",
 	"right-editaccount": "Edycja informacji innych użytkowników"
 }

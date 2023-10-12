@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ezagren"
+		]
+	},
+	"editaccount-label-clearunsub": "Ampih balangganan",
+	"editaccount-submit-clearunsub": "Hapus nang kada balangganan",
+	"logentry-editaccnt-realnamechange": "$1 maubah ngaran asli gasan pamakai $3"
+}
