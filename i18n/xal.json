@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ukhant Erdemt"
+		]
+	},
+	"editaccount-usage": "Керглгчин өггдл вики болһнд тус-бүр кэшлгднә. Та нууц үг эс гиҗ цәкм хайган шинрүлх цагт кэшиг зөвкн эн вики-д уга кенә. \nКэшин асудлас зәәлхин төлә керглгчин шин нууц үгәр невтрхин төлә эн вики-д чиглүлтн.",
+	"editaccount-label-email": "Шин цәкм хайг тохрултн",
+	"editaccount-submit-email": "Цәкм хайган хадһлҗ батрултн.",
+	"editaccount-usage-close": "Та мөн керглгчин бүртклиг нууц үгәр хааһад, цәкм поштын хайгиг уга кеҗ хаах болмҗта. Эн өггдл алдгдад, сергәх болмҗ угаг аңхартн.",
+	"editaccount-success-email": "$1 даңсин цәкм хайгиг $2 болһҗ сольх",
+	"editaccount-success-email-blank": "$1 Даңсин цәкм хайгиг уга кев.",
+	"editaccount-error-email": "Цәкм хайг сольгдад уга. Дарунь дәкн орлдтн.",
+	"editaccount-error-pass": "Нууц үг сольгдад уга. Дарунь дәкн орлдтн.",
+	"editaccount-error-realname": "Йосн нерн шинрлгдәд уга. Дарунь дәкн орлдтн.",
+	"editaccount-error-close": "Бүртклиг хаах цагт асудл һарв. Дарунь дәкн орлдтн.",
+	"editaccount-invalid-email": "\"$1\"-нь күчтә цәкм хайг биш бәәнә!",
+	"editaccount-label-email-status": "Цәкм хайгин стаутс: $1",
+	"editaccount-error-tempuser-email": "Түр-зуурин керглгчнрин цәкм хайгин талвр хоосн бәәҗ болшго. Цәкм хайган орултн.",
+	"editaccount-email-change-requested": "Керглгч Preferences-әр дамҗулад, цәкм хайган сольхар $1 болһҗ күсчәнә. Керглгчин цәкм хайгин сольхиг батрулхин төлә дорк талврт күссн цәкм хайган орулад, \"{{int:editaccount-submit-email}}\" дартн.",
+	"log-description-editaccnt": "Эн халхд {{SITENAME}}-ин көдләчнрин керглгчнрин медәллд кесн шинрлтсиг җигсәсн болв.",
+	"logentry-editaccnt-mailchange": "$1 керглгчин цәкм хайгиг $3 шинрүлх",
+	"edit-account-closed-flag": "Эн бүртклиг {{SITENAME}} делкә даяр хаав."
+}

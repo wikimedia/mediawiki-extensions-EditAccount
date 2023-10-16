@@ -3,7 +3,8 @@
 		"authors": [
 			"Rancher",
 			"Verlor",
-			"BadDog"
+			"BadDog",
+			"Milicevic01"
 		]
 	},
 	"editaccount": "Измена налога",
@@ -19,12 +20,20 @@
 	"editaccount-submit-realname": "Сачувај право име",
 	"editaccount-submit-close": "Затвори налог",
 	"editaccount-status": "Статусна порука",
-	"editaccount-success-email": "Е-адреса за налог $1 на $2 је измењена.",
+	"editaccount-success-email": "Промењена имејл адреса за налог $1 у $2.",
+	"editaccount-success-email-blank": "Уклоњена имејл адреса за налог $1.",
 	"editaccount-success-pass": "Лозинка за налог $1 је измењена.",
 	"editaccount-success-realname": "Право име за налог $1 је измењено.",
 	"editaccount-success-close": "Налог $1 је успешно затворен.",
+	"editaccount-error-email": "Имејл није промењен. Покушајте касније.",
+	"editaccount-error-pass": "Лозинка није промењена. Покушајте касније.",
+	"editaccount-error-realname": "Право име није промењено. Покушајте касније.",
 	"editaccount-invalid-email": "„$1“ није важећа имејл адреса!",
 	"editaccount-nouser": "„$1“ налог не постоји!",
+	"editaccount-label-email-status": "Статус имејла: $1",
+	"editaccount-error-tempuser-email": "Привремени корисници морају унети имејл адресу.",
 	"log-name-editaccnt": "Дневник корисничких налога",
+	"logentry-editaccnt-mailchange": "$1 је променио имејл за корисника $3",
+	"edit-account-closed-flag": "Овај налог је глобално онемогућио {{SITENAME}}.",
 	"action-editaccount": "уређујете информације других корисника"
 }

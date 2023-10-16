@@ -5,7 +5,8 @@
 			"Glanthor Reviol",
 			"Misibacsi",
 			"R-Joe",
-			"TK-999"
+			"TK-999",
+			"Tacsipacsi"
 		]
 	},
 	"editaccount": "Felhasználói fiók szerkesztése",
@@ -17,7 +18,7 @@
 	"editaccount-submit-account": "Felhasználói fiók kezelése",
 	"editaccount-frame-account": "Felhasználói adatok szerkesztése: $1 fiókja",
 	"editaccount-frame-close": "Felhasználói fiók tiltása: $1 részére",
-	"editaccount-label-email": "Új e-mail cím beállítása",
+	"editaccount-label-email": "Új e-mail-cím beállítása",
 	"editaccount-label-pass": "Új jelszó beállítása",
 	"editaccount-label-realname": "Új valódi név beállítása",
 	"editaccount-label-clearunsub": "Leiratkozott",
@@ -36,7 +37,7 @@
 	"editaccount-error-pass": "A jelszó nem változott meg. Próbálja újra, vagy lépjen kapcsolatba a műszaki csoporttal.",
 	"editaccount-error-realname": "A valódi név nem változott meg. Próbálja újra, vagy lépjen kapcsolatba a műszaki csoporttal.",
 	"editaccount-error-close": "Hiba történt a fiók szerkesztése közben. Próbálja újra, vagy lépjen kapcsolatba a műszaki csoporttal.",
-	"editaccount-invalid-email": "\"$1\" nem érvényes e-mail cím!",
+	"editaccount-invalid-email": "A(z) „$1” nem érvényes e-mail-cím!",
 	"editaccount-nouser": "A(z) „$1” felhasználói fiók nem létezik!",
 	"editaccount-label-account-status": "Fiók állapota: $1",
 	"editaccount-label-email-status": "E-mail állapota: $1",
@@ -44,7 +45,7 @@
 	"editaccount-status-unconfirmed": "Nincs megerősítve",
 	"editaccount-status-realuser": "Valódi felhasználó",
 	"editaccount-status-tempuser": "Ideiglenes felhasználó",
-	"editaccount-error-tempuser-email": "Ideiglenes felhasználónak nem lehet üres az e-mail cím mezője, adjon meg egy e-mail címet.",
+	"editaccount-error-tempuser-email": "Ideiglenes felhasználónak nem lehet üres az e-mail-cím-mezője, adj meg egy e-mail-címet.",
 	"log-name-editaccnt": "Felhasználói fiókok naplója",
 	"edit-account-closed-flag": "Ezt a fiókot a ShoutWiki az egész hálózatán letiltotta.",
 	"right-editaccount": "más felhasználók beállításainak szerkesztése"
