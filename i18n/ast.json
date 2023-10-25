@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Xuacu"
+			"Xuacu",
+			"YoaR"
 		]
 	},
 	"editaccount": "Editar la cuenta",
@@ -39,7 +40,7 @@
 	"editaccount-success-email-blank": "Desanicióse la direición de corréu electrónicu de la cuenta $1.",
 	"editaccount-success-pass": "Camudóse la contraseña de la cuenta $1.",
 	"editaccount-success-realname": "Camudóse'l nome real de la cuenta $1.",
-	"editaccount-success-unsub": "Desanicióse'l bit d'encaboxar suscripción de la cuenta $1.",
+	"editaccount-success-unsub": "Desanicióse'l bit de borrar la soscripción de la cuenta $1.",
 	"editaccount-success-disable": "Desanicióse'l bit de desactivada pa la cuenta $1.",
 	"editaccount-success-toggleadopt": "Camudóse l'estáu de elixibilidá p'adopción de la cuenta $1.",
 	"editaccount-success-close": "Cuenta $1 desactivada.",

@@ -53,6 +53,7 @@
 	"editaccount-error-close": "Er is een probleem ontstaan bij het afsluiten van de gebruiker.\nProbeer het opnieuw of neem contact op met het Tech Team.",
 	"editaccount-invalid-email": "\"$1\" is geen geldig e-mailadres.",
 	"editaccount-nouser": "De gebruiker \"$1\" bestaat niet.",
+	"editaccount-not-loaded": "Fout: Gebruikersgegevens kunnen niet correct worden geladen. Probeer de pagina opnieuw te laden.",
 	"editaccount-remove-avatar-fail": "Er is een probleem opgetreden tijdens het automatisch verwijderen van de avatar.",
 	"editaccount-requested": "Opmerking: gebruiker heeft een rekeningsluiting aangevraagd",
 	"editaccount-not-requested": "Waarschuwing: gebruiker heeft geen accountsluiting aangevraagd",
