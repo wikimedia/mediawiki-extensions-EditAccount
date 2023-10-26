@@ -43,7 +43,7 @@
 	"editaccount-warning-close": "<b>Attention !</b> Vous êtes sur le point de désactiver le compte utilisateur <b>$1</b> de manière permanente. Cette action est irréversible. Êtes-vous certain de vouloir effectuer cette opération ?",
 	"editaccount-status": "Message de statut",
 	"editaccount-success-email": "L'adresse électronique du compte $1 a été changée pour $2.",
-	"editaccount-success-email-blank": "L'adresse électronique du compte $1 a été supprimée avec succès.",
+	"editaccount-success-email-blank": "L'adresse courriel du compte $1 a été supprimée.",
 	"editaccount-success-pass": "Le mot de passe du compte $1 a été modifié avec succès.",
 	"editaccount-success-realname": "Le nom complet du compte $1 a été modifié avec succès.",
 	"editaccount-success-unsub": "Drapeau de désabonnement retiré avec succès du compte $1.",
