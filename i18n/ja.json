@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"LaMagiaaa",
 			"Omotecho",
 			"Shirayuki",
 			"Yusuke1109"
@@ -31,13 +32,13 @@
 	"editaccount-warning-close": "<b>警告!</b> 利用者 <b>$1</b> のアカウントを永久的に無効化しようとしています。この操作は取り消せません。本当に実行しますか?",
 	"editaccount-status": "状態メッセージ",
 	"editaccount-success-email": "アカウント $1 のメールアドレスを $2 に変更しました。",
-	"editaccount-success-email-blank": "アカウント $1 のメールアドレスを除去しました。",
+	"editaccount-success-email-blank": "アカウント$1のメールアドレスを除去しました。",
 	"editaccount-success-pass": "アカウント $1 のパスワードを変更しました。",
 	"editaccount-success-realname": "アカウント $1 の本名を変更しました。",
 	"editaccount-success-close": "アカウント $1 を無効化しました。",
-	"editaccount-error-email": "メールアドレスは変更されませんでした。再試行するか、技術チームにお問い合わせください。",
-	"editaccount-error-pass": "パスワードは変更されませんでした。再試行するか、技術チームにお問い合わせください。",
-	"editaccount-error-realname": "本名は変更されませんでした。再試行するか、技術チームにお問い合わせください。",
+	"editaccount-error-email": "メールアドレスは変更されませんでした。時間をおいてから再試行してください。",
+	"editaccount-error-pass": "パスワードは変更されませんでした。時間をおいてから再試行してください。",
+	"editaccount-error-realname": "本名は変更されませんでした。時間をおいてから再試行してください。",
 	"editaccount-invalid-email": "「$1」は有効なメールアドレスではありません。",
 	"editaccount-nouser": "アカウント「$1」は存在しません。",
 	"editaccount-label-account-status": "アカウントの状態: $1",
