@@ -40,7 +40,7 @@
 	"editaccount-usage-close": "您也可以透過打亂密碼和移除電子郵件地址來停用使用者帳號，請注意此資料會遺失掉且不可回復。",
 	"editaccount-warning-close": "<b>警告！</b>您正要永久停用使用者 <b>$1</b> 的帳號，此操作為不可回復，您確定真的要這樣做嗎？",
 	"editaccount-status": "狀態訊息",
-	"editaccount-success-email": "已更改使用者 $1 的電子郵件地址為 $2。",
+	"editaccount-success-email": "已更改使用者$1的電子郵件地址為：$2。",
 	"editaccount-success-email-blank": "已移除使用者 $1 的電子郵件地址。",
 	"editaccount-success-pass": "已變更帳號 $1 的密碼。",
 	"editaccount-success-realname": "已更改使用者 $1 的真實名稱。",
@@ -72,7 +72,7 @@
 	"logentry-editaccnt-passchange": "$1 變更了使用者 $3 的密碼",
 	"logentry-editaccnt-realnamechange": "$1 變更了使用者 $3 的真實姓名",
 	"logentry-editaccnt-closeaccnt": "$1 停用了帳號 $3",
-	"edit-account-closed-flag": "此帳號已透過 ShoutWiki 停用。",
+	"edit-account-closed-flag": "此帳號已透過 {{SITENAME}} 停用。",
 	"action-editaccount": "編輯其他使用者的資訊",
 	"right-editaccount": "編輯其他使用者的資訊"
 }
