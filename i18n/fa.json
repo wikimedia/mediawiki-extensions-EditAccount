@@ -2,10 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"BlueDevil",
-			"ZxxZxxZ"
+			"ZxxZxxZ",
+			"Rulebased"
 		]
 	},
 	"editaccount": "ویرایش حساب کاربری",
 	"editaccount-label-realname": "تعیین نام واقعی جدید",
-	"editaccount-submit-close": "بستن حساب کاربری"
+	"editaccount-submit-close": "بستن حساب کاربری",
+	"editaccount-error-email": "آدرس ایمیل تغییر نکرد. دوباره تلاش کنید.",
+	"editaccount-error-realname": "نام واقعی تغییر نکرد. لطفاً دوباره تلاش کنید.",
+	"editaccount-invalid-email": "\"$1\" یک آدرس ایمیل معتبر نیست!"
 }
