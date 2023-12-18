@@ -3,7 +3,8 @@
 		"authors": [
 			"A1",
 			"Prima klasy4na",
-			"Piramidion"
+			"Piramidion",
+			"Ата"
 		]
 	},
 	"editaccount": "Редагувати обліковий запис",
@@ -11,7 +12,7 @@
 	"editaccount-user-id": "Ідентифікатор користувача: $1",
 	"editaccount-user-reg-date": "Дата реєстрації облікового запису: $1",
 	"editaccount-return": "Повернутися",
-	"editaccount-desc": "Дозволяє керувати обліковими записами користувачів",
+	"editaccount-desc": "Дозволяє привілейованим користувачам [[Special:EditAccount|керувати інформацією облікових записів користувачів]]",
 	"editaccount-frame-manage": "Редагувати обліковий запис",
 	"editaccount-frame-usage": "Примітка",
 	"editaccount-usage": "Дані користувача кешуються окремо для кожної вікі.\nКоли скидаєте свій пароль чи електронну адресу, кеш зміниться лише в цій вікі.\nБудь ласка, спрямуйте користувача на цю вікі, щоб увійти в систему із новим паролем, аби уникнути проблем із кешем.",
@@ -69,7 +70,7 @@
 	"logentry-editaccnt-passchange": "$1 змінено пароль користувача $3",
 	"logentry-editaccnt-realnamechange": "$1 змінено реальне ім'я користувача $3",
 	"logentry-editaccnt-closeaccnt": "$1 вимкнено обліковий запис $3",
-	"edit-account-closed-flag": "Цей обліковий запис відключений глобально на ShoutWiki.",
+	"edit-account-closed-flag": "Цей обліковий запис відключений глобально {{SITENAME}}.",
 	"action-editaccount": "редагування інформації про інших користувачів",
 	"right-editaccount": "Редагувати інформацію інших користувачів"
 }
