@@ -48,7 +48,7 @@
 	"editaccount-status-realuser": "Implijer gwirion",
 	"log-name-editaccnt": "Marilh ar c'hontoù implijer",
 	"log-description-editaccnt": "Rollet e vez er pajenn-mañ ar c'hemmoù graet gant staff {{SITENAME}} en titouroù implijer.",
-	"logentry-editaccnt-mailchange": "$1 en deus kemmet chmolec'h postel an implijer $3",
+	"logentry-editaccnt-mailchange": "$1 en deus kemmet chomlec'h postel an implijer $3",
 	"logentry-editaccnt-passchange": "$1 en deus kemmet ger-tremen ar gont $3",
 	"logentry-editaccnt-realnamechange": "$1 en deus kemmet anv gwir ar gont $3",
 	"logentry-editaccnt-closeaccnt": "$1 en deus diweredekaet ar gont $3",
