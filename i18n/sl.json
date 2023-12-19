@@ -68,7 +68,7 @@
 	"logentry-editaccnt-passchange": "$1 je {{GENDER:|spremenil|spremenila|spremenil_a}} geslo za uporabnika $3",
 	"logentry-editaccnt-realnamechange": "$1 je {{GENDER:|spremenil|spremenila|spremenil_a}} resnično ime uporabnika $3",
 	"logentry-editaccnt-closeaccnt": "$1 je  {{GENDER:|onemogočil|onemogočila|onemogočil_a}} račun $3",
-	"edit-account-closed-flag": "Ta račun je globalno onemogočil/a {{SITENAME}}.",
+	"edit-account-closed-flag": "Ta račun je globalno onemogočil_a {{SITENAME}}.",
 	"action-editaccount": "urejanje podatkov drugih uporabnikov",
 	"right-editaccount": "Urejanje podatkov drugih uporabnikov"
 }
