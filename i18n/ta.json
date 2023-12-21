@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Fahimrazick",
 			"Mahir78",
 			"TRYPPN"
 		]
@@ -33,6 +34,6 @@
 	"editaccount-invalid-email": "\"$1\" சரியான மின்னஞ்சல் இல்லை!",
 	"editaccount-nouser": "\"$1\" - அப்படியொரு கணக்கு இல்லை!",
 	"log-name-editaccnt": "பயனர் கணக்கு log",
-	"log-description-editaccnt": "இந்தப் பக்கம் விக்கியா அலுவலரால் மாற்றப்பட்ட பயனர் விருப்பத்தேர்வுகள் பட்டியல்கள்.",
-	"right-editaccount": "ஏனைய பயனர் விருப்பத்தேர்வுகளை தொகு"
+	"log-description-editaccnt": "இப்பக்கம் {{SITENAME}} அலுவலரால் மாற்றப்பட்ட பயனர் தகவல்களைப் பட்டியலிடுகிறது.",
+	"right-editaccount": "மற்றப் பயனர்களின் தகவல்களைத் தொகு"
 }
