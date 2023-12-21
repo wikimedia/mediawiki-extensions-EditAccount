@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Dr Lotus Black"
+			"Dr Lotus Black",
+			"Ninjastrikers"
 		]
 	},
 	"editaccount": "အကောင့်ကို ပြင်ဆင်ရန်",
@@ -50,7 +51,7 @@
 	"logentry-editaccnt-passchange": "အသုံးပြုသူ $3 အတွက် စကားဝှက်ကို $1 က ပြောင်းလဲခဲ့သည်။",
 	"logentry-editaccnt-realnamechange": "အသုံးပြုသူ $3 အတွက် အမည်ရင်းကို $1 က ပြောင်းလဲခဲ့သည်။",
 	"logentry-editaccnt-closeaccnt": "$1 က $3 အကောင့်ကို ပိတ်ခဲ့သည်",
-	"edit-account-closed-flag": "ဤအကောင့်ကို ShoutWiki မှ တစ်ကမ္ဘာလုံး ပိတ်ထားသည်။",
+	"edit-account-closed-flag": "ဤအကောင့်ကို {{SITENAME}} မှ တစ်ကမ္ဘာလုံးတွင် ပိတ်ထားသည်။",
 	"action-editaccount": "အခြားအသုံးပြုသူများ၏ အချက်အလက်ကို တည်းဖြတ်ရန်",
 	"right-editaccount": "အခြားအသုံးပြုသူများ၏ အချက်အလက်ကို တည်းဖြတ်ရန်"
 }
