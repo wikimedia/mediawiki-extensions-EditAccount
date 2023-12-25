@@ -64,7 +64,7 @@
 	"editaccount-email-change-requested": "Uporabnik je prek nastavitev zahteval spremembo e-pošte v $1. Če želite za uporabnika potrditi zahtevano spremembo e-poštnega naslova, vnesite zahtevani e-poštni naslov v spodnje polje in kliknite »{{int:editaccount-submit-email}}«.",
 	"log-name-editaccnt": "Dnevnik uporabniških računov",
 	"log-description-editaccnt": "Na tej strani so navedene spremembe uporabniških podatkov, ki jih je izvedlo osebje {{SITENAME}}.",
-	"logentry-editaccnt-mailchange": "$1 je spremenil/a e-poštni naslov uporabnika $3",
+	"logentry-editaccnt-mailchange": "$1 je spremenil_a e-poštni naslov uporabnika $3",
 	"logentry-editaccnt-passchange": "$1 je {{GENDER:|spremenil|spremenila|spremenil_a}} geslo za uporabnika $3",
 	"logentry-editaccnt-realnamechange": "$1 je {{GENDER:|spremenil|spremenila|spremenil_a}} resnično ime uporabnika $3",
 	"logentry-editaccnt-closeaccnt": "$1 je  {{GENDER:|onemogočil|onemogočila|onemogočil_a}} račun $3",
