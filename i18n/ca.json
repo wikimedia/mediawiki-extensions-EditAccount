@@ -1,12 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Davidpar"
+			"Davidpar",
+			"SMP"
 		]
 	},
 	"logentry-editaccnt-passchange": "contrasenya canviada de l'usuari $2",
 	"logentry-editaccnt-realnamechange": "canviat el nom real de l'usuari $2",
 	"logentry-editaccnt-closeaccnt": "compte desactivat $2",
 	"edit-account-closed-flag": "Aquest compte ha estat desactivat.",
-	"right-editaccount": "Edita les preferències dels altres usuaris"
+	"action-editaccount": "modificar la informació dels altres usuaris",
+	"right-editaccount": "Modificar la informació dels altres usuaris"
 }
