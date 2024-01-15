@@ -10,7 +10,7 @@
 	"editaccount-user-id": "Identificador de utilizador: $1",
 	"editaccount-user-reg-date": "Data de registo da conta: $1",
 	"editaccount-return": "Voltar",
-	"editaccount-desc": "Permite que os membros da equipa administrem a informação das contas de utilizador",
+	"editaccount-desc": "Permite que os membros da equipa [[Special:EditAccount|administrem a informação das contas de utilizador]]",
 	"editaccount-frame-manage": "Editar uma conta",
 	"editaccount-frame-usage": "Nota",
 	"editaccount-usage": "Os dados do utilizador são mantidos em caches separadas para cada wiki. Ao reiniciar a palavra-chave ou o endereço de correio electrónico, será desfeita somente a cache desta wiki. Para evitar problemas de cache, direccione o utilizador para esta wiki para se autenticar com uma palavra-chave nova.",
