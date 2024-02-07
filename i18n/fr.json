@@ -8,7 +8,8 @@
 			"Urhixidur",
 			"Verdy p",
 			"Wladek92",
-			"Wyz"
+			"Wyz",
+			"Thibaut120094"
 		]
 	},
 	"editaccount": "Modifier le compte",
@@ -75,6 +76,6 @@
 	"logentry-editaccnt-realnamechange": "$1 a modifié le nom complet du compte $3",
 	"logentry-editaccnt-closeaccnt": "$1 a désactivé le compte $3",
 	"edit-account-closed-flag": "Ce compte a été désactivé globalement par ShoutWiki.",
-	"action-editaccount": "modifier d'autres informations utilisateur",
+	"action-editaccount": "modifier d’autres informations utilisateur",
 	"right-editaccount": "Modifier les préférences d'autres utilisateurs"
 }
