@@ -129,11 +129,11 @@ class EditAccount extends SpecialPage {
 				$actor = $services->getUserIdentityLookup()->getUserIdentityByName( $userName );
 				$id = $actor ? $actor->getId() : null;
 
-				if ( empty( $action ) ) {
+				if ( !$action ) {
 					$action = 'displayuser';
 				}
 
-				if ( empty( $id ) ) {
+				if ( !$id ) {
 					// Wikia stuff...
 					if ( class_exists( 'TempUser' ) ) {
 						$this->mTempUser = TempUser::getTempUserFromName( $userName );
@@ -254,7 +254,7 @@ class EditAccount extends SpecialPage {
 
 			// get new e-mail (unconfirmed)
 			$optionNewEmail = $this->userOptionsManager->getOption( $this->mUser, 'new_email' );
-			if ( empty( $optionNewEmail ) ) {
+			if ( !$optionNewEmail ) {
 				$changeEmailRequested = '';
 			} else {
 				$changeEmailRequested = $this->msg( 'editaccount-email-change-requested', $optionNewEmail )->parse();
