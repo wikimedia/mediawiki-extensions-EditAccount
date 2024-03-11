@@ -9,7 +9,8 @@
 			"Wladek92",
 			"DePlusJean",
 			"Urhixidur",
-			"Thibaut120094"
+			"Thibaut120094",
+			"MacOS Weed"
 		]
 	},
 	"editaccount": "Modifier le compte",
@@ -75,7 +76,7 @@
 	"logentry-editaccnt-passchange": "$1 a modifié le mot de passe du compte $3",
 	"logentry-editaccnt-realnamechange": "$1 a modifié le nom complet du compte $3",
 	"logentry-editaccnt-closeaccnt": "$1 a désactivé le compte $3",
-	"edit-account-closed-flag": "Ce compte a été désactivé globalement par ShoutWiki.",
+	"edit-account-closed-flag": "Ce compte a été désactivé globalement par {{SITENAME}}.",
 	"action-editaccount": "modifier d’autres informations utilisateur",
 	"right-editaccount": "Modifier les préférences d'autres utilisateurs"
 }
