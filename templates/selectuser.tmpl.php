@@ -24,14 +24,14 @@ class EditAccountSelectUserTemplate extends QuickTemplate {
 <fieldset>
 	<legend><?php echo wfMessage( 'editaccount-status' )->plain(); ?></legend>
 	<?php
-		if ( $status ) {
-			echo Xml::element( 'span', [ 'style' => 'color: darkgreen; font-weight: bold;' ], $statusMsg );
-		} else {
-			echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg );
-		}
-		if ( !empty( $statusMsg2 ) ) {
-			echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg2 );
-		}
+	if ( $status ) {
+		echo Xml::element( 'span', [ 'style' => 'color: darkgreen; font-weight: bold;' ], $statusMsg );
+	} else {
+		echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg );
+	}
+	if ( !empty( $statusMsg2 ) ) {
+		echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg2 );
+	}
 	?>
 </fieldset>
 <?php } ?>
