@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Naudefj"
+			"Naudefj",
+			"Rooiratel"
 		]
 	},
 	"editaccount": "Wysig gebruiker",
@@ -13,6 +14,7 @@
 	"editaccount-label-email": "Stel nuwe e-posadres",
 	"editaccount-label-pass": "Stel nuwe wagwoord",
 	"editaccount-label-realname": "Stel nuwe regte naam",
+	"editaccount-label-reason": "Rede:",
 	"editaccount-submit-email": "Stoor E-pos",
 	"editaccount-submit-pass": "Stoor wagwoord",
 	"editaccount-submit-realname": "Stoor regte naam",
