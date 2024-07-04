@@ -28,6 +28,7 @@
 		"CloseAccount": {
 			"class": "CloseAccount",
 			"services": [
+				"UserFactory",
 				"UserGroupManager",
 				"UserNameUtils"
 			]
@@ -35,7 +36,11 @@
 		"EditAccount": {
 			"class": "EditAccount",
 			"services": [
+				"DBLoadBalancer",
+				"LinkRenderer",
 				"PasswordFactory",
+				"UserFactory",
+				"UserIdentityLookup",
 				"UserNameUtils",
 				"UserOptionsManager",
 				"MainWANObjectCache"

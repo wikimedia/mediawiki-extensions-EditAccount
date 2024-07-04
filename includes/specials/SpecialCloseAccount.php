@@ -11,7 +11,7 @@
  * @see https://bugzilla.shoutwiki.com/show_bug.cgi?id=294
  */
 
-use MediaWiki\MediaWikiServices;
+use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserGroupManager;
 use MediaWiki\User\UserNameUtils;
 
@@ -23,25 +23,24 @@ class CloseAccount extends EditAccount {
 	 */
 	public ?User $mUser;
 
-	/**
-	 * @var UserGroupManager
-	 */
+	private UserFactory $userFactory;
 	private UserGroupManager $userGroupManager;
-
-	/** @var UserNameUtils */
 	private UserNameUtils $userNameUtils;
 
 	/**
 	 * Constructor -- set up the new special page
 	 *
+	 * @param UserFactory $userFactory
 	 * @param UserGroupManager $userGroupManager
 	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct(
+		UserFactory $userFactory,
 		UserGroupManager $userGroupManager,
 		UserNameUtils $userNameUtils
 	) {
 		SpecialPage::__construct( 'CloseAccount' );
+		$this->userFactory = $userFactory;
 		$this->userGroupManager = $userGroupManager;
 		$this->userNameUtils = $userNameUtils;
 	}
@@ -122,7 +121,7 @@ class CloseAccount extends EditAccount {
 
 		// Check if user name is an existing user
 		if ( $this->userNameUtils->isValid( $userName ) ) {
-			$this->mUser = MediaWikiServices::getInstance()->getUserFactory()->newFromName( $userName );
+			$this->mUser = $this->userFactory->newFromName( $userName );
 		}
 
 		$changeReason = $request->getVal( 'wpReason' );
