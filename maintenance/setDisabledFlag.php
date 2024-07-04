@@ -20,8 +20,6 @@
  * $IP/maintenance/.
  */
 
-use MediaWiki\MediaWikiServices;
-
 ini_set( 'include_path', __DIR__ . '/../../../maintenance' );
 
 require_once 'Maintenance.php';
@@ -41,7 +39,7 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 			return;
 		}
 
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
+		$dbw = $this->getServiceContainer()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
 		$res = $dbw->select(
 			'user',
 			[ 'user_id', 'user_name' ],
