@@ -58,10 +58,10 @@ class CloseAccount extends EditAccount {
 	/**
 	 * Special page description shown on Special:SpecialPages (for mortals)
 	 *
-	 * @return string Special page description
+	 * @return Message Special page description
 	 */
-	public function getDescription(): string {
-		return $this->msg( 'editaccount-general-description' )->plain();
+	public function getDescription(): Message {
+		return $this->msg( 'editaccount-general-description' );
 	}
 
 	/**
@@ -111,7 +111,7 @@ class CloseAccount extends EditAccount {
 		$this->setHeaders();
 
 		// Special:EditAccount is a fairly stupid page title
-		$out->setPageTitle( $this->getDescription() );
+		$out->setPageTitleMsg( $this->getDescription() );
 
 		// Mortals can only close their own account
 		$userName = $user->getName();
