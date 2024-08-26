@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kimberli Mäkäräinen (WMNO)"
+			"Kimberli Mäkäräinen (WMNO)",
+			"Yupik"
 		]
 	},
 	"editaccount-frame-usage": "Fuomáš!",
+	"editaccount-submit-button": "Vurke",
 	"editaccount-status-tempuser": "Gaskaboddosaš geavaheaddji"
 }
