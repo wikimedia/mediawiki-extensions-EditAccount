@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amire80",
-			"שומבלע"
+			"שומבלע",
+			"מקף"
 		]
 	},
 	"editaccount": "עריכת חשבון",
@@ -59,7 +60,7 @@
 	"editaccount-status-confirmed": "אושר",
 	"editaccount-status-unconfirmed": "האישור בוטל",
 	"editaccount-status-realuser": "משתמש אמיתי",
-	"editaccount-status-tempuser": "משתמש זמני",
+	"editaccount-status-tempuser": "חשבון חולף",
 	"editaccount-error-tempuser-email": "למשתמשים זמניים לא יכול להיות שדה כתובת דואר אלקטרוני ריק, נא להזין כתובת דואר אלקטרוני.",
 	"editaccount-email-change-requested": "המשתמש ביקש שינוי דואר אלקטרוני דרך העדפות ל־$1. כדי לאשר את שינוי כתובת הדואר האלקטרוני המבוקש עבור המשתמש, יש להזין את כתובת הדוא\"ל המבוקשת בשדה למטה וללחוץ על \"{{int:editaccount-submit-email}}\".",
 	"log-name-editaccnt": "יומן חשבונות משתמש",
