@@ -10,7 +10,7 @@
 	"descriptionmsg": "editaccount-desc",
 	"type": "specialpage",
 	"requires": {
-		"MediaWiki": ">= 1.36.0"
+		"MediaWiki": ">= 1.41.0"
 	},
 	"license-name": "GPL-2.0-or-later",
 	"GroupPermissions": {

@@ -75,13 +75,13 @@ class EditAccount extends SpecialPage {
 	 * Special page description shown on Special:SpecialPages -- different for
 	 * privileged users and mortals
 	 *
-	 * @return string Special page description
+	 * @return Message Special page description
 	 */
-	public function getDescription(): string {
+	public function getDescription(): Message {
 		if ( $this->getUser()->isAllowed( 'editaccount' ) ) {
-			return $this->msg( 'editaccount' )->plain();
+			return $this->msg( 'editaccount' );
 		} else {
-			return $this->msg( 'editaccount-general-description' )->plain();
+			return $this->msg( 'editaccount-general-description' );
 		}
 	}
 
@@ -114,7 +114,7 @@ class EditAccount extends SpecialPage {
 		$this->setHeaders();
 
 		// Special:EditAccount is a fairly stupid page title
-		$out->setPageTitle( $this->getDescription() );
+		$out->setPageTitleMsg( $this->getDescription() );
 
 		// Get name to work on. Subpage is supported, but form submit name trumps
 		$userName = $request->getVal( 'wpUserName', $subPage );
