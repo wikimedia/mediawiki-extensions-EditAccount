@@ -1,8 +1,11 @@
 <?php
 
-use MediaWiki\MediaWikiServices;
+use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserOptionsManager;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * Main logic of the EditAccount extension
@@ -28,27 +31,29 @@ class EditAccount extends SpecialPage {
 	/** @var User|null */
 	public ?User $mTempUser = null;
 
-	/** @var PasswordFactory */
+	private ILoadBalancer $lb;
+	private LinkRenderer $linkRenderer;
 	private PasswordFactory $passwordFactory;
-
-	/** @var UserNameUtils */
+	private UserFactory $userFactory;
+	private UserIdentityLookup $userIdentityLookup;
 	private UserNameUtils $userNameUtils;
-
-	/** @var UserOptionsManager */
 	private UserOptionsManager $userOptionsManager;
 
-	/**
-	 * @param PasswordFactory $passwordFactory
-	 * @param UserNameUtils $userNameUtils
-	 * @param UserOptionsManager $userOptionsManager
-	 */
 	public function __construct(
+		ILoadBalancer $lb,
+		LinkRenderer $linkRenderer,
 		PasswordFactory $passwordFactory,
+		UserFactory $userFactory,
+		UserIdentityLookup $userIdentityLookup,
 		UserNameUtils $userNameUtils,
 		UserOptionsManager $userOptionsManager
 	) {
 		parent::__construct( 'EditAccount', 'editaccount' );
+		$this->lb = $lb;
+		$this->linkRenderer = $linkRenderer;
 		$this->passwordFactory = $passwordFactory;
+		$this->userFactory = $userFactory;
+		$this->userIdentityLookup = $userIdentityLookup;
 		$this->userNameUtils = $userNameUtils;
 		$this->userOptionsManager = $userOptionsManager;
 	}
@@ -89,7 +94,6 @@ class EditAccount extends SpecialPage {
 		$out = $this->getOutput();
 		$request = $this->getRequest();
 		$user = $this->getUser();
-		$services = MediaWikiServices::getInstance();
 
 		// Redirect mortals to Special:CloseAccount
 		if ( !$user->isAllowed( 'editaccount' ) ) {
@@ -124,9 +128,8 @@ class EditAccount extends SpecialPage {
 
 			// Check if user name is an existing user
 			if ( $this->userNameUtils->isValid( $userName ) ) {
-				$userFactory = $services->getUserFactory();
-				$this->mUser = $userFactory->newFromName( $userName );
-				$actor = $services->getUserIdentityLookup()->getUserIdentityByName( $userName );
+				$this->mUser = $this->userFactory->newFromName( $userName );
+				$actor = $this->userIdentityLookup->getUserIdentityByName( $userName );
 				$id = $actor ? $actor->getId() : null;
 
 				if ( !$action ) {
@@ -141,7 +144,7 @@ class EditAccount extends SpecialPage {
 
 					if ( $this->mTempUser ) {
 						$id = $this->mTempUser->getId();
-						$this->mUser = $userFactory->newFromId( $id );
+						$this->mUser = $this->userFactory->newFromId( $id );
 					} else {
 						$this->mStatus = false;
 						$this->mStatusMsg = $this->msg( 'editaccount-nouser', $userName )->text();
@@ -213,7 +216,6 @@ class EditAccount extends SpecialPage {
 		$templateClassName = 'EditAccount' . $template . 'Template';
 		$tmpl = new $templateClassName;
 
-		$linkRenderer = $services->getLinkRenderer();
 		$templateVariables = [
 			'status' => $this->mStatus,
 			'statusMsg' => $this->mStatusMsg,
@@ -229,7 +231,7 @@ class EditAccount extends SpecialPage {
 			'isDisabled' => null,
 			'isAdopter' => null,
 			'returnURL' => $this->getFullTitle()->getFullURL(),
-			'logLink' => $linkRenderer->makeLink(
+			'logLink' => $this->linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Log', 'editaccnt' ),
 				$this->msg( 'log-name-editaccnt' )
 			),
@@ -396,7 +398,7 @@ class EditAccount extends SpecialPage {
 			// throw new MWException( "Passed User has not been added to the database yet!" );
 		}
 
-		$dbw = MediaWikiServices::getInstance()->getDBLoadBalancer()->getMaintenanceConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getMaintenanceConnectionRef( DB_PRIMARY );
 		$row = $dbw->selectRow(
 			'user',
 			'user_id',
@@ -492,7 +494,7 @@ class EditAccount extends SpecialPage {
 		$id = $this->mUser->getId();
 
 		// Reload user
-		$this->mUser = MediaWikiServices::getInstance()->getUserFactory()->newFromId( $id );
+		$this->mUser = $this->userFactory->newFromId( $id );
 
 		if ( $this->mUser->getEmail() == '' ) {
 			// ShoutWiki patch begin
