@@ -155,7 +155,7 @@ class EditAccount extends SpecialPage {
 		}
 
 		// FB:23860
-		if ( !( $this->mUser instanceof User ) ) {
+		if ( !$this->mUser ) {
 			$action = '';
 		}
 
@@ -244,7 +244,7 @@ class EditAccount extends SpecialPage {
 			$tmpl->set( $templateVariable, $variableValue );
 		}
 
-		if ( is_object( $this->mUser ) ) {
+		if ( $this->mUser ) {
 			if ( $this->mTempUser ) {
 				$this->mUser = $this->mTempUser->mapTempUserToUser( false );
 				$userStatus = $this->msg( 'editaccount-status-tempuser' )->plain();

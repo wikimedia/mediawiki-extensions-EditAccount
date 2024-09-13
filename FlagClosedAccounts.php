@@ -30,10 +30,6 @@ $wgMessagesDirs['EditAccount'] = __DIR__ . '/i18n';
  */
 function efFlagClosedAccounts( $id ) {
 	$u = User::newFromId( $id );
-	// Quick safeguard, *just* in case...probably not even needed.
-	if ( !$u instanceof User ) {
-		return true;
-	}
 
 	// ShoutWiki patch begin
 	// Correctly show the "This account has been disabled" box on wikis other
