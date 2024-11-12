@@ -11,7 +11,8 @@
 			"Urhixidur",
 			"Verdy p",
 			"Wladek92",
-			"Wyz"
+			"Wyz",
+			"Mahabarata"
 		]
 	},
 	"editaccount": "Modifier le compte",
@@ -22,7 +23,7 @@
 	"editaccount-desc": "Permet aux membres du personnel de [[Special:EditAccount|gérer les informations sur les comptes d'utilisateur]]",
 	"editaccount-frame-manage": "Modifier un compte",
 	"editaccount-frame-usage": "Note",
-	"editaccount-usage": "Les données des utilisateurs sont mises en cache  séparément pour chaque wiki. Si vous réinitialisez le mot de passe ou l'adresse électronique, le cache ne sera annulé que pour ce wiki. Veuillez rediriger l'utilisateur vers ce wiki pour qu'il se connecte avec son nouveau mot de passe pour éviter les problèmes de cache.",
+	"editaccount-usage": "Les données des utilisateurs sont mises en cache  séparément pour chaque wiki. Si vous réinitialisez le mot de passe ou l'e-mail, le cache ne sera annulé que pour ce wiki. Veuillez rediriger l'utilisateur vers ce wiki pour qu'il se connecte avec son nouveau mot de passe pour éviter les problèmes de cache.",
 	"editaccount-label-select": "Sélectionner un compte d’utilisateur",
 	"editaccount-submit-account": "Gérer le compte",
 	"editaccount-frame-account": "Modification du compte utilisateur : $1",
@@ -69,7 +70,7 @@
 	"editaccount-status-unconfirmed": "Non confirmé",
 	"editaccount-status-realuser": "Utilisateur réel",
 	"editaccount-status-tempuser": "Utilisateur temporaire",
-	"editaccount-error-tempuser-email": "Les utilisateurs temporaires ne peuvent pas avoir de champ Adresse de courriel vide; veuillez entrer une adresse de courriel.",
+	"editaccount-error-tempuser-email": "Les utilisateurs temporaires ne peuvent pas avoir de champ d'adresse e-mail vide, veuillez saisir une adresse e-mail.",
 	"editaccount-email-change-requested": "Un utilisateur a demandé le changement de courriel via les préférences de $1. Pour confirmer le changement d'adresse courriel demandé pour l'utilisateur, entrez l'adresse de courriel demandée dans le champ ci-dessous et cliquez sur «{{int:editaccount-submit-email}}».",
 	"log-name-editaccnt": "Journal des comptes utilisateurs",
 	"log-description-editaccnt": "Cette page liste les modifications des informations utilisateur faites par le personnel de ShoutWiki.",
