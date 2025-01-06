@@ -4,14 +4,15 @@
 			"Crazymadlover",
 			"Dada",
 			"Evropi",
+			"Fotis A.",
 			"KATRINE1992",
 			"McDutchie"
 		]
 	},
 	"editaccount": "Επεξεργασία λογαριασμού",
-	"editaccount-general-description": "Κλείσετε τον λογαριασμό σας χρήστη",
-	"editaccount-user-id": "ID  Χρήστη $1",
-	"editaccount-user-reg-date": "Ημερομηνία δημιουργίας λογαριασμού: $1",
+	"editaccount-general-description": "Κλείστε τον λογαριασμό χρήστη σας",
+	"editaccount-user-id": "Αναγνωριστικό χρήστη: $1",
+	"editaccount-user-reg-date": "Ημερομηνία εγγραφής λογαριασμού: $1",
 	"editaccount-return": "Επιστροφή",
 	"editaccount-desc": "Επιτρέπει στα μέλη του προσωπικού να διαχειρίζονται τις πληροφορίες λογαριασμού χρήστη",
 	"editaccount-frame-manage": "Επεξεργασία ενός λογαριασμού",
