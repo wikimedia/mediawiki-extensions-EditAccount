@@ -7,7 +7,7 @@
 	},
 	"editaccount": "Kont änneren",
 	"editaccount-general-description": "Maacht Äre Benotzerkont zou",
-	"editaccount-user-id": "Benotzer ID: $1",
+	"editaccount-user-id": "Benotzer-ID: $1",
 	"editaccount-user-reg-date": "Datum vun der Registréierung vum Benotzerkont: $1",
 	"editaccount-return": "Zréck",
 	"editaccount-desc": "Erlaabt et privilegiéierte Benotzer fir Memberen hir [[Special:EditAccount|Benotzerkonteninformatioun ze geréieren]]",
