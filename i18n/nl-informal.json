@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"McDutchie",
 			"Siebrand"
 		]
 	},
-	"editaccount-usage": "Gebruikersgevens worden voor iedere wiki apart in een cache bijgehouden.\nAls je een wachtwoord of e-mailadres opnieuw instelt, wordt alleen de cache voor deze wiki ongeldig gemaakt.\nLaat de gebruiker bij deze wiki aanmelden met een nieuw wachtwoord om problemen met de cache te voorkomen.",
+	"editaccount-usage": "Gebruikersgevens worden voor iedere wiki apart in een cache bijgehouden.\nAls je een wachtwoord of e-mailadres opnieuw instelt, wordt alleen de cache voor deze wiki ongeldig gemaakt.\nLaat de gebruiker zich met een nieuw wachtwoord bij deze wiki aanmelden om problemen met de cache te voorkomen.",
 	"editaccount-usage-close": "Je kunt een gebruiker ook uitschakelen door een onbekend wachtwoord in te stellen en het e-mailadres te verwijderen.\nDe huidige gegevens gaan dan verloren en zijn niet te herstellen.",
-	"editaccount-warning-close": "<b>Let op!</b>\nJe staat op het punt de gebruiker <b>$1</b> permanent af te sluiten.\nDit kan niet ongedaan gemaakt worden.\nWeet je zeker dat u dit wilt doen?"
+	"editaccount-warning-close": "<b>Let op!</b>\nJe staat op het punt de gebruiker <b>$1</b> permanent af te sluiten.\nDit kan niet ongedaan gemaakt worden.\nWeet je zeker dat je dit wilt doen?"
 }
