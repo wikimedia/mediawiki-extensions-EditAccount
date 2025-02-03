@@ -16,7 +16,7 @@
 	"editaccount-desc": "Stelt bevoorrechte gebruikers in staat [[Special:EditAccount|gebruikersinformatie te beheren]]",
 	"editaccount-frame-manage": "Gebruiker bewerken",
 	"editaccount-frame-usage": "Let op",
-	"editaccount-usage": "Gebruikersgevens worden voor iedere wiki apart in een cache bijgehouden.\nAls u een wachtwoord of e-mailadres opnieuw instelt, wordt alleen de cache voor deze wiki ongeldig gemaakt.\nLaat de gebruiker bij deze wiki aanmelden met een nieuw wachtwoord om problemen met de cache te voorkomen.",
+	"editaccount-usage": "Gebruikersgevens worden voor iedere wiki apart in een cache bijgehouden.\nAls u een wachtwoord of e-mailadres opnieuw instelt, wordt alleen de cache voor deze wiki ongeldig gemaakt.\nLaat de gebruiker zich met een nieuw wachtwoord bij deze wiki aanmelden om problemen met de cache te voorkomen.",
 	"editaccount-label-select": "Selecteer een gebruiker",
 	"editaccount-submit-account": "Gebruiker beheren",
 	"editaccount-frame-account": "Te bewerken gebruiker: $1",
