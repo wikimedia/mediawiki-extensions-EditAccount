@@ -4,7 +4,7 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel"
 		]
 	},
-	"editaccount": "ګڼون سمول",
+	"editaccount": "گڼون سمول",
 	"editaccount-frame-manage": "يو ګڼون سمول",
 	"editaccount-frame-usage": "يادښت",
 	"editaccount-label-select": "يو کارن ګڼون وټاکۍ",
@@ -15,6 +15,6 @@
 	"editaccount-submit-pass": "پټنوم خوندي کول",
 	"editaccount-submit-close": "کارن حساب تړل",
 	"editaccount-status": "د پيغام دريځ",
-	"editaccount-label-account-status": "د ګڼون دريځ: $1",
+	"editaccount-label-account-status": "گڼون‌اکر: $1",
 	"editaccount-label-email-status": "د برېښليک دريځ: $1"
 }
