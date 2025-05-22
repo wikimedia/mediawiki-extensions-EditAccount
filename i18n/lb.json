@@ -55,6 +55,6 @@
 	"logentry-editaccnt-realnamechange": "$1 huet de richtegen Numm vum Benotzer $3 geännert",
 	"logentry-editaccnt-closeaccnt": "$1 huet de Benotzerkont $3 desaktivéiert",
 	"edit-account-closed-flag": "Dëse Benotzerkont gouf global vu {{SITENAME}} desaktivéiert.",
-	"action-editaccount": "Informatioune vun anere Benotzer änneren",
+	"action-editaccount": "Informatioune vun anere Benotzer z'änneren",
 	"right-editaccount": "Informatioune vun anere Benotzer änneren"
 }
