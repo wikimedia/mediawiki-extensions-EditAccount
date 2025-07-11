@@ -233,7 +233,7 @@ class EditAccount extends SpecialPage {
 			'returnURL' => $this->getFullTitle()->getFullURL(),
 			'logLink' => $this->linkRenderer->makeLink(
 				SpecialPage::getTitleFor( 'Log', 'editaccnt' ),
-				$this->msg( 'log-name-editaccnt' )
+				$this->msg( 'log-name-editaccnt' )->text()
 			),
 			'userStatus' => null,
 			'emailStatus' => null,
