@@ -5,15 +5,5 @@
 			"LWChris"
 		]
 	},
-	"editaccount-usage": "User-Daten werden separat für jedes Wiki gespeichert. Wenn Sie ein Passwort oder E-Mail-Adresse zurücksetzen, wird der Speicher nur für dieses Wiki gelöscht werden. Bitte schicken Sie den Benutzer zu diesem Wiki zum Einzuloggen mit neuem Passwort, um Cache-Probleme zu vermeiden.",
-	"editaccount-label-select": "Wählen Sie ein Benutzerkonto",
-	"editaccount-usage-close": "Sie können ein Konto auch deaktivieren indem Sie das Passwort zerwürfeln und die E-Mail-Adresse löschen. Beachten Sie, dass diese Daten verloren und nicht wiederherstellbar sind.",
-	"editaccount-warning-close": "<b>Achtung!</b> Sie sind gerade dabei, das Konto von Benutzer <b>$1</b> dauerhaft zu deaktivieren. Dies kann nicht rückgängig gemacht werden. Sind Sie sicher, dass Sie das tun möchten?",
-	"editaccount-error-email": "Die E-Mail-Adresse des Benutzerkontos wurde nicht geändert. Versuchen Sie es bitte erneut oder kontaktieren Sie den Systemadministrator.",
-	"editaccount-error-pass": "Das Passwort des Benutzerkontos wurde nicht geändert. Versuchen Sie es bitte erneut oder kontaktieren Sie den Systemadministrator.",
-	"editaccount-error-realname": "Der bürgerliche Name des Benutzerkontos wurde nicht geändert. Versuchen Sie es bitte erneut oder kontaktieren Sie den Systemadministrator.",
-	"editaccount-error-close": "Beim Schließen des Benutzerkontos trat ein Problem auf. Versuchen Sie es bitte erneut oder kontaktieren Sie den Systemadministrator.",
-	"editaccount-not-loaded": "Fehler: Die Benutzerdaten konnten nicht ordnungsgemäß geladen werden. Bitte versuchen Sie, die Seite neu zu laden.",
-	"editaccount-error-tempuser-email": "Vorläufige Benutzer müssen eine E-Mail-Adresse angeben. Bitte geben Sie eine E-Mail-Adresse an.",
 	"right-editaccount": "Bearbeiten Sie andere Benutzereinstellungen"
 }
