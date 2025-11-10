@@ -15,7 +15,9 @@ use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserGroupManager;
 use MediaWiki\User\UserNameUtils;
 
-// @note Extends EditAccount so that we don't have to duplicate closeAccount() etc.
+/**
+ * @note Extends EditAccount so that we don't have to duplicate closeAccount() etc.
+ */
 class CloseAccount extends EditAccount {
 
 	/**

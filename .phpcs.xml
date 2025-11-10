@@ -1,11 +1,18 @@
 <?xml version="1.0"?>
 <ruleset>
 	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
-		<exclude name="Generic.Files.LineLength.TooLong" />
-		<exclude name="MediaWiki.Commenting.ClassAnnotations.UnrecognizedAnnotation" />
-		<exclude name="MediaWiki.Commenting.CommentBeforeClass.StrayStyle" />
 		<exclude name="MediaWiki.Files.ClassMatchesFilename.NotMatch" />
-		<exclude name="MediaWiki.NamingConventions.PrefixedGlobalFunctions.allowedPrefix" />
+	</rule>
+	<rule ref="Generic.Files.LineLength">
+		<exclude-pattern>/EditAccount.alias.php</exclude-pattern>
+		<exclude-pattern>/templates/*.tmpl.php</exclude-pattern>
+	</rule>
+	<rule ref="MediaWiki.NamingConventions.PrefixedGlobalFunctions">
+		<properties>
+			<property name="allowedPrefixes" type="array">
+				<element value="ef" />
+			</property>
+		</properties>
 	</rule>
 	<file>.</file>
 	<arg name="extensions" value="php"/>

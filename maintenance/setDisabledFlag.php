@@ -27,7 +27,9 @@ require_once 'Maintenance.php';
 class AddEntriesForAllDisabledUsers extends Maintenance {
 	public function __construct() {
 		parent::__construct();
-		$this->addDescription( 'Updates global preferences for accounts that have their real name set to "Account Disabled".' );
+		$this->addDescription( 'Updates global preferences for accounts that have ' .
+			'their real name set to "Account Disabled".'
+		);
 		$this->addOption( 'doit', 'Actually perform the database updates, too, instead of doing a dry run?' );
 
 		$this->requireExtension( 'EditAccount' );

@@ -1,12 +1,4 @@
 <?php
-
-use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\User\UserFactory;
-use MediaWiki\User\UserIdentityLookup;
-use MediaWiki\User\UserNameUtils;
-use MediaWiki\User\UserOptionsManager;
-use Wikimedia\Rdbms\ILoadBalancer;
-
 /**
  * Main logic of the EditAccount extension
  *
@@ -17,6 +9,13 @@ use Wikimedia\Rdbms\ILoadBalancer;
  * @copyright Copyright © 2008 Łukasz Garczewski, Wikia Inc.
  * @license GPL-2.0-or-later
  */
+
+use MediaWiki\Linker\LinkRenderer;
+use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserIdentityLookup;
+use MediaWiki\User\UserNameUtils;
+use MediaWiki\User\UserOptionsManager;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 class EditAccount extends SpecialPage {
 
