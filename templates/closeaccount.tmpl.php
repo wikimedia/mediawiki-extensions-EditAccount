@@ -6,6 +6,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'This is not a valid entry point to MediaWiki.' );
 }
 
+use MediaWiki\Html\Html;
+
 /**
  * HTML template for Special:EditAccount
  *
@@ -27,9 +29,9 @@ if ( $status !== null && $user !== $user_hsc ) { ?>
 	<legend><?php echo wfMessage( 'editaccount-status' )->plain() ?></legend>
 	<?php
 	if ( $status ) {
-		echo Xml::element( 'span', [ 'style' => 'color: darkgreen; font-weight: bold;' ], $statusMsg );
+		echo Html::element( 'span', [ 'style' => 'color: darkgreen; font-weight: bold;' ], $statusMsg );
 	} else {
-		echo Xml::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg );
+		echo Html::element( 'span', [ 'style' => 'color: #fe0000; font-weight: bold;' ], $statusMsg );
 	}
 	?>
 </fieldset>

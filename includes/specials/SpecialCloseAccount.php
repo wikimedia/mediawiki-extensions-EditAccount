@@ -11,6 +11,7 @@
  * @see https://bugzilla.shoutwiki.com/show_bug.cgi?id=294
  */
 
+use MediaWiki\Html\Html;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserGroupManager;
 use MediaWiki\User\UserNameUtils;
@@ -139,7 +140,7 @@ class CloseAccount extends EditAccount {
 			$out->addHTML(
 				"<fieldset>\n<legend>" . $this->msg( 'editaccount-status' )->escaped() .
 				'</legend>' .
-				Xml::element( 'span', [ 'style' => "color: $color; font-weight: bold;" ], $this->mStatusMsg ) .
+				Html::element( 'span', [ 'style' => "color: $color; font-weight: bold;" ], $this->mStatusMsg ) .
 				'</fieldset>'
 			);
 		} else {
