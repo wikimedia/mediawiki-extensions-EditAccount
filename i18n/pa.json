@@ -6,7 +6,9 @@
 			"ਗੁਰਪ੍ਰੀਤ ਹੁੰਦਲ"
 		]
 	},
-	"editaccount": "ਅਕਾਊਂਟ ਸੋਧ",
+	"editaccount": "ਖਾਤਾ ਸੋਧੋ",
+	"editaccount-general-description": "ਆਪਣਾ ਵਰਤੋਂਕਾਰ ਖਾਤਾ ਬੰਦ ਕਰੋ",
+	"editaccount-return": "ਵਾਪਸ-ਜਾਓ",
 	"editaccount-desc": "ਵਿਸ਼ੇਸ਼ ਅਧਿਕਾਰ ਪ੍ਰਾਪਤ ਵਰਤੋਂਕਾਰ ਮੈਂਬਰਾਂ ਨੂੰ [[Special:EditAccount|ਵਰਤੋਂਕਾਰ ਖਾਤੇ ਦੀ ਜਾਣਕਾਰੀ ਦਾ ਪ੍ਰਬੰਧਨ]] ਕਰਨ ਦੇ ਯੋਗ ਬਣਾਉਂਦਾ ਹੈ",
 	"editaccount-frame-manage": "ਅਕਾਊਂਟ ਸੋਧੋ",
 	"editaccount-frame-usage": "ਧਿਆਨ ਦਿਓ",
@@ -16,7 +18,26 @@
 	"editaccount-label-email": "ਨਵਾਂ ਈਮੇਲ ਪਤਾ ਕਾਇਮ ਕਰੋ",
 	"editaccount-label-pass": "ਨਵਾਂ ਲੰਘ-ਸ਼ਬਦ ਸੂਤਰ ਕਰੋ",
 	"editaccount-label-realname": "ਨਵਾਂ ਅਸਲੀ ਨਾਂ ਕਾਇਮ ਕਰੋ",
+	"editaccount-label-clearunsub": "ਗਾਹਕੀ ਰੱਦ ਕਰੋ",
+	"editaccount-label-reason": "ਕਾਰਨ:",
 	"editaccount-submit-email": "ਈਮੇਲ ਖਾਤਾ ਸੰਭਾਲੋ ਅਤੇ ਤਸਦੀਕ ਕਰੋ",
 	"editaccount-submit-pass": "ਲੰਘ-ਸ਼ਬਦ ਸਾਂਭੋ",
-	"editaccount-submit-realname": "ਅਸਲੀ ਨਾਂ ਸੰਭਾਲੋ"
+	"editaccount-submit-realname": "ਅਸਲੀ ਨਾਂ ਸੰਭਾਲੋ",
+	"editaccount-submit-clearunsub": "ਗਾਹਕੀ ਰੱਦ ਕਰਨ ਨੂੰ ਸਾਫ਼ ਕਰੋ",
+	"editaccount-submit-close": "ਖਾਤਾ ਬੰਦ ਕਰੋ",
+	"editaccount-submit-button": "ਸਾਂਭੋ",
+	"editaccount-requested": "ਧਿਆਨ ਦਿਓ: ਵਰਤੋਂਕਾਰ ਨੇ ਖਾਤਾ ਬੰਦ ਕਰਨ ਦੀ ਬੇਨਤੀ ਕੀਤੀ ਏ",
+	"editaccount-not-requested": "ਧਿਆਨ ਦਿਓ: ਵਰਤੋਂਕਾਰ ਨੇ ਖਾਤਾ ਬੰਦ ਕਰਨ ਦੀ ਬੇਨਤੀ ਨਹੀਂ ਕੀਤੀ ਏ",
+	"editaccount-status-confirmed": "ਤਸਦੀਕ ਕੀਤੀ ਗਈ",
+	"editaccount-status-unconfirmed": "ਤਸਦੀਕ ਨਹੀਂ ਕੀਤੀ ਗਈ",
+	"editaccount-status-realuser": "ਅਸਲੀ ਵਰਤੋਂਕਾਰ",
+	"editaccount-status-tempuser": "ਆਰਜ਼ੀ ਵਰਤੋਂਕਾਰ",
+	"editaccount-error-tempuser-email": "ਆਰਜ਼ੀ ਵਰਤੋਂਕਾਰਾਂ ਲਈ ਈਮੇਲ ਦਾ ਖ਼ਾਨਾ ਖ਼ਾਲੀ ਨਹੀਂ ਹੋ ਸਕਦਾ, ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ ਈਮੇਲ ਪਤਾ ਭਰੋ।",
+	"log-name-editaccnt": "ਵਰਤੋਂਕਾਰ ਖਾਤਾ ਇੰਦਰਾਜ",
+	"logentry-editaccnt-mailchange": "$1 ਨੇ ਵਰਤੋਂਕਾਰ $3 ਲਈ ਈ-ਮੇਲ ਬਦਲੀ",
+	"logentry-editaccnt-passchange": "$1 ਨੇ ਵਰਤੋਂਕਾਰ $3 ਲਈ ਲੰਘ-ਸ਼ਬਦ ਬਦਲਿਆ",
+	"logentry-editaccnt-realnamechange": "$1 ਨੇ ਵਰਤੋਂਕਾਰ $3 ਲਈ ਅਸਲੀ ਨਾਂ ਬਦਲਿਆ",
+	"logentry-editaccnt-closeaccnt": "$1 ਨੇ ਖਾਤਾ $3 ਬੰਦ ਕਰ ਦਿੱਤਾ",
+	"action-editaccount": "ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਦੀ ਜਾਣਕਾਰੀ ਨੂੰ ਸੋਧੋ",
+	"right-editaccount": "ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਦੀ ਜਾਣਕਾਰੀ ਨੂੰ ਸੋਧੋ"
 }
