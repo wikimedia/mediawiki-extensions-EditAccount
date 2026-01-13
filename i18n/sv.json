@@ -4,14 +4,16 @@
 			"Lokal Profil",
 			"Tobulos1",
 			"VickyC",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"editaccount": "Redigera konto",
 	"editaccount-general-description": "Stäng ditt användarkonto",
 	"editaccount-user-id": "Användar-ID: $1",
 	"editaccount-user-reg-date": "Kontots registreringsdatum: $1",
-	"editaccount-desc": "Enables staff members to manage user account information",
+	"editaccount-return": "Återvänd",
+	"editaccount-desc": "Gör det möjligt för privilegierade användare att [[Special:EditAccount|hantera användarkontoinformation]]",
 	"editaccount-frame-manage": "Redigera ett konto",
 	"editaccount-frame-usage": "Notis",
 	"editaccount-usage": "Användardata är cachad separat för varje wiki. När du återställer ett lösenord eller en e-post kommer cachen att brytas för endast denna wiki. Vänligen styr användaren till denna wiki för att logga in med ett nybildat lösenord för att undvika cache-problem.",
@@ -23,6 +25,9 @@
 	"editaccount-label-pass": "Ange nytt lösenord",
 	"editaccount-label-realname": "Ange ett nytt riktigt namn",
 	"editaccount-label-clearunsub": "Prenumeration avslutad",
+	"editaccount-label-toggleadopt": "Ändra adopterings-status (för AutomaticWikiAdopt):",
+	"editaccount-label-toggleadopt-prevent": "Förhindra automatisk adoptering",
+	"editaccount-label-toggleadopt-allow": "Tillåt automatisk adoptering",
 	"editaccount-label-reason": "Anledning:",
 	"editaccount-submit-email": "Spara e-postadress",
 	"editaccount-submit-pass": "Spara lösenord",
@@ -38,6 +43,9 @@
 	"editaccount-success-email-blank": "Tog bort e-postadressen för kontot $1.",
 	"editaccount-success-pass": "Ändrade lösenordet för kontot $1.",
 	"editaccount-success-realname": "Ändrade riktigt namn för kontot $1.",
+	"editaccount-success-unsub": "Borttagen avprenumerations-bit för konto $1.",
+	"editaccount-success-disable": "Tog bort den inaktiverade biten för kontot $1.",
+	"editaccount-success-toggleadopt": "Växlade status för adoptionsberättigande för konto $1.",
 	"editaccount-success-close": "Konto $1 har avaktiverats.",
 	"editaccount-error-email": "E-postadressen ändrades inte. Försök igen eller kontakta Tech Teamet.",
 	"editaccount-error-pass": "Lösenordet ändrades inte. Försök igen eller kontakta Tech Teamet.",
@@ -62,7 +70,7 @@
 	"logentry-editaccnt-passchange": "$1 ändrade lösenord för användare $3",
 	"logentry-editaccnt-realnamechange": "$1 ändrade riktigt namn för användare $3",
 	"logentry-editaccnt-closeaccnt": "$1 inaktiverade kontot $3",
-	"edit-account-closed-flag": "Detta konto har inaktiverat globalt av ShoutWiki.",
+	"edit-account-closed-flag": "Det här kontot har inaktiverats globalt av {{SITENAME}}.",
 	"action-editaccount": "redigera information för andra användare",
 	"right-editaccount": "Redigera andra användares inställningar"
 }
