@@ -14,7 +14,7 @@
 	"editaccount-user-id": "ID użytkownika: $1",
 	"editaccount-user-reg-date": "Data rejestracji konta: $1",
 	"editaccount-return": "Powrót",
-	"editaccount-desc": "Pozwala zmienić informacje o koncie użytkownika",
+	"editaccount-desc": "Pozwala uprzywilejowanym członkom na [[Special:EditAccount|zmianę informacji o koncie innego użytkownika]]",
 	"editaccount-frame-manage": "Edytuj konto",
 	"editaccount-frame-usage": "Komentarz",
 	"editaccount-usage": "Dane użytkownika przechowywane są osobno na każdej wiki. Kiedy resetujesz hasło lub e-mai, pamięć podręczna zostanie odświeżona tylko na danej wiki. Proszę skieruj użytkownika do tej wiki aby zalogował się nowym hasłem, aby uniknąć kłopotów z pamięcią podręczną.",
