@@ -9,6 +9,7 @@
 	"editaccount": "Редакция на профил",
 	"editaccount-general-description": "Затваряне на сметка",
 	"editaccount-submit-account": "Управление на сметка",
+	"editaccount-label-reason": "Причина:",
 	"editaccount-submit-pass": "Съхраняване на паролата",
 	"editaccount-invalid-email": "„$1“ не е валиден адрес за електронна поща!",
 	"editaccount-status-confirmed": "Потвърден",
