@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Aca",
 			"Winston Sung"
 		]
 	},
@@ -13,7 +14,7 @@
 	"editaccount-frame-manage": "Uredi račun",
 	"editaccount-frame-usage": "Napomena",
 	"editaccount-usage": "Korisnički podaci keširaju se zasebno za svaki wiki. Kada smijenite lozinku ili e-poštu, keš će se obnoviti samo za ovaj wiki. Usmjerite korisnika na ovaj wiki da biste se prijavili s novostvorenom lozinkom, kako biste izbjegli probleme s keširanjem.",
-	"editaccount-label-select": "Odaberite korisnički račun",
+	"editaccount-label-select": "Izaberite korisnički račun",
 	"editaccount-submit-account": "Upravljanje računom",
 	"editaccount-frame-account": "Uređivanje korisničkog računa: $1",
 	"editaccount-frame-close": "Onemogući korisnički račun: $1",
