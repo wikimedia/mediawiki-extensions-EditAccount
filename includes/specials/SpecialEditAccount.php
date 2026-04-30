@@ -30,31 +30,16 @@ class EditAccount extends SpecialPage {
 	/** @var User|null */
 	public ?User $mTempUser = null;
 
-	private ILoadBalancer $lb;
-	private LinkRenderer $linkRenderer;
-	private PasswordFactory $passwordFactory;
-	private UserFactory $userFactory;
-	private UserIdentityLookup $userIdentityLookup;
-	private UserNameUtils $userNameUtils;
-	private UserOptionsManager $userOptionsManager;
-
 	public function __construct(
-		ILoadBalancer $lb,
-		LinkRenderer $linkRenderer,
-		PasswordFactory $passwordFactory,
-		UserFactory $userFactory,
-		UserIdentityLookup $userIdentityLookup,
-		UserNameUtils $userNameUtils,
-		UserOptionsManager $userOptionsManager
+		private readonly ILoadBalancer $lb,
+		private readonly LinkRenderer $linkRenderer,
+		private readonly PasswordFactory $passwordFactory,
+		private readonly UserFactory $userFactory,
+		private readonly UserIdentityLookup $userIdentityLookup,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly UserOptionsManager $userOptionsManager,
 	) {
 		parent::__construct( 'EditAccount' );
-		$this->lb = $lb;
-		$this->linkRenderer = $linkRenderer;
-		$this->passwordFactory = $passwordFactory;
-		$this->userFactory = $userFactory;
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->userNameUtils = $userNameUtils;
-		$this->userOptionsManager = $userOptionsManager;
 	}
 
 	/** @inheritDoc */

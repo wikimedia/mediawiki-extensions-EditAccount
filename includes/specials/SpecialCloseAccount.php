@@ -26,26 +26,15 @@ class CloseAccount extends EditAccount {
 	 */
 	public ?User $mUser;
 
-	private UserFactory $userFactory;
-	private UserGroupManager $userGroupManager;
-	private UserNameUtils $userNameUtils;
-
 	/**
 	 * Constructor -- set up the new special page
-	 *
-	 * @param UserFactory $userFactory
-	 * @param UserGroupManager $userGroupManager
-	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct(
-		UserFactory $userFactory,
-		UserGroupManager $userGroupManager,
-		UserNameUtils $userNameUtils
+		private readonly UserFactory $userFactory,
+		private readonly UserGroupManager $userGroupManager,
+		private readonly UserNameUtils $userNameUtils,
 	) {
 		SpecialPage::__construct( 'CloseAccount' );
-		$this->userFactory = $userFactory;
-		$this->userGroupManager = $userGroupManager;
-		$this->userNameUtils = $userNameUtils;
 	}
 
 	/**
