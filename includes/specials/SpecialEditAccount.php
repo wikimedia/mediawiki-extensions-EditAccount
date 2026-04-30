@@ -47,7 +47,7 @@ class EditAccount extends SpecialPage {
 		UserNameUtils $userNameUtils,
 		UserOptionsManager $userOptionsManager
 	) {
-		parent::__construct( 'EditAccount', 'editaccount' );
+		parent::__construct( 'EditAccount' );
 		$this->lb = $lb;
 		$this->linkRenderer = $linkRenderer;
 		$this->passwordFactory = $passwordFactory;
@@ -55,6 +55,11 @@ class EditAccount extends SpecialPage {
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->userNameUtils = $userNameUtils;
 		$this->userOptionsManager = $userOptionsManager;
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'editaccount';
 	}
 
 	public function doesWrites(): bool {
