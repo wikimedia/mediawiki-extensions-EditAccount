@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cafeinlove",
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
 	"editaccount": "계정 편집",
@@ -21,6 +22,8 @@
 	"editaccount-label-pass": "새 비밀번호 설정",
 	"editaccount-label-realname": "새 실명 설정",
 	"editaccount-label-clearunsub": "구독 해지됨",
+	"editaccount-label-toggleadopt-prevent": "자동 입양 방지",
+	"editaccount-label-toggleadopt-allow": "자동 입양 허용",
 	"editaccount-label-reason": "이유:",
 	"editaccount-submit-email": "저장하고 이메일 주소 인증하기",
 	"editaccount-submit-pass": "비밀번호 저장",
