@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Cafeinlove",
-			"Ykhwong"
+			"Ykhwong",
+			"Tensama0415"
 		]
 	},
 	"editaccount": "계정 편집",
@@ -21,6 +22,9 @@
 	"editaccount-label-pass": "새 비밀번호 설정",
 	"editaccount-label-realname": "새 실명 설정",
 	"editaccount-label-clearunsub": "구독 해지됨",
+	"editaccount-label-toggleadopt": "입양자 상태 수정 (AutomaticWikiAdopt용):",
+	"editaccount-label-toggleadopt-prevent": "자동 입양 방지",
+	"editaccount-label-toggleadopt-allow": "자동 입양 허용",
 	"editaccount-label-reason": "이유:",
 	"editaccount-submit-email": "저장하고 이메일 주소 인증하기",
 	"editaccount-submit-pass": "비밀번호 저장",
@@ -56,6 +60,7 @@
 	"editaccount-status-tempuser": "임시 사용자",
 	"editaccount-error-tempuser-email": "임시 사용자는 이메일 주소 칸을 비워둘 수 없으므로 이메일 주소를 입력해 주십시오.",
 	"log-name-editaccnt": "사용자 계정 기록",
+	"log-description-editaccnt": "이 문서에는 {{SITENAME}} 직원이 사용자 정보에 적용한 변경 사항이 나열됩니다.",
 	"logentry-editaccnt-mailchange": "$1님이 사용자 $3의 이메일을 변경했습니다",
 	"logentry-editaccnt-passchange": "$1님이 $3 사용자의 비밀번호를 변경했습니다",
 	"logentry-editaccnt-realnamechange": "$1님이 $3 사용자의 실명을 변경했습니다",
