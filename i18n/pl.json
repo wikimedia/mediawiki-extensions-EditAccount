@@ -6,7 +6,8 @@
 			"Rail",
 			"Railfail536",
 			"Sovq",
-			"Woytecr"
+			"Woytecr",
+			"PanWor"
 		]
 	},
 	"editaccount": "Edytuj konto",
@@ -17,7 +18,7 @@
 	"editaccount-desc": "Pozwala uprzywilejowanym członkom na [[Special:EditAccount|zmianę informacji o koncie innego użytkownika]]",
 	"editaccount-frame-manage": "Edytuj konto",
 	"editaccount-frame-usage": "Komentarz",
-	"editaccount-usage": "Dane użytkownika przechowywane są osobno na każdej wiki. Kiedy resetujesz hasło lub e-mai, pamięć podręczna zostanie odświeżona tylko na danej wiki. Proszę skieruj użytkownika do tej wiki aby zalogował się nowym hasłem, aby uniknąć kłopotów z pamięcią podręczną.",
+	"editaccount-usage": "Dane użytkownika przechowywane są osobno na każdej wiki. Kiedy resetujesz hasło lub adres e-mail, pamięć podręczna zostanie odświeżona tylko na danej wiki. Proszę skieruj użytkownika do tej wiki, aby zalogował się nowym hasłem, unikając tym samym kłopoty z pamięcią podręczną.",
 	"editaccount-label-select": "Wybierz konto użytkownika",
 	"editaccount-submit-account": "Zarządzanie kontem",
 	"editaccount-frame-account": "Edycja konta użytkownika:$1",
