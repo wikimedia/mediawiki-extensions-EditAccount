@@ -50,8 +50,7 @@ class AddEntriesForAllDisabledUsers extends Maintenance {
 		);
 
 		if ( $res->numRows() === 0 ) {
-			// @phan-suppress-next-line PhanTypeMismatchArgument
-			$this->error( 'Nothing to do...', true );
+			$this->fatalError( 'Nothing to do...' );
 		} else {
 			$this->output( 'Got ' . $res->numRows() . " accounts to mark as disabled\n" );
 
