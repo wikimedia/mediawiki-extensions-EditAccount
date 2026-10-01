@@ -17,6 +17,7 @@ class EditAccountCloseAccountTemplate extends QuickTemplate {
 		$statusMsg = $this->data['statusMsg'];
 		$user = $this->data['user'];
 		$user_hsc = $this->data['user_hsc'];
+		$editToken = $this->data['editToken'];
 ?>
 <!-- s:<?php echo __FILE__ ?> -->
 <?php
@@ -46,6 +47,7 @@ if ( $status !== null && $user !== $user_hsc ) { ?>
 			<input type="submit" value="<?php echo wfMessage( 'editaccount-submit-close' )->plain() ?>" />
 		</div>
 		<input type="hidden" name="wpUserName" value="<?php echo $user_hsc ?>" />
+		<input type="hidden" name="wpEditToken" value="<?php echo htmlspecialchars( $editToken, ENT_QUOTES ) ?>" />
 		<input type="hidden" name="wpAction" value="closeaccountconfirm" />
 	</fieldset>
 </form>

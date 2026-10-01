@@ -27,6 +27,7 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 		$changeEmailRequested = $this->data['changeEmailRequested'];
 		$userEmail = $this->data['userEmail'];
 		$user_hsc = $this->data['user_hsc'];
+		$editToken = $this->data['editToken'];
 		$userRealName = $this->data['userRealName'];
 		$isAdopter = $this->data['isAdopter'];
 		$isUnsub = $this->data['isUnsub'];
@@ -105,6 +106,7 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 		</div>
 
 		<input type="hidden" name="wpUserName" value="<?php echo $user_hsc ?>" />
+		<input type="hidden" name="wpEditToken" value="<?php echo htmlspecialchars( $editToken, ENT_QUOTES ) ?>" />
 	</form>
 </fieldset>
 <fieldset>
@@ -114,6 +116,7 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 		<input type="submit" value="<?php echo wfMessage( 'editaccount-submit-close' )->plain() ?>" <?php echo $disabled; ?> />
 		<input type="hidden" name="wpAction" value="closeaccount" />
 		<input type="hidden" name="wpUserName" value="<?php echo $user_hsc ?>" />
+		<input type="hidden" name="wpEditToken" value="<?php echo htmlspecialchars( $editToken, ENT_QUOTES ) ?>" />
 	</form>
 <?php if ( $isDisabled ) {
 	echo wfMessage( 'edit-account-closed-flag' )->plain(); ?>
@@ -121,6 +124,7 @@ class EditAccountDisplayUserTemplate extends QuickTemplate {
 		<input type="submit" value="<?php echo wfMessage( 'editaccount-submit-cleardisable' )->plain() ?>" <?php echo $disabled; ?> />
 		<input type="hidden" name="wpAction" value="cleardisable" />
 		<input type="hidden" name="wpUserName" value="<?php echo $user_hsc ?>" />
+		<input type="hidden" name="wpEditToken" value="<?php echo htmlspecialchars( $editToken, ENT_QUOTES ) ?>" />
 	</form>
 <?php }
 // end undisable ?>

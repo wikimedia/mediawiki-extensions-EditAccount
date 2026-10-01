@@ -104,6 +104,7 @@ class CloseAccount extends EditAccount {
 		$effectiveGroups = $this->userGroupManager->getUserEffectiveGroups( $user );
 		if ( in_array( 'staff', $effectiveGroups ) ) {
 			$out->redirect( SpecialPage::getTitleFor( 'EditAccount' )->getFullURL() );
+			return;
 		}
 
 		// Set page title and other stuff
@@ -127,7 +128,12 @@ class CloseAccount extends EditAccount {
 		$changeReason = $request->getVal( 'wpReason' );
 
 		if ( $request->wasPosted() ) {
-			$this->mStatus = $this->closeAccount( $changeReason );
+			if ( !$this->getContext()->getCsrfTokenSet()->matchTokenField( 'wpEditToken' ) ) {
+				$this->mStatus = false;
+				$this->mStatusMsg = $this->msg( 'sessionfailure' )->text();
+			} else {
+				$this->mStatus = $this->closeAccount( $changeReason );
+			}
 			if ( $this->mStatus ) {
 				$color = 'darkgreen';
 			} else {
@@ -153,7 +159,8 @@ class CloseAccount extends EditAccount {
 				'statusMsg' => '',
 				// likewise
 				'user' => $userName,
-				'user_hsc' => htmlspecialchars( $userName )
+				'user_hsc' => htmlspecialchars( $userName ),
+				'editToken' => $this->getContext()->getCsrfTokenSet()->getToken()->toString(),
 			];
 			foreach ( $templateVariables as $templateVariable => $variableValue ) {
 				$tmpl->set( $templateVariable, $variableValue );
