@@ -152,6 +152,26 @@ class EditAccount extends SpecialPage {
 		$changeReason = $request->getVal( 'wpReason' );
 
 		// What to do, what to show? Hmm...
+		$writeActions = [
+			'setemail',
+			'setpass',
+			'setrealname',
+			'closeaccountconfirm',
+			'clearunsub',
+			'cleardisable',
+			'toggleadopter',
+		];
+		if ( in_array( $action, $writeActions, true ) ) {
+			if ( !$user->isAllowed( 'editaccount' )
+				|| !$request->wasPosted()
+				|| !$this->getContext()->getCsrfTokenSet()->matchTokenField( 'wpEditToken' )
+			) {
+				$this->mStatus = false;
+				$this->mStatusMsg = $this->msg( 'sessionfailure' )->text();
+				$action = ( $this->mUser instanceof User ) ? 'displayuser' : '';
+			}
+		}
+
 		switch ( $action ) {
 			case 'setemail':
 				$newEmail = $request->getVal( 'wpNewEmail' );
@@ -215,6 +235,7 @@ class EditAccount extends SpecialPage {
 			'userRealName' => null,
 			'userEncoded' => urlencode( $userName ),
 			'user_hsc' => htmlspecialchars( $userName ),
+			'editToken' => $this->getContext()->getCsrfTokenSet()->getToken()->toString(),
 			'userId' => null,
 			'userReg' => null,
 			'isUnsub' => null,
